@@ -25,5 +25,4 @@ greet();`,
       { answerText: "int x = 5;", isCorrect: false },
     ],
   },
-  // Tambahkan 8 soal lainnya...
 ];

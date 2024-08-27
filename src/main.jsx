@@ -2,16 +2,19 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Quiz from './components/sections/Quiz'
+import { NextUIProvider } from '@nextui-org/react'
+import { Home } from './pages/home'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Quiz />,
+    element: <Home />,
   }
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <NextUIProvider>
+      <RouterProvider router={router} />
+    </NextUIProvider>
   </StrictMode>,
 )
