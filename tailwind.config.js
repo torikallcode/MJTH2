@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         'cinzel': ['Cinzel', 'sans-serif'],
         'baskerville': ['Baskervville SC', 'serif'],
+        'poppins': ['Poppins', 'sans-serif']
       },
       colors: {
         'light-blue': '#a5d8ff',

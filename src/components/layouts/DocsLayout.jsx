@@ -20,7 +20,7 @@ export const DocsLayout = () => {
   return (
     <div className="flex flex-col h-screen">
       <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
-      <div className="flex flex-1">
+      <div className="flex flex-1 pt-16">
         <Sidebar isOpen={isSidebarOpen} onSelect={handleSelect} />
         <MainContent selected={selectedContent} />
       </div>

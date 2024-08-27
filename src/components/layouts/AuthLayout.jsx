@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { questions } from "../../components/fragments/Question";
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import NavbarComponent from "../fragments/NavbarComponent";
+import Navbar from "../fragments/Navbar";
+import Sidebar from "../fragments/SideBar";
 import { Link } from "react-router-dom";
+import NavbarComponent from "../fragments/NavbarComponent";
 
 export const AuthLayout = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -23,24 +25,36 @@ export const AuthLayout = () => {
     }
   };
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedContent, setSelectedContent] = useState('');
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+
+  const handleSelect = (item) => {
+    setSelectedContent(item);
+    setIsSidebarOpen(false); // Optionally close the sidebar after selection on mobile
+  };
+
+  const menuItems = [
+    { id: 'introduction', label: 'Introduction' },
+    { id: 'getting-started', label: 'Getting Started' },
+    { id: 'customization', label: 'Customization' },
+    { id: 'components', label: 'Components' },
+  ];
+
   return (
     <div className="font-baskerville">
-      <NavbarComponent
-        buttonStart={
-          <Link
-            to={"/docs"}
-            className="font-medium bg-gray-100 p-2 rounded-lg text-hitam cursor-pointer"
-          >
-            Get Started
-          </Link>
-        }
-      />
+      <NavbarComponent></NavbarComponent>
+
       <div className="flex flex-col justify-center items-center bg-white mb-96">
         <div className="relative flex flex-col justify-center items-center mx-auto w-full h-screen">
-          <h1 className="text-7xl text-center mx-auto max-w-[350px] xl:text-8xl text-hitam">My Journey To Heaven</h1>
+          <h1 className="text-6xl text-center mx-auto max-w-[250px] xl:max-w-md xl:text-8xl text-hitam">My Journey To Heaven</h1>
           <h2 className="text-3xl absolute bottom-12 text-center">II</h2>
         </div>
-        <div className="flex flex-col w-full px-5 pt-10">
+        <div className="flex flex-col w-full px-5 pt-10 xl:max-w-[90rem]">
           <h1 className="text-3xl text-start">Lorem ipsum dolor sit.</h1>
           <p className="text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam quae id odio earum voluptatum officia adipisci iusto non culpa rem!</p>
         </div>

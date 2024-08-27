@@ -9,7 +9,7 @@ const Sidebar = ({ isOpen, onSelect }) => {
   ];
 
   return (
-    <aside className={`fixed lg:sticky top-0 left-0 h-full w-64 bg-gray-100 p-4 border-r border-gray-200 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50`}>
+    <aside className={`fixed top-16 left-0 h-full w-64 bg-white p-4 border-r border-gray-200 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50`}>
       <ul>
         {menuItems.map((item) => (
           <li key={item.id}>

@@ -29,7 +29,7 @@ const MainContent = ({ selected }) => {
   };
 
   return (
-    <main className="flex-grow p-6 sticky bg-yellow-500 w-full">
+    <main className="flex-grow p-6 lg:ml-64 mt-7 pb-[100rem]">
       {content[selected] || (
         <div>
           <h1 className="text-3xl font-bold mb-4">Welcome to My Documentation</h1>

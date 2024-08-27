@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
-
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
+import { Link } from "react-router-dom";
 export default function NavbarComponent({ buttonStart }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -19,9 +19,9 @@ export default function NavbarComponent({ buttonStart }) {
 
   return (
     <Navbar
-      className="fixed top-0 left-0 right-0 z-10"
+      className="fixed top-0 left-0 right-0 z-10 mx-0 px-0"
       onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
+      <NavbarContent className="w-full">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
@@ -31,7 +31,7 @@ export default function NavbarComponent({ buttonStart }) {
             src="img/logonew.png"
             alt=""
             className="w-7 h-7" /> */}
-          <p className="font-bold text-inherit text-hitam text-lg">Torikal</p>
+          <p className="font-bold text-inherit text-hitam text-xl">Torikal</p>
         </NavbarBrand>
       </NavbarContent>
       {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -56,7 +56,9 @@ export default function NavbarComponent({ buttonStart }) {
           <Link href="#">Login</Link>
         </NavbarItem> */}
         <NavbarItem>
-          {buttonStart}
+          <Link
+            to={'/docs'}
+            className="text-hitam text-base font-poppins font-medium cursor-pointer bg-gray-200 p-2 rounded-md">Get Started</Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
