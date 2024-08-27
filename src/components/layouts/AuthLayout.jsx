@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { questions } from "../../components/fragments/Question";
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import App from "../fragments/Navbar";
+import NavbarComponent from "../fragments/NavbarComponent";
+import { Link } from "react-router-dom";
 
 export const AuthLayout = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -24,13 +25,26 @@ export const AuthLayout = () => {
 
   return (
     <div className="font-baskerville">
-      <App />
+      <NavbarComponent
+        buttonStart={
+          <Link
+            to={"/docs"}
+            className="font-medium bg-gray-100 p-2 rounded-lg text-hitam cursor-pointer"
+          >
+            Get Started
+          </Link>
+        }
+      />
       <div className="flex flex-col justify-center items-center bg-white mb-96">
         <div className="relative flex flex-col justify-center items-center mx-auto w-full h-screen">
           <h1 className="text-7xl text-center mx-auto max-w-[350px] xl:text-8xl text-hitam">My Journey To Heaven</h1>
           <h2 className="text-3xl absolute bottom-12 text-center">II</h2>
         </div>
-        <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+        <div className="flex flex-col w-full px-5 pt-10">
+          <h1 className="text-3xl text-start">Lorem ipsum dolor sit.</h1>
+          <p className="text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam quae id odio earum voluptatum officia adipisci iusto non culpa rem!</p>
+        </div>
+        {/* <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
           {showScore ? (
             <div className="text-center">
               <div className="text-2xl font-bold mb-4">Your Score: {score}</div>
@@ -67,7 +81,7 @@ export const AuthLayout = () => {
               </div>
             </>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
 
