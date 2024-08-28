@@ -1,6 +1,16 @@
 import React from 'react';
 import { Variable } from './Variable';
 import { Integer } from './Integer';
+import { Boolean } from './Boolean';
+import { Constant } from './Constant';
+import { Conversi } from './Conversi';
+import { TypeDeklarasi } from './TypeDeklarasi';
+import { OperasiMatematika } from './OperasiMatematika';
+import { Perbandingan } from './Perbandingan';
+import { Array } from './Array';
+import { Slice } from './Slice';
+import { Map } from './Map';
+import { If } from './If';
 
 const MainContent = ({ selected }) => {
   const content = {
@@ -21,62 +31,85 @@ const MainContent = ({ selected }) => {
     ),
     'integer': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Tipe Data Integer</h1>
+        <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
         <Integer />
       </div>
     ),
-    'getting-started': (
+    'boolean': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Getting Started</h1>
+        <h1 className="text-3xl font-bold mb-4">Boolean</h1>
         <p>This is the getting started content.</p>
+        <Boolean />
       </div>
     ),
-    'basics': (
+    'string': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">The Basics</h1>
+        <h1 className="text-3xl font-bold mb-4">String</h1>
         <p>This is the basics content.</p>
+        <String />
       </div>
     ),
-    'advanced': (
+    'const': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Advanced</h1>
+        <h1 className="text-3xl font-bold mb-4">Constant</h1>
         <p>This is the advanced content.</p>
+        <Constant />
       </div>
     ),
-    'customization': (
+    'conversi': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Customization</h1>
+        <h1 className="text-3xl font-bold mb-4">Conversi</h1>
         <p>This is the customization content.</p>
+        <Conversi />
       </div>
     ),
-    'theme': (
+    'typeDeklarasi': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Theme</h1>
+        <h1 className="text-3xl font-bold mb-4">Type Deklarasi</h1>
         <p>This is the theme content.</p>
+        <TypeDeklarasi />
       </div>
     ),
-    'layout': (
+    'opm': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Layout</h1>
+        <h1 className="text-3xl font-bold mb-4">Operasi Matematika</h1>
         <p>This is the layout content.</p>
+        <OperasiMatematika />
       </div>
     ),
-    'components': (
+    'perbandingan': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Components</h1>
+        <h1 className="text-3xl font-bold mb-4">Perbandingan</h1>
         <p>This is the components content.</p>
+        <Perbandingan />
       </div>
     ),
-    'buttons': (
+    'array': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Buttons</h1>
+        <h1 className="text-3xl font-bold mb-4">Array</h1>
         <p>This is the buttons content.</p>
+        <Array />
       </div>
     ),
-    'cards': (
+    'slice': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Cards</h1>
+        <h1 className="text-3xl font-bold mb-4">Slice</h1>
         <p>This is the cards content.</p>
+        <Slice />
+      </div>
+    ),
+    'map': (
+      <div>
+        <h1 className="text-3xl font-bold mb-4">Map</h1>
+        <p>This is the cards content.</p>
+        <Map />
+      </div>
+    ),
+    'if': (
+      <div>
+        <h1 className="text-3xl font-bold mb-4">IF</h1>
+        <p>This is the cards content.</p>
+        <If />
       </div>
     ),
   }; 0
