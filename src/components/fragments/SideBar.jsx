@@ -8,16 +8,8 @@ const Sidebar = ({ isOpen, onSelect }) => {
       id: 'Golang Dasar',
       label: 'Golang Dasar',
       children: [
-        { id: 'variable', label: 'variable' },
-        { id: 'installation', label: 'Installation' },
-        { id: 'overview', label: 'Overview' },
-        { id: 'installation', label: 'Installation' },
-        { id: 'overview', label: 'Overview' },
-        { id: 'installation', label: 'Installation' },
-        { id: 'overview', label: 'Overview' },
-        { id: 'installation', label: 'Installation' },
-        { id: 'overview', label: 'Overview' },
-        { id: 'installation', label: 'Installation' },
+        { id: 'variable', label: 'Variable' },
+        { id: 'integer', label: 'Integer' },
       ],
     },
     {

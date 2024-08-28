@@ -1,5 +1,6 @@
 import React from 'react';
 import { Variable } from './Variable';
+import { Integer } from './Integer';
 
 const MainContent = ({ selected }) => {
   const content = {
@@ -11,18 +12,17 @@ const MainContent = ({ selected }) => {
     ),
     'variable': (
       <div>
-        <div className='mb-5'>
-          <h1 className="text-3xl font-bold mb-4">Variable</h1>
-          <p>This is the overview content.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus animi tempora asperiores eius at, libero laudantium enim pariatur a delectus?</p>
+        <div className='mb-5 font-poppins'>
+          <h1 className="text-3xl font-bold mb-4 ">Variable</h1>
+          <p>Variable adalah tempat meyimpan data  , di Golang variable hanya menyimpan tipe data yang sama. Untuk membuat Variable kita menggunakan kata kunci “var” lalu diikuti dengan “nama” dan “tipe datanya” </p>
         </div>
         <Variable />
       </div>
     ),
-    'installation': (
+    'integer': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Installation</h1>
-        <p>This is the installation content.</p>
+        <h1 className="text-3xl font-bold mb-4">Tipe Data Integer</h1>
+        <Integer />
       </div>
     ),
     'getting-started': (
@@ -82,7 +82,7 @@ const MainContent = ({ selected }) => {
   }; 0
 
   return (
-    <main className="flex-grow px-5 pt-5 lg:pt-2 lg:ml-80 mt-7 pb-[100rem]">
+    <main className="flex-grow px-5 pt-5 lg:pt-2 lg:ml-80 mt-3 lg:mt-7 pb-10">
       {content[selected] || (
         <div>
           <h1 className="text-3xl font-bold mb-4">Welcome to My Documentation</h1>
