@@ -1,10 +1,7 @@
-import React from 'react'
-import NavbarComponent from '../fragments/NavbarComponent'
-import Sidebar from '../fragments/SideBar'
-import MainContent from '../fragments/MainContent'
-import { useState } from 'react'
-import Navbar from '../fragments/Navbar'
-
+import React, { useState } from 'react';
+import Navbar from '../fragments/Navbar';
+import Sidebar from '../fragments/SideBar';
+import MainContent from '../fragments/MainContent';
 export const DocsLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedContent, setSelectedContent] = useState('');
@@ -17,13 +14,18 @@ export const DocsLayout = () => {
     setSelectedContent(item);
     setIsSidebarOpen(false); // Optionally close the sidebar after selection on mobile
   };
+
   return (
-    <div className="flex flex-col h-screen">
+    <div className={`flex flex-col h-screen ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
       <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
       <div className="flex flex-1 pt-16">
         <Sidebar isOpen={isSidebarOpen} onSelect={handleSelect} />
-        <MainContent selected={selectedContent} />
+        <div
+          className={`flex-grow transition-all duration-300 ${isSidebarOpen ? 'blur-lg  bg-opacity-30 lg:backdrop-blur-none lg:bg-transparent' : ''}`}
+        >
+          <MainContent selected={selectedContent} />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
