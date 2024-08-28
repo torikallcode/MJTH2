@@ -12,7 +12,7 @@ const QuizComponent = ({
   handleRestartQuiz
 }) => {
   return (
-    <div className="w-full max-w-[22rem] p-8 bg-darken rounded-lg shadow-lg">
+    <div className="w-full sm:max-w-md sm:mx-auto p-8 bg-darken rounded-lg shadow-lg">
       {showScore ? (
         <div className="text-center min-h-52">
           <div className="text-2xl font-bold mb-4 text-gray-100">Your Score: {score}</div>
@@ -27,7 +27,7 @@ const QuizComponent = ({
         <>
           <div className="mb-4">
             <div className="text-sm font-medium font-poppins text-gray-400 tracking-wider mb-3">
-              Question {currentQuestion + 1}/{questions.length}
+              {currentQuestion + 1}/{questions.length}
             </div>
             <div className="text-lg mb-4 text-gray-100 font-poppins">{questions[currentQuestion].questionText}</div>
             {questions[currentQuestion].code && (

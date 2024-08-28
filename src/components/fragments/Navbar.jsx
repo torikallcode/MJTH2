@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { Button } from '@nextui-org/react';
 
 const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -38,7 +39,9 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
           <Link
             to={'/docs'}
           >
-            Get started
+            <Button color="primary" variant="shadow">
+              Get Started
+            </Button>
           </Link>
         </div>
       </div>

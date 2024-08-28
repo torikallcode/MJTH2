@@ -12,9 +12,9 @@ const MainContent = ({ selected }) => {
     ),
     'variable': (
       <div>
-        <div className='mb-5 font-poppins'>
-          <h1 className="text-3xl font-bold mb-4 ">Variable</h1>
-          <p>Variable adalah tempat meyimpan data  , di Golang variable hanya menyimpan tipe data yang sama. Untuk membuat Variable kita menggunakan kata kunci “var” lalu diikuti dengan “nama” dan “tipe datanya” </p>
+        <div className='mb-10 font-poppins'>
+          <h1 className="text-3xl sm:text-4xl lg:text-3xl font-bold mb-4">Variable</h1>
+          <p className='sm:text-lg lg:text-base'>Variable adalah tempat meyimpan data  , di Golang variable hanya menyimpan tipe data yang sama. Untuk membuat Variable kita menggunakan kata kunci “var” lalu diikuti dengan “nama” dan “tipe datanya” </p>
         </div>
         <Variable />
       </div>
@@ -82,7 +82,7 @@ const MainContent = ({ selected }) => {
   }; 0
 
   return (
-    <main className="flex-grow px-5 pt-5 lg:pt-2 lg:ml-80 mt-3 lg:mt-7 pb-10">
+    <main className="flex-grow px-5 pt-5 lg:pt-2 lg:ml-80 mt-3 lg:mt-7 pb-10 max-w-[60rem]">
       {content[selected] || (
         <div>
           <h1 className="text-3xl font-bold mb-4">Welcome to My Documentation</h1>
