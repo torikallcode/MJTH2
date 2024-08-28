@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #7BC9FF 0%, transparent 25%), 
+              linear-gradient(-45deg, #8576FF 0%, transparent 25%), 
+              linear-gradient(135deg, #8576FF 0%, transparent 25%), 
+              linear-gradient(-135deg, #7BC9FF 0%, transparent 25%);
+  background-size: 100% 100%;
+  background-blend-mode: multiply;
+  opacity: 0.3;
+}

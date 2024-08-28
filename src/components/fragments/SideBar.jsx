@@ -8,7 +8,7 @@ const Sidebar = ({ isOpen, onSelect }) => {
       id: 'Golang Dasar',
       label: 'Golang Dasar',
       children: [
-        { id: 'Variable', label: 'Variable' },
+        { id: 'variable', label: 'variable' },
         { id: 'installation', label: 'Installation' },
         { id: 'overview', label: 'Overview' },
         { id: 'installation', label: 'Installation' },
@@ -52,7 +52,7 @@ const Sidebar = ({ isOpen, onSelect }) => {
   };
 
   return (
-    <aside className={`fixed top-14 left-0 h-full w-64 lg:w-72 lg:py-10 lg:pl-20 bg-white p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40`}>
+    <aside className={`fixed top-14 left-0 h-full w-64 lg:w-72 lg:py-10 lg:pl-20 bg-white lg:bg-opacity-50 lg:backdrop-blur-md p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40`}>
       <ul className='font-poppins text-hitam text-end'>
         {menuItems.map((item) => (
           <li key={item.id}>

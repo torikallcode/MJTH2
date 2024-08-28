@@ -1,4 +1,5 @@
 import React from 'react';
+import { Variable } from './Variable';
 
 const MainContent = ({ selected }) => {
   const content = {
@@ -8,11 +9,14 @@ const MainContent = ({ selected }) => {
         <p>This is the introduction content.</p>
       </div>
     ),
-    'overview': (
+    'variable': (
       <div>
-        <h1 className="text-3xl font-bold mb-4">Overview</h1>
-        <p>This is the overview content.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus animi tempora asperiores eius at, libero laudantium enim pariatur a delectus?</p>
+        <div className='mb-5'>
+          <h1 className="text-3xl font-bold mb-4">Variable</h1>
+          <p>This is the overview content.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus animi tempora asperiores eius at, libero laudantium enim pariatur a delectus?</p>
+        </div>
+        <Variable />
       </div>
     ),
     'installation': (
