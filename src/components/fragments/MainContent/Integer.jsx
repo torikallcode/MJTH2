@@ -171,11 +171,8 @@ export const Integer = () => {
       ],
     },
   ];
-
-
-
   return (
-    <div>
+    <div className='w-full h-full'>
       <QuizComponent
         questions={questions}
         currentQuestion={currentQuestion}

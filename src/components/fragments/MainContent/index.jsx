@@ -11,6 +11,7 @@ import { Array } from './Array';
 import { Slice } from './Slice';
 import { Map } from './Map';
 import { If } from './If';
+import { String } from './String';
 
 const MainContent = ({ selected }) => {
   const content = {
@@ -21,101 +22,152 @@ const MainContent = ({ selected }) => {
       </div>
     ),
     'variable': (
-      <div>
-        <div className='mb-10 font-poppins'>
-          <h1 className="text-3xl sm:text-4xl lg:text-3xl font-bold mb-4">Variable</h1>
-          <p className='sm:text-lg lg:text-base'>Variable adalah tempat meyimpan data  , di Golang variable hanya menyimpan tipe data yang sama. Untuk membuat Variable kita menggunakan kata kunci “var” lalu diikuti dengan “nama” dan “tipe datanya” </p>
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
         </div>
-        <Variable />
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Variable />
+        </div>
       </div>
     ),
     'integer': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
-        <Integer />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Integer />
+        </div>
       </div>
     ),
     'boolean': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Boolean</h1>
-        <p>This is the getting started content.</p>
-        <Boolean />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Boolean />
+        </div>
       </div>
     ),
     'string': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">String</h1>
-        <p>This is the basics content.</p>
-        <String />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <String />
+        </div>
       </div>
     ),
     'const': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Constant</h1>
-        <p>This is the advanced content.</p>
-        <Constant />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Constant />
+        </div>
       </div>
     ),
     'conversi': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Conversi</h1>
-        <p>This is the customization content.</p>
-        <Conversi />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Conversi />
+        </div>
       </div>
     ),
     'typeDeklarasi': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Type Deklarasi</h1>
-        <p>This is the theme content.</p>
-        <TypeDeklarasi />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <TypeDeklarasi />
+        </div>
       </div>
     ),
     'opm': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Operasi Matematika</h1>
-        <p>This is the layout content.</p>
-        <OperasiMatematika />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <OperasiMatematika />
+        </div>
       </div>
     ),
     'perbandingan': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Perbandingan</h1>
-        <p>This is the components content.</p>
-        <Perbandingan />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Perbandingan />
+        </div>
       </div>
     ),
     'array': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Array</h1>
-        <p>This is the buttons content.</p>
-        <Array />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Array />
+        </div>
       </div>
     ),
     'slice': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Slice</h1>
-        <p>This is the cards content.</p>
-        <Slice />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Slice />
+        </div>
       </div>
     ),
     'map': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">Map</h1>
-        <p>This is the cards content.</p>
-        <Map />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <Map />
+        </div>
       </div>
     ),
     'if': (
-      <div>
-        <h1 className="text-3xl font-bold mb-4">IF</h1>
-        <p>This is the cards content.</p>
-        <If />
+      <div className='w-full lg:flex lg:relative lg:items-start'>
+        <div className='lg:w-[65%] pr-7'>
+          <h1 className="text-3xl font-bold mb-4">Integer & FLoat</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magni adipisci. Illo exercitationem reiciendis corporis vel porro cum veniam aperiam tempore minus iste nobis consequatur soluta autem labore ut repellendus ratione eaque quae voluptates eum quibusdam, obcaecati voluptatem. Possimus sequi iure vero ab officia numquam eum repudiandae nisi suscipit magni animi atque, architecto aut dolorem a neque aliquid at fuga optio obcaecati et. Ipsam delectus blanditiis quia corporis. Labore distinctio nesciunt delectus laboriosam ducimus, a suscipit dolorem veniam impedit. Nostrum voluptatem debitis laborum molestias ducimus inventore quia fugiat. Amet quo maiores, alias adipisci ipsa asperiores optio ipsam dolore vitae fugit sed dolorem nesciunt aut est veniam unde voluptatibus odio fugiat laboriosam quis. Quasi tempore ducimus reprehenderit animi dignissimos velit illo tenetur iure! Distinctio minima blanditiis consectetur nostrum maxime, eum quas ducimus assumenda impedit ab ullam totam voluptas odit culpa expedita repellat, fugit inventore beatae reiciendis? Sapiente suscipit optio ab aliquam reprehenderit, facilis sunt quasi perferendis commodi non doloribus, unde, eos officia consequuntur consectetur aut laborum voluptas neque fuga praesentium maxime blanditiis eum natus odit. Quos ab autem quo officia sint rerum labore, repellendus tempore cumque, non minima. Praesentium eveniet beatae earum quaerat magni. Quam unde officiis temporibus nihil, hic rerum.</p>
+        </div>
+        <div className='lg:w-[35%] lg:sticky  lg:top-28'>
+          <If />
+        </div>
       </div>
     ),
   }; 0
 
   return (
-    <main className="flex-grow px-5 pt-5 lg:pt-2 lg:ml-80 mt-3 lg:mt-7 pb-10 max-w-[60rem]">
+    <main className="flex px-5 pt-5 lg:pt-2 mt-3 lg:mt-7 pb-10">
       {content[selected] || (
         <div>
           <h1 className="text-3xl font-bold mb-4">Welcome to My Documentation</h1>

@@ -32,127 +32,147 @@ export const Boolean = () => {
   import "fmt"
   
   func main() {
-      var x int = 10
-      fmt.Println(x)
+      var isAvailable bool = true
+      fmt.Println(isAvailable)
   }`,
       answerOptions: [
-        { answerText: "10", isCorrect: true },
+        { answerText: "true", isCorrect: true },
+        { answerText: "false", isCorrect: false },
+        { answerText: "1", isCorrect: false },
         { answerText: "0", isCorrect: false },
-        { answerText: "undefined", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "What is the correct way to declare a variable in Go?",
-      code: `var x = 5`,
+      questionText: "What is the default value of a boolean variable in Go?",
+      code: `var isComplete bool`,
       answerOptions: [
-        { answerText: "let x = 5", isCorrect: false },
-        { answerText: "var x = 5", isCorrect: true },
-        { answerText: "x := 5", isCorrect: false },
-        { answerText: "int x = 5", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What keyword is used to declare a variable with a specified type in Go?",
-      code: `var name string = "GoLang"`,
-      answerOptions: [
-        { answerText: "let", isCorrect: false },
-        { answerText: "var", isCorrect: true },
-        { answerText: "const", isCorrect: false },
-        { answerText: "define", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What is the output of the following code?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      var x int
-      fmt.Println(x)
-  }`,
-      answerOptions: [
-        { answerText: "0", isCorrect: true },
-        { answerText: "nil", isCorrect: false },
-        { answerText: "undefined", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which of the following correctly declares a variable using shorthand notation?",
-      code: `x := 20`,
-      answerOptions: [
-        { answerText: "var x int = 20", isCorrect: false },
-        { answerText: "x := 20", isCorrect: true },
-        { answerText: "let x = 20", isCorrect: false },
-        { answerText: "x = 20", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the output of the following code?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      x := 5
-      y := 10
-      fmt.Println(x + y)
-  }`,
-      answerOptions: [
-        { answerText: "15", isCorrect: true },
-        { answerText: "510", isCorrect: false },
-        { answerText: "undefined", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which of the following is the zero value for a string variable in Go?",
-      code: `var s string`,
-      answerOptions: [
-        { answerText: '"" (empty string)', isCorrect: true },
+        { answerText: "false", isCorrect: true },
+        { answerText: "true", isCorrect: false },
         { answerText: "0", isCorrect: false },
         { answerText: "nil", isCorrect: false },
-        { answerText: "undefined", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Which of the following is the correct way to declare a boolean variable in Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "var isReady bool = true", isCorrect: true },
+        { answerText: "bool isReady = true", isCorrect: false },
+        { answerText: "let isReady = true", isCorrect: false },
+        { answerText: "isReady := 'true'", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What will be the output of the following code involving boolean logic?",
       code: `package main
   import "fmt"
   
   func main() {
-      var x, y int = 10, 20
-      var z = x + y
-      fmt.Println(z)
+      var a bool = true
+      var b bool = false
+      fmt.Println(a && b)
   }`,
       answerOptions: [
-        { answerText: "30", isCorrect: true },
-        { answerText: "1020", isCorrect: false },
+        { answerText: "false", isCorrect: true },
+        { answerText: "true", isCorrect: false },
         { answerText: "undefined", isCorrect: false },
         { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "What is the correct way to declare a constant in Go?",
-      code: `const Pi = 3.14`,
+      questionText: "What will be the output of the following Go code?",
+      code: `package main
+  import "fmt"
+  
+  func main() {
+      var x bool = true
+      var y bool = !x
+      fmt.Println(y)
+  }`,
       answerOptions: [
-        { answerText: "var Pi = 3.14", isCorrect: false },
-        { answerText: "const Pi = 3.14", isCorrect: true },
-        { answerText: "let Pi = 3.14", isCorrect: false },
-        { answerText: "define Pi = 3.14", isCorrect: false },
+        { answerText: "false", isCorrect: true },
+        { answerText: "true", isCorrect: false },
+        { answerText: "undefined", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "Which of the following Go keywords can be used to declare multiple variables at once?",
-      code: `var a, b, c int = 1, 2, 3`,
+      questionText: "Which of the following expressions will evaluate to true?",
+      code: `var x bool = (10 > 5)`,
       answerOptions: [
-        { answerText: "var", isCorrect: true },
-        { answerText: "let", isCorrect: false },
-        { answerText: "const", isCorrect: false },
-        { answerText: "define", isCorrect: false },
+        { answerText: "10 > 5", isCorrect: true },
+        { answerText: "10 < 5", isCorrect: false },
+        { answerText: "10 == 5", isCorrect: false },
+        { answerText: "!(10 > 5)", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What will be the output of the following Go code involving boolean OR operator?",
+      code: `package main
+  import "fmt"
+  
+  func main() {
+      var a bool = false
+      var b bool = true
+      fmt.Println(a || b)
+  }`,
+      answerOptions: [
+        { answerText: "true", isCorrect: true },
+        { answerText: "false", isCorrect: false },
+        { answerText: "undefined", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What will be the output of the following code with combined boolean expressions?",
+      code: `package main
+  import "fmt"
+  
+  func main() {
+      var a bool = true
+      var b bool = false
+      var c bool = (a || b) && !b
+      fmt.Println(c)
+  }`,
+      answerOptions: [
+        { answerText: "true", isCorrect: true },
+        { answerText: "false", isCorrect: false },
+        { answerText: "undefined", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What will be the output of the following Go code?",
+      code: `package main
+  import "fmt"
+  
+  func main() {
+      var isRaining bool = false
+      if !isRaining {
+          fmt.Println("Go outside")
+      } else {
+          fmt.Println("Stay inside")
+      }
+  }`,
+      answerOptions: [
+        { answerText: "Go outside", isCorrect: true },
+        { answerText: "Stay inside", isCorrect: false },
+        { answerText: "undefined", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Which of the following is a valid boolean expression in Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "5 != 10", isCorrect: true },
+        { answerText: "5 = 10", isCorrect: false },
+        { answerText: "true = false", isCorrect: false },
+        { answerText: "10 => 5", isCorrect: false },
       ],
     },
   ];
+
   return (
     <div>
       <QuizComponent

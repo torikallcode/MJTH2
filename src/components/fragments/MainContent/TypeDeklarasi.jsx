@@ -27,132 +27,65 @@ export const TypeDeklarasi = () => {
 
   const questions = [
     {
+      questionText: "What is the correct way to declare a new type in Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "type MyInt int", isCorrect: true },
+        { answerText: "let MyInt = int", isCorrect: false },
+        { answerText: "var MyInt = int", isCorrect: false },
+        { answerText: "const MyInt int", isCorrect: false },
+      ],
+    },
+    {
       questionText: "What will be the output of the following Go code?",
       code: `package main
   import "fmt"
   
-  func main() {
-      var x int = 10
-      fmt.Println(x)
-  }`,
-      answerOptions: [
-        { answerText: "10", isCorrect: true },
-        { answerText: "0", isCorrect: false },
-        { answerText: "undefined", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What is the correct way to declare a variable in Go?",
-      code: `var x = 5`,
-      answerOptions: [
-        { answerText: "let x = 5", isCorrect: false },
-        { answerText: "var x = 5", isCorrect: true },
-        { answerText: "x := 5", isCorrect: false },
-        { answerText: "int x = 5", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What keyword is used to declare a variable with a specified type in Go?",
-      code: `var name string = "GoLang"`,
-      answerOptions: [
-        { answerText: "let", isCorrect: false },
-        { answerText: "var", isCorrect: true },
-        { answerText: "const", isCorrect: false },
-        { answerText: "define", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What is the output of the following code?",
-      code: `package main
-  import "fmt"
+  type Celsius float64
   
   func main() {
-      var x int
-      fmt.Println(x)
+      var temp Celsius = 36.6
+      fmt.Println(temp)
   }`,
       answerOptions: [
-        { answerText: "0", isCorrect: true },
-        { answerText: "nil", isCorrect: false },
-        { answerText: "undefined", isCorrect: false },
+        { answerText: "36.6", isCorrect: true },
+        { answerText: "36", isCorrect: false },
         { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which of the following correctly declares a variable using shorthand notation?",
-      code: `x := 20`,
-      answerOptions: [
-        { answerText: "var x int = 20", isCorrect: false },
-        { answerText: "x := 20", isCorrect: true },
-        { answerText: "let x = 20", isCorrect: false },
-        { answerText: "x = 20", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the output of the following code?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      x := 5
-      y := 10
-      fmt.Println(x + y)
-  }`,
-      answerOptions: [
-        { answerText: "15", isCorrect: true },
-        { answerText: "510", isCorrect: false },
-        { answerText: "undefined", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which of the following is the zero value for a string variable in Go?",
-      code: `var s string`,
-      answerOptions: [
-        { answerText: '"" (empty string)', isCorrect: true },
-        { answerText: "0", isCorrect: false },
-        { answerText: "nil", isCorrect: false },
         { answerText: "undefined", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      var x, y int = 10, 20
-      var z = x + y
-      fmt.Println(z)
-  }`,
+      questionText: "How do you define a custom type based on a struct in Go?",
+      code: ``,
       answerOptions: [
-        { answerText: "30", isCorrect: true },
-        { answerText: "1020", isCorrect: false },
-        { answerText: "undefined", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
+        { answerText: "type Person struct { Name string; Age int }", isCorrect: true },
+        { answerText: "struct Person { Name string; Age int }", isCorrect: false },
+        { answerText: "type Person { Name string; Age int }", isCorrect: false },
+        { answerText: "const Person struct { Name string; Age int }", isCorrect: false },
       ],
     },
     {
-      questionText: "What is the correct way to declare a constant in Go?",
-      code: `const Pi = 3.14`,
+      questionText: "Which of the following code snippets correctly defines a new type for a slice of strings?",
+      code: ``,
       answerOptions: [
-        { answerText: "var Pi = 3.14", isCorrect: false },
-        { answerText: "const Pi = 3.14", isCorrect: true },
-        { answerText: "let Pi = 3.14", isCorrect: false },
-        { answerText: "define Pi = 3.14", isCorrect: false },
+        { answerText: "type StringList []string", isCorrect: true },
+        { answerText: "type []string StringList", isCorrect: false },
+        { answerText: "type StringList [string]", isCorrect: false },
+        { answerText: "const StringList []string", isCorrect: false },
       ],
     },
     {
-      questionText: "Which of the following Go keywords can be used to declare multiple variables at once?",
-      code: `var a, b, c int = 1, 2, 3`,
+      questionText: "What is the purpose of type declarations in Go?",
+      code: ``,
       answerOptions: [
-        { answerText: "var", isCorrect: true },
-        { answerText: "let", isCorrect: false },
-        { answerText: "const", isCorrect: false },
-        { answerText: "define", isCorrect: false },
+        { answerText: "To create new, distinct types from existing ones", isCorrect: true },
+        { answerText: "To declare variables with specific values", isCorrect: false },
+        { answerText: "To import packages", isCorrect: false },
+        { answerText: "To define constants", isCorrect: false },
       ],
     },
   ];
+
   return (
     <div>
       <QuizComponent

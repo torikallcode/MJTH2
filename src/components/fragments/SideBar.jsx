@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 const Sidebar = ({ isOpen, onSelect }) => {
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -20,6 +20,13 @@ const Sidebar = ({ isOpen, onSelect }) => {
         { id: 'array', label: 'Array' },
         { id: 'slice', label: 'Slice' },
         { id: 'map', label: 'Map' },
+        { id: 'if', label: 'If' },
+        { id: 'if', label: 'If' },
+        { id: 'if', label: 'If' },
+        { id: 'if', label: 'If' },
+        { id: 'if', label: 'If' },
+        { id: 'if', label: 'If' },
+        { id: 'if', label: 'If' },
         { id: 'if', label: 'If' },
       ],
     },
@@ -49,13 +56,15 @@ const Sidebar = ({ isOpen, onSelect }) => {
     },
   ];
 
-
   const handleMenuClick = (id) => {
     setActiveMenu(activeMenu === id ? null : id);
   };
 
   return (
-    <aside className={`fixed top-14 left-0 h-full w-64 lg:w-72 lg:py-10 lg:pl-20 bg-white lg:bg-opacity-50 lg:backdrop-blur-md p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40`}>
+    <aside
+      className={`fixed lg:sticky top-14 left-0 min-h-full w-64 lg:w-72 lg:py-10 lg:pl-20 bg-white lg:bg-opacity-50 lg:backdrop-blur-md p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40 overflow-y-auto`}
+      style={{ maxHeight: 'calc(100vh - 56px)' }} // Adjusting maxHeight for the sidebar to fit in the viewport
+    >
       <ul className='font-poppins font-semibold text-end lg:text-sm'>
         {menuItems.map((item) => (
           <li key={item.id}>

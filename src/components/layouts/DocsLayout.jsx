@@ -16,7 +16,7 @@ export const DocsLayout = () => {
   };
 
   return (
-    <div className={`flex flex-col h-screen ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
+    <div className={`flex flex-col h-screen max-w-[100rem] mx-auto ${isSidebarOpen ? 'overflow-hidden' : ''}`}>
       {/* <div id='background'></div> */}
       <div className='fixed top-0 -z-10 w-full h-[100vh] bg-cover bg-center overflow-hidden'>
         <svg viewBox="0 0 1108 632" aria-hidden="true" class="absolute top-10 left-[calc(50%-4rem)] -z-10 w-[69.25rem] max-w-none transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]">
@@ -30,8 +30,10 @@ export const DocsLayout = () => {
         </svg>
       </div>
       < Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
-      <div className="flex flex-1 pt-16">
-        <Sidebar isOpen={isSidebarOpen} onSelect={handleSelect} />
+      <div className="flex pt-16">
+        <div className=''>
+          <Sidebar isOpen={isSidebarOpen} onSelect={handleSelect} />
+        </div>
         <div
           className={`flex-grow transition-all duration-300 ${isSidebarOpen ? 'blur-lg  bg-opacity-30 lg:backdrop-blur-none lg:bg-transparent' : ''}`}
         >

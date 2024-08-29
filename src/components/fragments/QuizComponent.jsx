@@ -12,9 +12,9 @@ const QuizComponent = ({
   handleRestartQuiz
 }) => {
   return (
-    <div className="w-full sm:max-w-md sm:mx-auto p-8 bg-darken rounded-lg shadow-lg">
+    <div className="w-full sm:max-w-md lg:min-w-full sm:mx-auto p-8 bg-darken lg:h-full rounded-lg shadow-lg">
       {showScore ? (
-        <div className="text-center min-h-52">
+        <div className="text-center">
           <div className="text-2xl font-bold mb-4 text-gray-100">Your Score: {score}</div>
           <button
             className="mt-4 px-4 py-2 bg-light-blue text-white rounded font-poppins"
