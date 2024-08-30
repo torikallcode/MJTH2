@@ -1,6 +1,6 @@
 // Integer.js
 import React, { useState } from 'react';
-import QuizComponent from '../QuizComponent';
+import QuizComponent from '../../QuizComponent';
 export const String = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);

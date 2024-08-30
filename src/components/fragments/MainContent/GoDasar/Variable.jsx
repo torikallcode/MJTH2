@@ -1,7 +1,7 @@
 // Integer.js
 import React, { useState } from 'react';
-import QuizComponent from '../QuizComponent';
-export const Conversi = () => {
+import QuizComponent from '../../QuizComponent';
+export const Variable = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -155,6 +155,8 @@ export const Conversi = () => {
   ];
   return (
     <div>
+      <h1 className='text-2xl font-bold'>Variable</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi omnis placeat sequi rerum dolores consequatur beatae aliquam nobis totam recusandae assumenda, neque cum veritatis itaque illo nulla, illum optio!</p>
       <QuizComponent
         questions={questions}
         currentQuestion={currentQuestion}
