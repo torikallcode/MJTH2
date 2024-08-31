@@ -66,7 +66,7 @@ const Sidebar = ({ isOpen, onSelect }) => {
 
   return (
     <aside
-      className={`fixed lg:sticky top-14 left-0 min-h-full w-64 lg:w-72 lg:py-10 lg:pl-20 bg-white lg:bg-opacity-50 lg:backdrop-blur-md p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40 overflow-y-auto`}
+      className={`fixed lg:sticky top-14 left-0 min-h-full w-64 lg:w-52 xl:w-72 lg:py-10 xl:pl-20 bg-white lg:bg-opacity-50 lg:backdrop-blur-md p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40 overflow-y-auto`}
       style={{ maxHeight: 'calc(100vh - 56px)' }} // Adjusting maxHeight for the sidebar to fit in the viewport
     >
       <ul className='font-semibold font-poppins text-end lg:text-sm'>

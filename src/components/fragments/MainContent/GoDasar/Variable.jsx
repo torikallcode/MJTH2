@@ -1,6 +1,8 @@
 // Integer.js
 import React, { useState } from 'react';
 import QuizComponent from '../../QuizComponent';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
+import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 export const Variable = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -153,18 +155,57 @@ export const Variable = () => {
       ],
     },
   ];
+
+  const codeString = `
+  // Deklarasi sederhana
+  var x int = 10
+  var y string = "Hello"
+    `;
+
+  const codeString2 = `
+  // Multiple variable
+  var x , y int = 10, 20
+  `;
+
+  const codeString3 =
+    `
+  // Cara cepat
+  x := 10
+  y := "Hello"
+  `
   return (
-    <div>
-      <h1 className='text-2xl font-bold'>Variable</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi omnis placeat sequi rerum dolores consequatur beatae aliquam nobis totam recusandae assumenda, neque cum veritatis itaque illo nulla, illum optio!</p>
-      <QuizComponent
-        questions={questions}
-        currentQuestion={currentQuestion}
-        score={score}
-        showScore={showScore}
-        handleAnswerOptionClick={handleAnswerOptionClick}
-        handleRestartQuiz={handleRestartQuiz}
-      />
+    <div className='flex flex-col items-start pb-3 lg:flex-row lg:gap-x-3 gap-y-7'>
+      <div className='lg:w-[60%] xl:w-4/5'>
+        <h1 className='mb-3 text-2xl font-bold font-poppins'>Variable</h1>
+        <div className='flex flex-col gap-y-2'>
+          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Tempat untuk menyimpan data yang dapat berubah. Di Golang , Setiap variable yang dibuat harus di gunakan</span></h2>
+          <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Menyimpan dan mengelola data sementara selama program berjalan.</span></h2>
+          <div>
+            <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
+            <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
+              {codeString}
+            </SyntaxHighlighter>
+            <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
+              {codeString2}
+            </SyntaxHighlighter>
+            <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
+              {codeString3}
+            </SyntaxHighlighter>
+          </div>
+        </div>
+      </div>
+      <div className='lg:w-[40%] lg:sticky lg:top-24'>
+        <h2 className='mb-1 text-base italic font-medium font-poppins lg:hidden'>Quiz:</h2>
+        <QuizComponent
+          classname={''}
+          questions={questions}
+          currentQuestion={currentQuestion}
+          score={score}
+          showScore={showScore}
+          handleAnswerOptionClick={handleAnswerOptionClick}
+          handleRestartQuiz={handleRestartQuiz}
+        />
+      </div>
     </div>
   );
 };

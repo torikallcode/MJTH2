@@ -2,6 +2,7 @@
 import React from 'react';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import solarizedDark from 'react-syntax-highlighter/dist/cjs/styles/hljs/solarized-dark';
+import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const QuizComponent = ({
   questions,
@@ -9,15 +10,16 @@ const QuizComponent = ({
   score,
   showScore,
   handleAnswerOptionClick,
-  handleRestartQuiz
+  handleRestartQuiz,
+  classname
 }) => {
   return (
-    <div className="w-full sm:max-w-md lg:min-w-full sm:mx-auto p-8 bg-darken lg:h-full rounded-lg shadow-lg">
+    <div className={`w-full p-8 rounded-lg shadow-lg sm:max-w-md sm:mx-auto bg-darken lg:h-full xl:min-w-[400px] ${classname}`}>
       {showScore ? (
         <div className="text-center">
-          <div className="text-2xl font-bold mb-4 text-gray-100">Your Score: {score}</div>
+          <div className="mb-4 text-2xl font-bold text-gray-100">Your Score: {score}</div>
           <button
-            className="mt-4 px-4 py-2 bg-light-blue text-white rounded font-poppins"
+            className="px-4 py-2 mt-4 text-white rounded bg-light-blue font-poppins"
             onClick={handleRestartQuiz}
           >
             Restart Quiz
@@ -26,12 +28,12 @@ const QuizComponent = ({
       ) : (
         <>
           <div className="mb-4">
-            <div className="text-sm font-medium font-poppins text-gray-400 tracking-wider mb-3">
+            <div className="mb-3 text-sm font-medium tracking-wider text-gray-400 font-poppins">
               {currentQuestion + 1}/{questions.length}
             </div>
-            <div className="text-lg mb-4 text-gray-100 font-poppins">{questions[currentQuestion].questionText}</div>
+            <div className="mb-4 text-lg text-gray-100 font-poppins">{questions[currentQuestion].questionText}</div>
             {questions[currentQuestion].code && (
-              <SyntaxHighlighter language="go" style={solarizedDark} className="mb-4 rounded-lg font-poppins">
+              <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
                 {questions[currentQuestion].code}
               </SyntaxHighlighter>
             )}
@@ -41,7 +43,7 @@ const QuizComponent = ({
               <button
                 key={index}
                 onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
-                className="w-full px-4 py-2 text-left bg-dark-blue rounded font-poppins text-light-blue hover:bg-light-blue hover:text-dark-blue"
+                className="w-full px-4 py-2 text-left rounded bg-dark-blue font-poppins text-light-blue"
               >
                 {answerOption.answerText}
               </button>

@@ -31,7 +31,7 @@ const contentComponents = {
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
     return (
-        <div className='flex w-full px-5 pt-5 pb-10 mt-3 lg:pt-2 lg:mt-7'>
+        <div className='flex w-full px-5 pt-3 pb-10 lg:pt-7'>
             <div className='lg:w-full lg:sticky lg:top-28'>
                 {ContentComponent && <ContentComponent />}
             </div>
