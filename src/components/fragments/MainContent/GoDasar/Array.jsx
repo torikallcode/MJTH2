@@ -163,7 +163,7 @@ export const Array = () => {
 
     `;
   return (
-    <div className='flex flex-col max-w-[22rem] lg:max-w-full items-start pb-3 lg:flex-row lg:gap-x-3 gap-y-7'>
+    <div className='flex flex-col pb-3 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Array</h1>
         <div className='flex flex-col gap-y-2'>

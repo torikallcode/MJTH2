@@ -171,7 +171,7 @@ export const OperasiMatematika = () => {
   var product int = 4 * 2
     `;
   return (
-    <div className='max-w-[22rem] lg:max-w-full flex flex-col items-start pb-3 lg:flex-row lg:gap-x-3 gap-y-7'>
+    <div className='flex flex-col pb-3 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Operasi Matematika</h1>
         <div className='flex flex-col gap-y-2'>

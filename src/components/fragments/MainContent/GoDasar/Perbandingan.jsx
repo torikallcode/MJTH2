@@ -163,7 +163,7 @@ export const Perbandingan = () => {
   var result bool = (5 > 3)  // true
     `;
   return (
-    <div className='max-w-[22rem] lg:max-w-full flex flex-col items-start pb-3 lg:flex-row lg:gap-x-3 gap-y-7'>
+    <div className='flex flex-col pb-3 lg:max-w-full lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Perbandingan</h1>
         <div className='flex flex-col gap-y-2'>

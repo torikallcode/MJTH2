@@ -183,7 +183,7 @@ export const Integer = () => {
   var x float64 = 10.0
   `;
   return (
-    <div className='max-w-[22rem] lg:max-w-full flex flex-col items-start pb-3 lg:flex-row lg:gap-x-3 gap-y-7'>
+    <div className='flex flex-col pb-3 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Integer & Float</h1>
         <div className='flex flex-col gap-y-2'>

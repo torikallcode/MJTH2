@@ -34,7 +34,7 @@ const MainContent = ({ selected }) => {
 
     return (
         <div className='flex w-full px-5 pt-3 pb-10 lg:pt-7'>
-            <div className='lg:w-full lg:sticky lg:top-28'>
+            <div className='w-full lg:w-full lg:sticky lg:top-28'>
                 {!ContentComponent ? (
                     <h1 className='text-2xl font-bold font-poppins'>Wellcome to My Documentasion</h1>
                 ) : (

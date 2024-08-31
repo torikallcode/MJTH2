@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const Sidebar = ({ isOpen, onSelect }) => {
   const [activeMenu, setActiveMenu] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const menuItems = [
     {
@@ -21,17 +22,17 @@ const Sidebar = ({ isOpen, onSelect }) => {
         { id: 'slice', label: 'Slice' },
         { id: 'map', label: 'Map' },
         { id: 'if', label: 'If' },
-        { id: 'switch', label: 'switch' },
-        { id: 'for', label: 'for' },
-        { id: 'break', label: 'break' },
-        { id: 'continue', label: 'continue' },
-        { id: 'function', label: 'function' },
-        { id: 'functionParameter', label: 'function Parameter' },
-        { id: 'namedReturnValue', label: 'named return value' },
-        { id: 'variadic_function', label: 'variadic function' },
-        { id: 'fuctionValue', label: 'function return value' },
-        { id: 'anonymousFunction', label: 'anonymous function' },
-        { id: 'recursiveFunction', label: 'recursive function' },
+        { id: 'switch', label: 'Switch' },
+        { id: 'for', label: 'For' },
+        { id: 'break', label: 'Break' },
+        { id: 'continue', label: 'Continue' },
+        { id: 'function', label: 'Function' },
+        { id: 'functionParameter', label: 'Function Parameter' },
+        { id: 'namedReturnValue', label: 'Named Return Value' },
+        { id: 'variadic_function', label: 'Variadic Function' },
+        { id: 'fuctionValue', label: 'Function Return Value' },
+        { id: 'anonymousFunction', label: 'Anonymous Function' },
+        { id: 'recursiveFunction', label: 'Recursive Function' },
       ],
     },
     {
@@ -64,36 +65,76 @@ const Sidebar = ({ isOpen, onSelect }) => {
     setActiveMenu(activeMenu === id ? null : id);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && filteredMenuItems.length > 0) {
+      // Navigate to the first item in the filtered list when pressing Enter
+      onSelect(filteredMenuItems[0].id);
+    }
+  };
+
+  const filteredMenuItems = menuItems.flatMap((item) =>
+    item.children
+      .filter((child) => child.label.toLowerCase().includes(searchTerm.toLowerCase()))
+      .map((child) => ({ ...child, parentLabel: item.label }))
+  );
+
   return (
     <aside
       className={`fixed lg:sticky top-14 left-0 min-h-full w-64 lg:w-52 xl:w-72 lg:py-10 xl:pl-20 bg-white lg:bg-opacity-50 lg:backdrop-blur-md p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40 overflow-y-auto`}
-      style={{ maxHeight: 'calc(100vh - 56px)' }} // Adjusting maxHeight for the sidebar to fit in the viewport
+      style={{ maxHeight: 'calc(100vh - 56px)' }}
     >
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          onKeyDown={handleKeyDown}
+          className="w-full p-2 border border-gray-300 rounded"
+        />
+      </div>
       <ul className='font-semibold font-poppins text-end lg:text-sm'>
-        {menuItems.map((item) => (
-          <li key={item.id}>
-            <button
-              onClick={() => handleMenuClick(item.id)}
-              className="block w-full p-2 text-left rounded text-dark-blue hover:bg-gray-200"
-            >
-              {item.label}
-            </button>
-            {activeMenu === item.id && item.children && (
-              <ul className="pl-4 mb-3 font-medium">
-                {item.children.map((child) => (
-                  <li key={child.id}>
-                    <button
-                      onClick={() => onSelect(child.id)}
-                      className="block w-full p-2 text-left rounded text-hitam hover:bg-gray-300"
-                    >
-                      {child.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
+        {searchTerm ? (
+          filteredMenuItems.map((child) => (
+            <li key={child.id}>
+              <button
+                onClick={() => onSelect(child.id)}
+                className="block w-full p-2 text-left rounded text-dark-blue hover:bg-gray-200"
+              >
+                {child.label} - <span className="italic">{child.parentLabel}</span>
+              </button>
+            </li>
+          ))
+        ) : (
+          menuItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => handleMenuClick(item.id)}
+                className="block w-full p-2 text-left rounded text-dark-blue hover:bg-gray-200"
+              >
+                {item.label}
+              </button>
+              {activeMenu === item.id && item.children && (
+                <ul className="pl-4 mb-3 font-medium">
+                  {item.children.map((child) => (
+                    <li key={child.id}>
+                      <button
+                        onClick={() => onSelect(child.id)}
+                        className="block w-full p-2 text-left rounded text-hitam hover:bg-gray-300"
+                      >
+                        {child.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))
+        )}
       </ul>
     </aside>
   );

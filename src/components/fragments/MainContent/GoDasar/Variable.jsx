@@ -174,7 +174,7 @@ export const Variable = () => {
   y := "Hello"
   `
   return (
-    <div className='max-w-[22rem] lg:max-w-full flex flex-col items-start pb-96 lg:flex-row lg:gap-x-3 gap-y-7'>
+    <div className='flex flex-col lg:items-start pb-96 lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Variable</h1>
         <div className='flex flex-col gap-y-2'>
@@ -194,7 +194,7 @@ export const Variable = () => {
           </div>
         </div>
       </div>
-      <div className='lg:w-[40%] lg:sticky lg:top-24'>
+      <div className='lg:w-[40%] lg:sticky lg:top-24 mx-auto lg:mx-0'>
         <h2 className='mb-1 text-base italic font-medium font-poppins lg:hidden'>Quiz:</h2>
         <QuizComponent
           classname={''}
