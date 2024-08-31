@@ -4,7 +4,7 @@ import QuizComponent from '../../QuizComponent';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FillContent } from '../fillContent';
-export const Array = () => {
+export const ReturningMultipleValue = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -162,8 +162,9 @@ export const Array = () => {
     {
       contoh:
         `
-  // Deklarasi sederhana      
-  var numbers [3]int = [3]int{1, 2, 3}
+  func swap(a, b int) (int, int) {
+      return b, a
+  }
   `
     },
   ]
@@ -173,9 +174,9 @@ export const Array = () => {
     <div className='flex flex-col pb-3 lg:pt-5 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
-          judul={'Array'}
-          pengertian={'Struktur data untuk menyimpan sekelompok nilai dengan tipe yang sama.'}
-          fungsi={'Mengelola koleksi data dengan indeks.'}
+          judul={'Returning Multiple Value'}
+          pengertian={'ungsi yang mengembalikan lebih dari satu nilai.'}
+          fungsi={'Mengembalikan beberapa hasil sekaligus.'}
         >
           {code1.map((item, index) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

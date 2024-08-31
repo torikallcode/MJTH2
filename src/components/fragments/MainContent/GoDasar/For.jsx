@@ -4,7 +4,7 @@ import QuizComponent from '../../QuizComponent';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FillContent } from '../fillContent';
-export const Array = () => {
+export const For = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -162,8 +162,10 @@ export const Array = () => {
     {
       contoh:
         `
-  // Deklarasi sederhana      
-  var numbers [3]int = [3]int{1, 2, 3}
+  for i := 0; i < 5; i++ {
+      fmt.Println(i)
+  }
+
   `
     },
   ]
@@ -173,9 +175,9 @@ export const Array = () => {
     <div className='flex flex-col pb-3 lg:pt-5 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
-          judul={'Array'}
-          pengertian={'Struktur data untuk menyimpan sekelompok nilai dengan tipe yang sama.'}
-          fungsi={'Mengelola koleksi data dengan indeks.'}
+          judul={'For'}
+          pengertian={'Satu-satunya struktur perulangan di Go.'}
+          fungsi={'Mengulang eksekusi blok kode beberapa kali.'}
         >
           {code1.map((item, index) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

@@ -12,6 +12,19 @@ import { Slice } from './GoDasar/Slice';
 import { Map } from './GoDasar/Map';
 import { If } from './GoDasar/If';
 import { String } from './GoDasar/String';
+import { Switch } from './GoDasar/Switch';
+import { For } from './GoDasar/For';
+import { BreakNContinue } from './GoDasar/BreakNContinue';
+import { Function } from './GoDasar/Function';
+import { FunctionParameter } from './GoDasar/FunctionParameter';
+import { FunctionReturn } from './GoDasar/FunctionReturn';
+import { ReturningMultipleValue } from './GoDasar/ReturnMultipleValue';
+import { NamedReturnValue } from './GoDasar/NamedReturnValue';
+import { VariadicFunction } from './GoDasar/VariadicFunction';
+import { FunctionAsValue } from './GoDasar/FunctionAsValue';
+import { FunctionAsParameter } from './GoDasar/FunctionAsParameter';
+import { AnonymousFunction } from './GoDasar/AnonymousFunction';
+import { RecursiveFunction } from './GoDasar/RecursiveFunction';
 
 const contentComponents = {
     'variable': Variable,
@@ -27,6 +40,19 @@ const contentComponents = {
     'slice': Slice,
     'map': Map,
     'if': If,
+    'switch': Switch,
+    'for': For,
+    'breakNContinue': BreakNContinue,
+    'function': Function,
+    'functionParameter': FunctionParameter,
+    'functionReturn': FunctionReturn,
+    'returningMultipleValue': ReturningMultipleValue,
+    'namedReturnValue': NamedReturnValue,
+    'variadicFunction': VariadicFunction,
+    'functionAsValue': FunctionAsValue,
+    'functionAsParameter': FunctionAsParameter,
+    'anonymousFunction': AnonymousFunction,
+    'recursiveFunction': RecursiveFunction,
 };
 
 const MainContent = ({ selected }) => {

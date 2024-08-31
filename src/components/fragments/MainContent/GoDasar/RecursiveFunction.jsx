@@ -4,7 +4,7 @@ import QuizComponent from '../../QuizComponent';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FillContent } from '../fillContent';
-export const Array = () => {
+export const RecursiveFunction = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -162,8 +162,12 @@ export const Array = () => {
     {
       contoh:
         `
-  // Deklarasi sederhana      
-  var numbers [3]int = [3]int{1, 2, 3}
+  func factorial(n int) int {
+      if n == 0 {
+          return 1
+      }
+      return n * factorial(n-1)
+  }
   `
     },
   ]
@@ -173,9 +177,9 @@ export const Array = () => {
     <div className='flex flex-col pb-3 lg:pt-5 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
-          judul={'Array'}
-          pengertian={'Struktur data untuk menyimpan sekelompok nilai dengan tipe yang sama.'}
-          fungsi={'Mengelola koleksi data dengan indeks.'}
+          judul={'Recursive Function'}
+          pengertian={'Fungsi yang memanggil dirinya sendiri.'}
+          fungsi={'Mengatasi masalah yang dapat dipecah menjadi sub-masalah yang lebih kecil.'}
         >
           {code1.map((item, index) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
