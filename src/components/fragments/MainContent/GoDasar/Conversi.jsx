@@ -160,7 +160,7 @@ export const Conversi = () => {
   var b float64 = float64(a)
     `;
   return (
-    <div className='flex flex-col w-full pb-3 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7 bg-sky-500'>
+    <div className='flex flex-col w-full pb-3 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Conversi</h1>
         <div className='flex flex-col gap-y-2'>
