@@ -12,6 +12,7 @@ import { Slice } from './GoDasar/Slice';
 import { Map } from './GoDasar/Map';
 import { If } from './GoDasar/If';
 import { String } from './GoDasar/String';
+
 const contentComponents = {
     'variable': Variable,
     'integer': Integer,
@@ -30,10 +31,15 @@ const contentComponents = {
 
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
+
     return (
         <div className='flex w-full px-5 pt-3 pb-10 lg:pt-7'>
             <div className='lg:w-full lg:sticky lg:top-28'>
-                {ContentComponent && <ContentComponent />}
+                {!ContentComponent ? (
+                    <h1 className='text-2xl font-bold font-poppins'>Wellcome to My Documentasion</h1>
+                ) : (
+                    <ContentComponent />
+                )}
             </div>
         </div>
     );

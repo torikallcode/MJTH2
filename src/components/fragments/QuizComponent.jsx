@@ -14,7 +14,7 @@ const QuizComponent = ({
   classname
 }) => {
   return (
-    <div className={`w-full p-8 rounded-lg shadow-lg sm:max-w-md sm:mx-auto bg-darken lg:h-full xl:min-w-[400px] ${classname}`}>
+    <div className={`w-full max-w-[22rem] lg:max-w-full p-8 rounded-lg shadow-lg sm:max-w-md sm:mx-auto bg-[#011627] lg:h-full xl:min-w-[400px] ${classname}`}>
       {showScore ? (
         <div className="text-center">
           <div className="mb-4 text-2xl font-bold text-gray-100">Your Score: {score}</div>

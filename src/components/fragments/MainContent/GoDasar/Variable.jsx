@@ -156,25 +156,25 @@ export const Variable = () => {
     },
   ];
 
-  const codeString = `
+  const code1 = `
   // Deklarasi sederhana
   var x int = 10
   var y string = "Hello"
     `;
 
-  const codeString2 = `
+  const code2 = `
   // Multiple variable
   var x , y int = 10, 20
   `;
 
-  const codeString3 =
+  const code3 =
     `
   // Cara cepat
   x := 10
   y := "Hello"
   `
   return (
-    <div className='flex flex-col items-start pb-3 lg:flex-row lg:gap-x-3 gap-y-7'>
+    <div className='max-w-[22rem] lg:max-w-full flex flex-col items-start pb-96 lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Variable</h1>
         <div className='flex flex-col gap-y-2'>
@@ -183,13 +183,13 @@ export const Variable = () => {
           <div>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
-              {codeString}
+              {code1}
             </SyntaxHighlighter>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
-              {codeString2}
+              {code2}
             </SyntaxHighlighter>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
-              {codeString3}
+              {code3}
             </SyntaxHighlighter>
           </div>
         </div>

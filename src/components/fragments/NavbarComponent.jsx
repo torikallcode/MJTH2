@@ -19,7 +19,7 @@ export default function NavbarComponent({ buttonStart }) {
 
   return (
     <Navbar
-      className="fixed top-0 left-0 right-0 z-10 mx-0 px-0"
+      className="fixed top-0 left-0 right-0 z-10 px-0 mx-0"
       onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent className="w-full">
         <NavbarMenuToggle
@@ -31,10 +31,10 @@ export default function NavbarComponent({ buttonStart }) {
             src="img/logonew.png"
             alt=""
             className="w-7 h-7" /> */}
-          <p className="font-bold text-inherit text-hitam text-xl">Torikal</p>
+          <p className="text-xl font-bold text-inherit text-hitam">MJTH</p>
         </NavbarBrand>
       </NavbarContent>
-      {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      {/* <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#">
             Features
@@ -58,7 +58,11 @@ export default function NavbarComponent({ buttonStart }) {
         <NavbarItem>
           <Link
             to={'/docs'}
-            className="text-hitam text-base font-poppins font-medium cursor-pointer bg-gray-200 p-2 rounded-md">Get Started</Link>
+          >
+            <button className="px-5 py-3 text-blue-500 bg-blue-100 rounded-xl font-poppins">
+              Get Started
+            </button>
+          </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>

@@ -1,6 +1,8 @@
 // Integer.js
 import React, { useState } from 'react';
 import QuizComponent from '../../QuizComponent';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
+import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 export const Boolean = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -173,16 +175,38 @@ export const Boolean = () => {
     },
   ];
 
+  const code1 = `
+  // Deklarasi sederhana
+  var isActive bool = true
+  var isActive2 bool = false
+    `;
   return (
-    <div>
-      <QuizComponent
-        questions={questions}
-        currentQuestion={currentQuestion}
-        score={score}
-        showScore={showScore}
-        handleAnswerOptionClick={handleAnswerOptionClick}
-        handleRestartQuiz={handleRestartQuiz}
-      />
+    <div className='flex flex-col items-start pb-3 lg:flex-row lg:gap-x-3 gap-y-7 max-w-[22rem] lg:max-w-full'>
+      <div className='lg:w-[60%] xl:w-4/5'>
+        <h1 className='mb-3 text-2xl font-bold font-poppins'>Boolean</h1>
+        <div className='flex flex-col gap-y-2'>
+          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Tipe data untuk menyimpan nilai benar (true) atau salah (false).</span></h2>
+          <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Untuk kondisi logika dan kontrol alur program.</span></h2>
+          <div>
+            <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
+            <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
+              {code1}
+            </SyntaxHighlighter>
+          </div>
+        </div>
+      </div>
+      <div className='lg:w-[40%] lg:sticky lg:top-24'>
+        <h2 className='mb-1 text-base italic font-medium font-poppins lg:hidden'>Quiz:</h2>
+        <QuizComponent
+          classname={''}
+          questions={questions}
+          currentQuestion={currentQuestion}
+          score={score}
+          showScore={showScore}
+          handleAnswerOptionClick={handleAnswerOptionClick}
+          handleRestartQuiz={handleRestartQuiz}
+        />
+      </div>
     </div>
   );
 };

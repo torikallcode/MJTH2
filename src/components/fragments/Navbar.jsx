@@ -25,7 +25,7 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
     <nav className={`bg-white max-w-[100rem] mx-auto bg-opacity-50 backdrop-blur-md p-4 w-full z-50 fixed top-0 lg:border-b lg:border-gray-300 ${hasScrolled ? 'border-b border-gray-200' : ''}`}>
       <div className="container mx-auto flex justify-between items-center max-w-[84rem]">
-        <Link to={'/'} className="text-hitam text-lg font-semibold tracking-widest font-baskerville">MJTH</Link>
+        <Link to={'/'} className="text-lg font-semibold tracking-widest text-hitam font-baskerville">MJTH</Link>
         <div className="block lg:hidden">
           <button
             onClick={toggleSidebar}
@@ -39,9 +39,9 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
           <Link
             to={'/docs'}
           >
-            <Button color="primary" variant="shadow">
+            <button className="px-5 py-3 font-medium text-blue-500 bg-blue-100 rounded-xl">
               Get Started
-            </Button>
+            </button>
           </Link>
         </div>
       </div>
