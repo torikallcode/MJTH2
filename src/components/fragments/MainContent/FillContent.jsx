@@ -2,7 +2,7 @@ import React from 'react'
 
 export const FillContent = ({ judul, pengertian, fungsi, children }) => {
   return (
-    <>
+    <div className='max-w-[22rem] sm:max-w-full'>
       <h1 className='mb-3 text-2xl font-bold font-poppins'>{judul}</h1>
       <div className='flex flex-col gap-y-2'>
         <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>{pengertian}</span></h2>
@@ -12,7 +12,7 @@ export const FillContent = ({ judul, pengertian, fungsi, children }) => {
           {children}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
