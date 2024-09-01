@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../fragments/Navbar';
 import Sidebar from '../fragments/SideBar';
-import MainContent from '../fragments/MainContent';
+import MainContent from '../fragments/MainContent/Index';
 export const DocsLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedContent, setSelectedContent] = useState('');

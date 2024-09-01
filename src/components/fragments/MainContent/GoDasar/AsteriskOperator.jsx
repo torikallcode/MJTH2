@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import QuizComponent from '../../QuizComponent';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { FillContent } from '../fillContent';
+import { FillContent } from '../FillContent';
 export const AsteriskOperator = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
