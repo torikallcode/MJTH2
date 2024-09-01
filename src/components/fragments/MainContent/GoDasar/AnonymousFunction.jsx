@@ -30,133 +30,143 @@ export const AnonymousFunction = () => {
 
   const questions = [
     {
-      questionText: "What is an array in Go?",
+      questionText: "Apa itu anonymous function dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "A fixed-size collection of elements of the same type", isCorrect: true },
-        { answerText: "A dynamically sized collection of elements of different types", isCorrect: false },
-        { answerText: "A collection of key-value pairs", isCorrect: false },
-        { answerText: "A built-in function for sorting elements", isCorrect: false },
+        { answerText: "Anonymous function adalah fungsi tanpa nama yang dapat langsung dipanggil atau disimpan dalam variabel.", isCorrect: true },
+        { answerText: "Anonymous function adalah fungsi yang hanya dapat dideklarasikan di dalam fungsi lain.", isCorrect: false },
+        { answerText: "Anonymous function adalah fungsi dengan nama yang tidak perlu disebutkan saat pemanggilan.", isCorrect: false },
+        { answerText: "Anonymous function adalah fungsi yang tidak dapat mengembalikan nilai.", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you declare an array in Go?",
+      questionText: "Bagaimana cara mendeklarasikan dan memanggil anonymous function dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using `var arr [size]Type` syntax", isCorrect: true },
-        { answerText: "Using `var arr []Type` syntax", isCorrect: false },
-        { answerText: "Using `make([]Type, size)` syntax", isCorrect: false },
-        { answerText: "Using `map[Type]Type` syntax", isCorrect: false },
+        { answerText: "Dengan menulis fungsi di dalam tanda kurung dan langsung memanggilnya dengan tanda kurung tambahan.", isCorrect: true },
+        { answerText: "Dengan mendeklarasikan fungsi di luar blok kode dan memanggilnya dengan nama fungsi.", isCorrect: false },
+        { answerText: "Dengan menggunakan kata kunci 'anon' sebelum nama fungsi.", isCorrect: false },
+        { answerText: "Dengan mendeklarasikan fungsi dalam variabel dan memanggil variabel tersebut.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Apa output dari kode berikut?",
       code: `package main
   import "fmt"
   
   func main() {
-      var arr = [3]int{1, 2, 3}
-      fmt.Println(arr[1])
+      func() {
+          fmt.Println("Hello from anonymous function")
+      }()
   }`,
       answerOptions: [
-        { answerText: "2", isCorrect: true },
-        { answerText: "1", isCorrect: false },
-        { answerText: "3", isCorrect: false },
+        { answerText: "Hello from anonymous function", isCorrect: true },
+        { answerText: "Error", isCorrect: false },
+        { answerText: "Hello", isCorrect: false },
+        { answerText: "Nothing", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bisakah anonymous function menyimpan hasil dalam variabel?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, hasil dari anonymous function dapat disimpan dalam variabel.", isCorrect: true },
+        { answerText: "Tidak, anonymous function tidak dapat menyimpan hasil.", isCorrect: false },
+        { answerText: "Ya, tetapi hanya jika anonymous function mengembalikan satu nilai.", isCorrect: false },
+        { answerText: "Tidak, hasil harus langsung diproses.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
+      code: `package main
+  import "fmt"
+  
+  func main() {
+      result := func(x, y int) int {
+          return x + y
+      }(10, 20)
+      fmt.Println(result)
+  }`,
+      answerOptions: [
+        { answerText: "30", isCorrect: true },
+        { answerText: "10", isCorrect: false },
+        { answerText: "20", isCorrect: false },
         { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you initialize an array of 5 integers with all elements set to zero in Go?",
+      questionText: "Apa kelebihan menggunakan anonymous function dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "var arr [5]int", isCorrect: true },
-        { answerText: "var arr [5]int = {0, 0, 0, 0, 0}", isCorrect: false },
-        { answerText: "arr := make([]int, 5)", isCorrect: false },
-        { answerText: "var arr [5] = [0, 0, 0, 0, 0]", isCorrect: false },
+        { answerText: "Memudahkan pembuatan fungsi kecil yang hanya digunakan satu kali tanpa perlu mendeklarasikan fungsi dengan nama.", isCorrect: true },
+        { answerText: "Membantu mendeklarasikan fungsi dengan nama yang lebih deskriptif.", isCorrect: false },
+        { answerText: "Membatasi akses ke fungsi di luar blok kode.", isCorrect: false },
+        { answerText: "Meningkatkan performa program secara signifikan.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the length of the following array in Go?",
+      questionText: "Bisakah anonymous function di Go memiliki parameter dan nilai kembalian?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, anonymous function dapat memiliki parameter dan nilai kembalian.", isCorrect: true },
+        { answerText: "Tidak, anonymous function tidak dapat memiliki parameter atau nilai kembalian.", isCorrect: false },
+        { answerText: "Ya, tetapi hanya untuk parameter dan nilai kembalian dengan tipe data tertentu.", isCorrect: false },
+        { answerText: "Tidak, hanya fungsi biasa yang dapat memiliki parameter dan nilai kembalian.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
   func main() {
-      arr := [...]string{"Go", "is", "fun"}
-      fmt.Println(len(arr))
-  }`,
-      answerOptions: [
-        { answerText: "3", isCorrect: true },
-        { answerText: "2", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you update the value of an array element in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "Using the index, e.g., `arr[index] = newValue`", isCorrect: true },
-        { answerText: "Using the `append` function", isCorrect: false },
-        { answerText: "Using the `push` function", isCorrect: false },
-        { answerText: "Using the `insert` function", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the output of the following code that modifies an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [4]int{1, 2, 3, 4}
-      arr[2] = 10
-      fmt.Println(arr)
-  }`,
-      answerOptions: [
-        { answerText: "[1 2 10 4]", isCorrect: true },
-        { answerText: "[1 2 3 4]", isCorrect: false },
-        { answerText: "[10 2 3 4]", isCorrect: false },
-        { answerText: "[1 10 3 4]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which function is used to determine the size of an array in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "len()", isCorrect: true },
-        { answerText: "cap()", isCorrect: false },
-        { answerText: "size()", isCorrect: false },
-        { answerText: "length()", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Can you change the size of an array after it is declared in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "No, arrays have a fixed size", isCorrect: true },
-        { answerText: "Yes, by using the append function", isCorrect: false },
-        { answerText: "Yes, by using the resize function", isCorrect: false },
-        { answerText: "No, but slices can be resized", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the result of the following code that iterates over an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [3]int{5, 10, 15}
-      for i := 0; i < len(arr); i++ {
-          fmt.Print(arr[i], " ")
+      add := func(a, b int) int {
+          return a + b
       }
+      fmt.Println(add(3, 5))
   }`,
       answerOptions: [
-        { answerText: "5 10 15 ", isCorrect: true },
-        { answerText: "10 15 5 ", isCorrect: false },
-        { answerText: "5 15 10 ", isCorrect: false },
+        { answerText: "8", isCorrect: true },
+        { answerText: "3", isCorrect: false },
+        { answerText: "5", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana anonymous function digunakan dalam Go untuk membuat closure?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Dengan mendeklarasikan anonymous function di dalam fungsi lain dan mengakses variabel dari fungsi luar.", isCorrect: true },
+        { answerText: "Dengan mendeklarasikan anonymous function di luar fungsi dan menggunakan variabel global.", isCorrect: false },
+        { answerText: "Dengan mendeklarasikan anonymous function dalam loop.", isCorrect: false },
+        { answerText: "Dengan mendeklarasikan anonymous function di dalam struct.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
+      code: `package main
+  import "fmt"
+  
+  func main() {
+      counter := func() func() int {
+          count := 0
+          return func() int {
+              count++
+              return count
+          }
+      }()
+      fmt.Println(counter())
+      fmt.Println(counter())
+  }`,
+      answerOptions: [
+        { answerText: "1 2", isCorrect: true },
+        { answerText: "0 1", isCorrect: false },
+        { answerText: "1 1", isCorrect: false },
         { answerText: "Error", isCorrect: false },
       ],
     },
   ];
+
 
   const code1 = [
     {

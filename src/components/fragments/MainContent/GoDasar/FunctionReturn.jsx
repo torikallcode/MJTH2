@@ -30,133 +30,170 @@ export const FunctionReturn = () => {
 
   const questions = [
     {
-      questionText: "What is an array in Go?",
+      questionText: "Apa itu return value dalam fungsi di Go?",
       code: ``,
       answerOptions: [
-        { answerText: "A fixed-size collection of elements of the same type", isCorrect: true },
-        { answerText: "A dynamically sized collection of elements of different types", isCorrect: false },
-        { answerText: "A collection of key-value pairs", isCorrect: false },
-        { answerText: "A built-in function for sorting elements", isCorrect: false },
+        { answerText: "Return value adalah nilai yang dikembalikan oleh fungsi setelah eksekusi.", isCorrect: true },
+        { answerText: "Return value adalah parameter yang diberikan kepada fungsi.", isCorrect: false },
+        { answerText: "Return value adalah nama fungsi itu sendiri.", isCorrect: false },
+        { answerText: "Return value adalah tipe data dari fungsi.", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you declare an array in Go?",
+      questionText: "Bagaimana cara mendeklarasikan nilai kembalian pada fungsi di Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using `var arr [size]Type` syntax", isCorrect: true },
-        { answerText: "Using `var arr []Type` syntax", isCorrect: false },
-        { answerText: "Using `make([]Type, size)` syntax", isCorrect: false },
-        { answerText: "Using `map[Type]Type` syntax", isCorrect: false },
+        { answerText: "Dengan menyebutkan tipe data nilai kembalian di bagian deklarasi fungsi setelah tanda kurung parameter.", isCorrect: true },
+        { answerText: "Dengan menggunakan kata kunci 'return' di dalam tubuh fungsi.", isCorrect: false },
+        { answerText: "Dengan menambahkan tipe data di bagian akhir kode fungsi.", isCorrect: false },
+        { answerText: "Dengan menggunakan variabel global untuk menyimpan nilai kembalian.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Apa output dari kode berikut?",
       code: `package main
   import "fmt"
   
+  func add(a int, b int) int {
+      return a + b
+  }
+  
   func main() {
-      var arr = [3]int{1, 2, 3}
-      fmt.Println(arr[1])
+      fmt.Println(add(5, 3))
   }`,
       answerOptions: [
-        { answerText: "2", isCorrect: true },
-        { answerText: "1", isCorrect: false },
+        { answerText: "8", isCorrect: true },
+        { answerText: "5", isCorrect: false },
         { answerText: "3", isCorrect: false },
         { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you initialize an array of 5 integers with all elements set to zero in Go?",
+      questionText: "Bisakah sebuah fungsi di Go mengembalikan lebih dari satu nilai?",
       code: ``,
       answerOptions: [
-        { answerText: "var arr [5]int", isCorrect: true },
-        { answerText: "var arr [5]int = {0, 0, 0, 0, 0}", isCorrect: false },
-        { answerText: "arr := make([]int, 5)", isCorrect: false },
-        { answerText: "var arr [5] = [0, 0, 0, 0, 0]", isCorrect: false },
+        { answerText: "Ya, fungsi dapat mengembalikan lebih dari satu nilai.", isCorrect: true },
+        { answerText: "Tidak, fungsi hanya dapat mengembalikan satu nilai.", isCorrect: false },
+        { answerText: "Ya, tetapi hanya dengan tipe data yang sama.", isCorrect: false },
+        { answerText: "Tidak, tetapi fungsi dapat mengembalikan nilai dalam bentuk slice.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the length of the following array in Go?",
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
-  func main() {
-      arr := [...]string{"Go", "is", "fun"}
-      fmt.Println(len(arr))
-  }`,
-      answerOptions: [
-        { answerText: "3", isCorrect: true },
-        { answerText: "2", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you update the value of an array element in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "Using the index, e.g., `arr[index] = newValue`", isCorrect: true },
-        { answerText: "Using the `append` function", isCorrect: false },
-        { answerText: "Using the `push` function", isCorrect: false },
-        { answerText: "Using the `insert` function", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the output of the following code that modifies an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [4]int{1, 2, 3, 4}
-      arr[2] = 10
-      fmt.Println(arr)
-  }`,
-      answerOptions: [
-        { answerText: "[1 2 10 4]", isCorrect: true },
-        { answerText: "[1 2 3 4]", isCorrect: false },
-        { answerText: "[10 2 3 4]", isCorrect: false },
-        { answerText: "[1 10 3 4]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which function is used to determine the size of an array in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "len()", isCorrect: true },
-        { answerText: "cap()", isCorrect: false },
-        { answerText: "size()", isCorrect: false },
-        { answerText: "length()", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Can you change the size of an array after it is declared in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "No, arrays have a fixed size", isCorrect: true },
-        { answerText: "Yes, by using the append function", isCorrect: false },
-        { answerText: "Yes, by using the resize function", isCorrect: false },
-        { answerText: "No, but slices can be resized", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the result of the following code that iterates over an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [3]int{5, 10, 15}
-      for i := 0; i < len(arr); i++ {
-          fmt.Print(arr[i], " ")
+  func divide(a, b int) (int, string) {
+      if b == 0 {
+          return 0, "Error: Division by zero"
       }
+      return a / b, ""
+  }
+  
+  func main() {
+      result, message := divide(10, 0)
+      fmt.Println(result, message)
   }`,
       answerOptions: [
-        { answerText: "5 10 15 ", isCorrect: true },
-        { answerText: "10 15 5 ", isCorrect: false },
-        { answerText: "5 15 10 ", isCorrect: false },
+        { answerText: "0 Error: Division by zero", isCorrect: true },
+        { answerText: "10", isCorrect: false },
+        { answerText: "Error: Division by zero", isCorrect: false },
+        { answerText: "0", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa output dari kode berikut jika fungsi tidak mengembalikan nilai apapun?",
+      code: `package main
+  import "fmt"
+  
+  func noReturn() {
+      // Tidak ada return statement
+  }
+  
+  func main() {
+      fmt.Println(noReturn())
+  }`,
+      answerOptions: [
+        { answerText: "Nilai default, biasanya 'nil' atau 'zero value'.", isCorrect: true },
         { answerText: "Error", isCorrect: false },
+        { answerText: "Void", isCorrect: false },
+        { answerText: "Tidak ada output", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana cara mengembalikan nilai default dari fungsi yang tidak memiliki return statement?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Dengan menggunakan return tanpa nilai.", isCorrect: true },
+        { answerText: "Dengan memberikan nilai default di deklarasi fungsi.", isCorrect: false },
+        { answerText: "Dengan menggunakan variabel global untuk menyimpan nilai default.", isCorrect: false },
+        { answerText: "Dengan mengubah tipe data fungsi menjadi void.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
+      code: `package main
+  import "fmt"
+  
+  func multipleReturns() (int, int) {
+      return 1, 2
+  }
+  
+  func main() {
+      a, b := multipleReturns()
+      fmt.Println(a, b)
+  }`,
+      answerOptions: [
+        { answerText: "1 2", isCorrect: true },
+        { answerText: "2 1", isCorrect: false },
+        { answerText: "1", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bisakah nilai kembalian dari fungsi digunakan sebagai parameter untuk fungsi lain?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, nilai kembalian dari fungsi dapat digunakan sebagai parameter untuk fungsi lain.", isCorrect: true },
+        { answerText: "Tidak, nilai kembalian tidak dapat digunakan sebagai parameter.", isCorrect: false },
+        { answerText: "Ya, tetapi hanya jika nilai kembalian bertipe integer.", isCorrect: false },
+        { answerText: "Tidak, harus ada konversi tipe data terlebih dahulu.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
+      code: `package main
+  import "fmt"
+  
+  func calculate(a int, b int) (sum int, product int) {
+      sum = a + b
+      product = a * b
+      return
+  }
+  
+  func main() {
+      s, p := calculate(3, 4)
+      fmt.Println(s, p)
+  }`,
+      answerOptions: [
+        { answerText: "7 12", isCorrect: true },
+        { answerText: "3 4", isCorrect: false },
+        { answerText: "12 7", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan terjadi jika kita mencoba untuk mengembalikan nilai dari tipe data yang berbeda dalam satu fungsi?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Akan terjadi error kompilasi jika tipe data nilai kembalian tidak konsisten.", isCorrect: true },
+        { answerText: "Fungsi akan mengembalikan nilai default.", isCorrect: false },
+        { answerText: "Program akan berhenti dengan pesan error pada runtime.", isCorrect: false },
+        { answerText: "Nilai kembalian akan dianggap sebagai tipe data yang pertama kali dideklarasikan.", isCorrect: false },
       ],
     },
   ];
+
 
   const code1 = [
     {

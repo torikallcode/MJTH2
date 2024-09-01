@@ -30,133 +30,167 @@ export const VariadicFunction = () => {
 
   const questions = [
     {
-      questionText: "What is an array in Go?",
+      questionText: "Apa itu variadic function dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "A fixed-size collection of elements of the same type", isCorrect: true },
-        { answerText: "A dynamically sized collection of elements of different types", isCorrect: false },
-        { answerText: "A collection of key-value pairs", isCorrect: false },
-        { answerText: "A built-in function for sorting elements", isCorrect: false },
+        { answerText: "Variadic function adalah fungsi yang dapat menerima jumlah argumen yang tidak terbatas dari tipe data yang sama.", isCorrect: true },
+        { answerText: "Variadic function adalah fungsi yang hanya dapat menerima satu argumen.", isCorrect: false },
+        { answerText: "Variadic function adalah fungsi yang tidak dapat mengembalikan nilai.", isCorrect: false },
+        { answerText: "Variadic function adalah fungsi yang dapat menerima argumen dari berbagai tipe data.", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you declare an array in Go?",
+      questionText: "Bagaimana cara mendeklarasikan variadic function dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using `var arr [size]Type` syntax", isCorrect: true },
-        { answerText: "Using `var arr []Type` syntax", isCorrect: false },
-        { answerText: "Using `make([]Type, size)` syntax", isCorrect: false },
-        { answerText: "Using `map[Type]Type` syntax", isCorrect: false },
+        { answerText: "Dengan menambahkan tiga titik (...) sebelum tipe data parameter terakhir.", isCorrect: true },
+        { answerText: "Dengan menambahkan tanda tanya (?) sebelum nama parameter.", isCorrect: false },
+        { answerText: "Dengan menggunakan kata kunci 'variadic' sebelum nama fungsi.", isCorrect: false },
+        { answerText: "Dengan menyebutkan parameter tanpa tipe data di dalam tanda kurung.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Apa output dari kode berikut?",
       code: `package main
   import "fmt"
   
+  func printNumbers(numbers ...int) {
+      for _, number := range numbers {
+          fmt.Println(number)
+      }
+  }
+  
   func main() {
-      var arr = [3]int{1, 2, 3}
-      fmt.Println(arr[1])
+      printNumbers(1, 2, 3, 4, 5)
   }`,
       answerOptions: [
-        { answerText: "2", isCorrect: true },
-        { answerText: "1", isCorrect: false },
+        { answerText: "1\n2\n3\n4\n5", isCorrect: true },
+        { answerText: "12345", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
+        { answerText: "Nothing", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bisakah variadic function menerima argumen yang berbeda tipe data?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Tidak, variadic function hanya dapat menerima argumen dari tipe data yang sama.", isCorrect: true },
+        { answerText: "Ya, variadic function dapat menerima argumen dari berbagai tipe data.", isCorrect: false },
+        { answerText: "Ya, tapi hanya jika tipe data yang diterima adalah string.", isCorrect: false },
+        { answerText: "Tidak, tapi bisa menggunakan parameter tambahan untuk tipe data berbeda.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa output dari kode berikut?",
+      code: `package main
+  import "fmt"
+  
+  func sum(numbers ...int) int {
+      total := 0
+      for _, number := range numbers {
+          total += number
+      }
+      return total
+  }
+  
+  func main() {
+      fmt.Println(sum(1, 2, 3))
+  }`,
+      answerOptions: [
+        { answerText: "6", isCorrect: true },
+        { answerText: "123", isCorrect: false },
         { answerText: "3", isCorrect: false },
         { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you initialize an array of 5 integers with all elements set to zero in Go?",
+      questionText: "Bagaimana cara memanggil variadic function dengan menggunakan slice sebagai argumen?",
       code: ``,
       answerOptions: [
-        { answerText: "var arr [5]int", isCorrect: true },
-        { answerText: "var arr [5]int = {0, 0, 0, 0, 0}", isCorrect: false },
-        { answerText: "arr := make([]int, 5)", isCorrect: false },
-        { answerText: "var arr [5] = [0, 0, 0, 0, 0]", isCorrect: false },
+        { answerText: "Dengan menggunakan operator '...' untuk mendeklarasikan elemen slice sebagai argumen.", isCorrect: true },
+        { answerText: "Dengan mengirimkan slice sebagai argumen tunggal tanpa operator tambahan.", isCorrect: false },
+        { answerText: "Dengan menggunakan fungsi khusus untuk mengkonversi slice menjadi argumen.", isCorrect: false },
+        { answerText: "Dengan mendeklarasikan elemen slice secara terpisah sebelum pemanggilan fungsi.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the length of the following array in Go?",
+      questionText: "Apa yang terjadi jika tidak ada argumen yang diberikan pada variadic function?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Parameter variadic akan menjadi slice kosong.", isCorrect: true },
+        { answerText: "Fungsi akan menghasilkan error.", isCorrect: false },
+        { answerText: "Fungsi akan mengembalikan nilai default.", isCorrect: false },
+        { answerText: "Fungsi akan mengabaikan parameter variadic.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
-  func main() {
-      arr := [...]string{"Go", "is", "fun"}
-      fmt.Println(len(arr))
-  }`,
-      answerOptions: [
-        { answerText: "3", isCorrect: true },
-        { answerText: "2", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you update the value of an array element in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "Using the index, e.g., `arr[index] = newValue`", isCorrect: true },
-        { answerText: "Using the `append` function", isCorrect: false },
-        { answerText: "Using the `push` function", isCorrect: false },
-        { answerText: "Using the `insert` function", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the output of the following code that modifies an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [4]int{1, 2, 3, 4}
-      arr[2] = 10
-      fmt.Println(arr)
-  }`,
-      answerOptions: [
-        { answerText: "[1 2 10 4]", isCorrect: true },
-        { answerText: "[1 2 3 4]", isCorrect: false },
-        { answerText: "[10 2 3 4]", isCorrect: false },
-        { answerText: "[1 10 3 4]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which function is used to determine the size of an array in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "len()", isCorrect: true },
-        { answerText: "cap()", isCorrect: false },
-        { answerText: "size()", isCorrect: false },
-        { answerText: "length()", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Can you change the size of an array after it is declared in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "No, arrays have a fixed size", isCorrect: true },
-        { answerText: "Yes, by using the append function", isCorrect: false },
-        { answerText: "Yes, by using the resize function", isCorrect: false },
-        { answerText: "No, but slices can be resized", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the result of the following code that iterates over an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [3]int{5, 10, 15}
-      for i := 0; i < len(arr); i++ {
-          fmt.Print(arr[i], " ")
+  func concat(words ...string) string {
+      result := ""
+      for _, word := range words {
+          result += word + " "
       }
+      return result
+  }
+  
+  func main() {
+      fmt.Println(concat("Go", "is", "fun"))
   }`,
       answerOptions: [
-        { answerText: "5 10 15 ", isCorrect: true },
-        { answerText: "10 15 5 ", isCorrect: false },
-        { answerText: "5 15 10 ", isCorrect: false },
+        { answerText: "Go is fun ", isCorrect: true },
+        { answerText: "Goisfun", isCorrect: false },
+        { answerText: "Go is", isCorrect: false },
         { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apakah variadic function dapat digunakan bersamaan dengan parameter lainnya dalam Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, variadic function dapat digunakan bersamaan dengan parameter lainnya.", isCorrect: true },
+        { answerText: "Tidak, variadic function tidak dapat digunakan bersama parameter lainnya.", isCorrect: false },
+        { answerText: "Ya, tetapi hanya dengan satu parameter tambahan.", isCorrect: false },
+        { answerText: "Tidak, harus ada satu parameter variadic untuk setiap parameter lainnya.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
+      code: `package main
+  import "fmt"
+  
+  func multiply(factor int, numbers ...int) []int {
+      result := make([]int, len(numbers))
+      for i, number := range numbers {
+          result[i] = factor * number
+      }
+      return result
+  }
+  
+  func main() {
+      fmt.Println(multiply(2, 3, 4, 5))
+  }`,
+      answerOptions: [
+        { answerText: "[6 8 10]", isCorrect: true },
+        { answerText: "[3 4 5]", isCorrect: false },
+        { answerText: "[2 3 4 5]", isCorrect: false },
+        { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bisakah variadic function mengembalikan lebih dari satu nilai dalam Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, variadic function dapat mengembalikan lebih dari satu nilai.", isCorrect: true },
+        { answerText: "Tidak, variadic function hanya dapat mengembalikan satu nilai.", isCorrect: false },
+        { answerText: "Ya, tetapi hanya jika nilai kembalian adalah slice.", isCorrect: false },
+        { answerText: "Tidak, tetapi bisa menggunakan beberapa variadic function.", isCorrect: false },
       ],
     },
   ];
+
 
   const code1 = [
     {

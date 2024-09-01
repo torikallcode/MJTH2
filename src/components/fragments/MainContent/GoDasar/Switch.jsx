@@ -30,133 +30,135 @@ export const Switch = () => {
 
   const questions = [
     {
-      questionText: "What is an array in Go?",
+      questionText: "Apa itu pernyataan 'switch' dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "A fixed-size collection of elements of the same type", isCorrect: true },
-        { answerText: "A dynamically sized collection of elements of different types", isCorrect: false },
-        { answerText: "A collection of key-value pairs", isCorrect: false },
-        { answerText: "A built-in function for sorting elements", isCorrect: false },
+        { answerText: "Pernyataan untuk mengalihkan eksekusi program ke berbagai kasus berdasarkan nilai ekspresi", isCorrect: true },
+        { answerText: "Pernyataan untuk membuat loop berulang", isCorrect: false },
+        { answerText: "Pernyataan untuk mendeklarasikan variabel", isCorrect: false },
+        { answerText: "Pernyataan untuk mendefinisikan fungsi", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you declare an array in Go?",
+      questionText: "Bagaimana cara menggunakan pernyataan 'switch' di Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using `var arr [size]Type` syntax", isCorrect: true },
-        { answerText: "Using `var arr []Type` syntax", isCorrect: false },
-        { answerText: "Using `make([]Type, size)` syntax", isCorrect: false },
-        { answerText: "Using `map[Type]Type` syntax", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'switch' diikuti dengan ekspresi, dan blok 'case' untuk berbagai kondisi", isCorrect: true },
+        { answerText: "Menggunakan kata kunci 'case' diikuti dengan ekspresi, dan blok 'switch' untuk berbagai kondisi", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'if' diikuti dengan kondisi", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'select' diikuti dengan ekspresi", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
   func main() {
-      var arr = [3]int{1, 2, 3}
-      fmt.Println(arr[1])
-  }`,
-      answerOptions: [
-        { answerText: "2", isCorrect: true },
-        { answerText: "1", isCorrect: false },
-        { answerText: "3", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you initialize an array of 5 integers with all elements set to zero in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "var arr [5]int", isCorrect: true },
-        { answerText: "var arr [5]int = {0, 0, 0, 0, 0}", isCorrect: false },
-        { answerText: "arr := make([]int, 5)", isCorrect: false },
-        { answerText: "var arr [5] = [0, 0, 0, 0, 0]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the length of the following array in Go?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [...]string{"Go", "is", "fun"}
-      fmt.Println(len(arr))
-  }`,
-      answerOptions: [
-        { answerText: "3", isCorrect: true },
-        { answerText: "2", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you update the value of an array element in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "Using the index, e.g., `arr[index] = newValue`", isCorrect: true },
-        { answerText: "Using the `append` function", isCorrect: false },
-        { answerText: "Using the `push` function", isCorrect: false },
-        { answerText: "Using the `insert` function", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the output of the following code that modifies an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [4]int{1, 2, 3, 4}
-      arr[2] = 10
-      fmt.Println(arr)
-  }`,
-      answerOptions: [
-        { answerText: "[1 2 10 4]", isCorrect: true },
-        { answerText: "[1 2 3 4]", isCorrect: false },
-        { answerText: "[10 2 3 4]", isCorrect: false },
-        { answerText: "[1 10 3 4]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which function is used to determine the size of an array in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "len()", isCorrect: true },
-        { answerText: "cap()", isCorrect: false },
-        { answerText: "size()", isCorrect: false },
-        { answerText: "length()", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Can you change the size of an array after it is declared in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "No, arrays have a fixed size", isCorrect: true },
-        { answerText: "Yes, by using the append function", isCorrect: false },
-        { answerText: "Yes, by using the resize function", isCorrect: false },
-        { answerText: "No, but slices can be resized", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the result of the following code that iterates over an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [3]int{5, 10, 15}
-      for i := 0; i < len(arr); i++ {
-          fmt.Print(arr[i], " ")
+      day := 3
+      switch day {
+      case 1:
+          fmt.Println("Senin")
+      case 2:
+          fmt.Println("Selasa")
+      case 3:
+          fmt.Println("Rabu")
+      default:
+          fmt.Println("Hari tidak dikenal")
       }
   }`,
       answerOptions: [
-        { answerText: "5 10 15 ", isCorrect: true },
-        { answerText: "10 15 5 ", isCorrect: false },
-        { answerText: "5 15 10 ", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
+        { answerText: "Rabu", isCorrect: true },
+        { answerText: "Senin", isCorrect: false },
+        { answerText: "Hari tidak dikenal", isCorrect: false },
+        { answerText: "Selasa", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa fungsi dari blok 'default' dalam pernyataan 'switch'?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Blok 'default' dijalankan jika tidak ada kondisi 'case' yang terpenuhi", isCorrect: true },
+        { answerText: "Blok 'default' dijalankan sebelum semua kondisi 'case' diperiksa", isCorrect: false },
+        { answerText: "Blok 'default' hanya digunakan untuk nilai numerik", isCorrect: false },
+        { answerText: "Blok 'default' adalah wajib dalam setiap pernyataan 'switch'", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bisakah kita menggunakan perbandingan logika dalam pernyataan 'switch' di Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, kita bisa menggunakan perbandingan logika dalam pernyataan 'switch' dengan menggunakan 'switch true'", isCorrect: true },
+        { answerText: "Tidak, pernyataan 'switch' hanya untuk perbandingan nilai langsung", isCorrect: false },
+        { answerText: "Ya, tapi hanya dengan tipe data integer", isCorrect: false },
+        { answerText: "Tidak, kita harus menggunakan pernyataan 'if' untuk perbandingan logika", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang terjadi jika tidak ada kasus ('case') yang cocok dalam pernyataan 'switch' tanpa blok 'default'?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Tidak ada yang dieksekusi, dan program melanjutkan setelah blok 'switch'", isCorrect: true },
+        { answerText: "Program akan menghasilkan kesalahan kompilasi", isCorrect: false },
+        { answerText: "Pernyataan 'switch' akan tetap menunggu kondisi yang cocok", isCorrect: false },
+        { answerText: "Program akan terhenti", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana cara menggunakan banyak nilai dalam satu kasus 'case' dalam pernyataan 'switch'?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Menggunakan koma untuk memisahkan beberapa nilai dalam satu kasus 'case'", isCorrect: true },
+        { answerText: "Menggunakan titik koma untuk memisahkan beberapa nilai dalam satu kasus 'case'", isCorrect: false },
+        { answerText: "Menggunakan 'or' untuk memisahkan beberapa nilai", isCorrect: false },
+        { answerText: "Tidak mungkin menggunakan banyak nilai dalam satu kasus 'case'", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut dengan menggunakan banyak nilai dalam 'case'?",
+      code: `package main
+  import "fmt"
+  
+  func main() {
+      number := 5
+      switch number {
+      case 1, 3, 5, 7, 9:
+          fmt.Println("Bilangan ganjil")
+      case 2, 4, 6, 8, 10:
+          fmt.Println("Bilangan genap")
+      default:
+          fmt.Println("Tidak diketahui")
+      }
+  }`,
+      answerOptions: [
+        { answerText: "Bilangan ganjil", isCorrect: true },
+        { answerText: "Bilangan genap", isCorrect: false },
+        { answerText: "Tidak diketahui", isCorrect: false },
+        { answerText: "Kesalahan kompilasi", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apakah kita bisa menggunakan tipe data yang berbeda dalam ekspresi 'switch' dan nilai 'case'?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Tidak, tipe data dari ekspresi 'switch' dan nilai 'case' harus sama", isCorrect: true },
+        { answerText: "Ya, Go akan secara otomatis mengonversi tipe data", isCorrect: false },
+        { answerText: "Ya, jika nilai 'case' adalah string", isCorrect: false },
+        { answerText: "Tidak, kecuali jika kita menggunakan blok 'default'", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana cara membuat pernyataan 'switch' untuk memeriksa beberapa kondisi dalam satu kasus?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Menggunakan 'switch true' dan menuliskan ekspresi logika di setiap 'case'", isCorrect: true },
+        { answerText: "Menggunakan 'if' di dalam setiap 'case'", isCorrect: false },
+        { answerText: "Menggunakan '&&' di dalam 'switch'", isCorrect: false },
+        { answerText: "Tidak mungkin menggunakan beberapa kondisi dalam satu kasus", isCorrect: false },
       ],
     },
   ];
+
 
   const code1 = [
     {

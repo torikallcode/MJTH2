@@ -30,133 +30,127 @@ export const NamedReturnValue = () => {
 
   const questions = [
     {
-      questionText: "What is an array in Go?",
+      questionText: "Apa itu 'Named Return Value' dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "A fixed-size collection of elements of the same type", isCorrect: true },
-        { answerText: "A dynamically sized collection of elements of different types", isCorrect: false },
-        { answerText: "A collection of key-value pairs", isCorrect: false },
-        { answerText: "A built-in function for sorting elements", isCorrect: false },
+        { answerText: "Named return value adalah nilai kembalian yang sudah diberi nama dalam deklarasi fungsi.", isCorrect: true },
+        { answerText: "Named return value adalah parameter input yang diberi nama dalam fungsi.", isCorrect: false },
+        { answerText: "Named return value adalah tipe data khusus yang digunakan dalam Go.", isCorrect: false },
+        { answerText: "Named return value adalah nama untuk semua nilai yang dikembalikan oleh fungsi.", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you declare an array in Go?",
+      questionText: "Bagaimana cara mendeklarasikan 'Named Return Value' dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using `var arr [size]Type` syntax", isCorrect: true },
-        { answerText: "Using `var arr []Type` syntax", isCorrect: false },
-        { answerText: "Using `make([]Type, size)` syntax", isCorrect: false },
-        { answerText: "Using `map[Type]Type` syntax", isCorrect: false },
+        { answerText: "Dengan menyebutkan nama dan tipe data nilai kembalian di bagian tanda kurung setelah tanda kurung parameter fungsi.", isCorrect: true },
+        { answerText: "Dengan menggunakan kata kunci 'return' sebelum nama fungsi.", isCorrect: false },
+        { answerText: "Dengan menyebutkan tipe data nilai kembalian tanpa nama di bagian tanda kurung.", isCorrect: false },
+        { answerText: "Dengan menuliskan tipe data nilai kembalian di luar fungsi.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Apa keunggulan menggunakan 'Named Return Value' dalam fungsi?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Mempermudah pembacaan kode dan memungkinkan nilai kembalian untuk diinisialisasi dan diubah dalam fungsi.", isCorrect: true },
+        { answerText: "Mengurangi penggunaan memori secara drastis.", isCorrect: false },
+        { answerText: "Meningkatkan performa eksekusi kode secara signifikan.", isCorrect: false },
+        { answerText: "Membuat fungsi tidak perlu memiliki parameter input.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
+  func divide(a, b int) (result int) {
+      result = a / b
+      return
+  }
+  
   func main() {
-      var arr = [3]int{1, 2, 3}
-      fmt.Println(arr[1])
+      fmt.Println(divide(10, 2))
   }`,
       answerOptions: [
-        { answerText: "2", isCorrect: true },
-        { answerText: "1", isCorrect: false },
-        { answerText: "3", isCorrect: false },
+        { answerText: "5", isCorrect: true },
         { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you initialize an array of 5 integers with all elements set to zero in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "var arr [5]int", isCorrect: true },
-        { answerText: "var arr [5]int = {0, 0, 0, 0, 0}", isCorrect: false },
-        { answerText: "arr := make([]int, 5)", isCorrect: false },
-        { answerText: "var arr [5] = [0, 0, 0, 0, 0]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the length of the following array in Go?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [...]string{"Go", "is", "fun"}
-      fmt.Println(len(arr))
-  }`,
-      answerOptions: [
-        { answerText: "3", isCorrect: true },
+        { answerText: "0", isCorrect: false },
         { answerText: "2", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you update the value of an array element in Go?",
+      questionText: "Apakah 'Named Return Value' bersifat opsional dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using the index, e.g., `arr[index] = newValue`", isCorrect: true },
-        { answerText: "Using the `append` function", isCorrect: false },
-        { answerText: "Using the `push` function", isCorrect: false },
-        { answerText: "Using the `insert` function", isCorrect: false },
+        { answerText: "Ya, penggunaannya bersifat opsional.", isCorrect: true },
+        { answerText: "Tidak, harus digunakan dalam semua fungsi yang mengembalikan nilai.", isCorrect: false },
+        { answerText: "Tidak, harus digunakan bersama variadic functions.", isCorrect: false },
+        { answerText: "Ya, tetapi hanya jika tipe data nilai kembalian adalah string.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code that modifies an array?",
+      questionText: "Apa output dari kode berikut jika variabel nilai kembalian diberi nilai awal?",
       code: `package main
   import "fmt"
   
-  func main() {
-      arr := [4]int{1, 2, 3, 4}
-      arr[2] = 10
-      fmt.Println(arr)
-  }`,
-      answerOptions: [
-        { answerText: "[1 2 10 4]", isCorrect: true },
-        { answerText: "[1 2 3 4]", isCorrect: false },
-        { answerText: "[10 2 3 4]", isCorrect: false },
-        { answerText: "[1 10 3 4]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which function is used to determine the size of an array in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "len()", isCorrect: true },
-        { answerText: "cap()", isCorrect: false },
-        { answerText: "size()", isCorrect: false },
-        { answerText: "length()", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Can you change the size of an array after it is declared in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "No, arrays have a fixed size", isCorrect: true },
-        { answerText: "Yes, by using the append function", isCorrect: false },
-        { answerText: "Yes, by using the resize function", isCorrect: false },
-        { answerText: "No, but slices can be resized", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the result of the following code that iterates over an array?",
-      code: `package main
-  import "fmt"
+  func compute() (x, y int) {
+      x, y = 5, 10
+      return
+  }
   
   func main() {
-      arr := [3]int{5, 10, 15}
-      for i := 0; i < len(arr); i++ {
-          fmt.Print(arr[i], " ")
-      }
+      fmt.Println(compute())
   }`,
       answerOptions: [
-        { answerText: "5 10 15 ", isCorrect: true },
-        { answerText: "10 15 5 ", isCorrect: false },
-        { answerText: "5 15 10 ", isCorrect: false },
+        { answerText: "5 10", isCorrect: true },
+        { answerText: "0 0", isCorrect: false },
         { answerText: "Error", isCorrect: false },
+        { answerText: "Nilai tidak terdefinisi", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana cara menginisialisasi nilai kembalian dalam fungsi dengan 'Named Return Value'?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Dengan memberikan nilai langsung pada variabel kembalian di dalam tubuh fungsi.", isCorrect: true },
+        { answerText: "Dengan mendeklarasikan kembali tipe data variabel kembalian di dalam tubuh fungsi.", isCorrect: false },
+        { answerText: "Dengan menambahkan tanda & di depan variabel.", isCorrect: false },
+        { answerText: "Dengan menggunakan tanda titik dua (:) setelah nama variabel.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa keuntungan menggunakan 'Named Return Value' ketika fungsi memiliki beberapa nilai kembalian?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Membuat kode lebih jelas dan mudah dibaca karena nilai kembalian diberi nama yang menjelaskan kegunaannya.", isCorrect: true },
+        { answerText: "Membuat fungsi menjadi lebih cepat dalam eksekusi.", isCorrect: false },
+        { answerText: "Membuat kode lebih aman dari bug.", isCorrect: false },
+        { answerText: "Membuat fungsi memiliki lebih sedikit parameter input.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apakah kita bisa mengubah nilai dari 'Named Return Value' di dalam fungsi sebelum 'return'?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, kita bisa mengubah nilai dari named return value sebelum 'return' dieksekusi.", isCorrect: true },
+        { answerText: "Tidak, nilainya tetap setelah deklarasi.", isCorrect: false },
+        { answerText: "Hanya bisa diubah jika nilainya adalah integer.", isCorrect: false },
+        { answerText: "Hanya bisa diubah jika kita menggunakan pointer.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan terjadi jika kita tidak secara eksplisit menggunakan 'return' di dalam fungsi dengan 'Named Return Value'?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Nilai kembalian akan tetap dikembalikan dengan nilai default (0 untuk integer, dll.)", isCorrect: true },
+        { answerText: "Fungsi akan mengembalikan nilai kosong (nil).", isCorrect: false },
+        { answerText: "Akan menyebabkan error saat kompilasi.", isCorrect: false },
+        { answerText: "Fungsi tidak akan mengembalikan nilai apapun.", isCorrect: false },
       ],
     },
   ];
+
 
   const code1 = [
     {

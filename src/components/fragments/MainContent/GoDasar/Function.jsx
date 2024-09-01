@@ -30,133 +30,136 @@ export const Function = () => {
 
   const questions = [
     {
-      questionText: "What is an array in Go?",
+      questionText: "Apa itu fungsi dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "A fixed-size collection of elements of the same type", isCorrect: true },
-        { answerText: "A dynamically sized collection of elements of different types", isCorrect: false },
-        { answerText: "A collection of key-value pairs", isCorrect: false },
-        { answerText: "A built-in function for sorting elements", isCorrect: false },
+        { answerText: "Fungsi adalah blok kode yang dapat dipanggil untuk melakukan tugas tertentu.", isCorrect: true },
+        { answerText: "Fungsi adalah variabel yang digunakan untuk menyimpan nilai.", isCorrect: false },
+        { answerText: "Fungsi adalah metode untuk mengelola loop.", isCorrect: false },
+        { answerText: "Fungsi adalah pernyataan kondisional.", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you declare an array in Go?",
+      questionText: "Bagaimana cara mendeklarasikan sebuah fungsi di Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using `var arr [size]Type` syntax", isCorrect: true },
-        { answerText: "Using `var arr []Type` syntax", isCorrect: false },
-        { answerText: "Using `make([]Type, size)` syntax", isCorrect: false },
-        { answerText: "Using `map[Type]Type` syntax", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'func' diikuti dengan nama fungsi, parameter, dan blok kode.", isCorrect: true },
+        { answerText: "Menggunakan kata kunci 'function' diikuti dengan nama fungsi dan parameter.", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'def' diikuti dengan nama fungsi dan parameter.", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'method' diikuti dengan nama fungsi dan parameter.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
+  func sayHello() {
+      fmt.Println("Hello, Go!")
+  }
+  
   func main() {
-      var arr = [3]int{1, 2, 3}
-      fmt.Println(arr[1])
+      sayHello()
   }`,
       answerOptions: [
-        { answerText: "2", isCorrect: true },
-        { answerText: "1", isCorrect: false },
-        { answerText: "3", isCorrect: false },
+        { answerText: "Hello, Go!", isCorrect: true },
+        { answerText: "Tidak ada output", isCorrect: false },
+        { answerText: "Kesalahan kompilasi", isCorrect: false },
+        { answerText: "Hello, World!", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apakah fungsi di Go bisa mengembalikan lebih dari satu nilai?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, fungsi di Go bisa mengembalikan lebih dari satu nilai.", isCorrect: true },
+        { answerText: "Tidak, fungsi di Go hanya bisa mengembalikan satu nilai.", isCorrect: false },
+        { answerText: "Ya, tapi hanya jika menggunakan pointer.", isCorrect: false },
+        { answerText: "Tidak, fungsi tidak bisa mengembalikan nilai.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
+      code: `package main
+  import "fmt"
+  
+  func add(a int, b int) int {
+      return a + b
+  }
+  
+  func main() {
+      fmt.Println(add(3, 4))
+  }`,
+      answerOptions: [
+        { answerText: "7", isCorrect: true },
+        { answerText: "34", isCorrect: false },
+        { answerText: "0", isCorrect: false },
         { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you initialize an array of 5 integers with all elements set to zero in Go?",
+      questionText: "Bagaimana cara mendefinisikan fungsi dengan parameter bernama dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "var arr [5]int", isCorrect: true },
-        { answerText: "var arr [5]int = {0, 0, 0, 0, 0}", isCorrect: false },
-        { answerText: "arr := make([]int, 5)", isCorrect: false },
-        { answerText: "var arr [5] = [0, 0, 0, 0, 0]", isCorrect: false },
+        { answerText: "Dengan menyebutkan nama parameter dan tipe datanya di dalam tanda kurung.", isCorrect: true },
+        { answerText: "Dengan menyebutkan hanya tipe data di dalam tanda kurung.", isCorrect: false },
+        { answerText: "Dengan menyebutkan hanya nama parameter di dalam tanda kurung.", isCorrect: false },
+        { answerText: "Tidak bisa mendefinisikan parameter bernama di Go.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the length of the following array in Go?",
+      questionText: "Apa kegunaan dari fungsi variadic di Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Untuk menerima sejumlah argumen yang tidak ditentukan saat fungsi dipanggil.", isCorrect: true },
+        { answerText: "Untuk mengembalikan nilai default.", isCorrect: false },
+        { answerText: "Untuk memanggil fungsi lain secara otomatis.", isCorrect: false },
+        { answerText: "Untuk mengulang loop dalam fungsi.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana cara mendeklarasikan fungsi variadic di Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Dengan menggunakan tanda ... sebelum tipe data parameter terakhir.", isCorrect: true },
+        { answerText: "Dengan menggunakan tanda ... sebelum nama fungsi.", isCorrect: false },
+        { answerText: "Dengan menggunakan kata kunci 'variadic'.", isCorrect: false },
+        { answerText: "Dengan tidak menyertakan tipe data parameter terakhir.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
-  func main() {
-      arr := [...]string{"Go", "is", "fun"}
-      fmt.Println(len(arr))
-  }`,
-      answerOptions: [
-        { answerText: "3", isCorrect: true },
-        { answerText: "2", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you update the value of an array element in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "Using the index, e.g., `arr[index] = newValue`", isCorrect: true },
-        { answerText: "Using the `append` function", isCorrect: false },
-        { answerText: "Using the `push` function", isCorrect: false },
-        { answerText: "Using the `insert` function", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the output of the following code that modifies an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [4]int{1, 2, 3, 4}
-      arr[2] = 10
-      fmt.Println(arr)
-  }`,
-      answerOptions: [
-        { answerText: "[1 2 10 4]", isCorrect: true },
-        { answerText: "[1 2 3 4]", isCorrect: false },
-        { answerText: "[10 2 3 4]", isCorrect: false },
-        { answerText: "[1 10 3 4]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which function is used to determine the size of an array in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "len()", isCorrect: true },
-        { answerText: "cap()", isCorrect: false },
-        { answerText: "size()", isCorrect: false },
-        { answerText: "length()", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Can you change the size of an array after it is declared in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "No, arrays have a fixed size", isCorrect: true },
-        { answerText: "Yes, by using the append function", isCorrect: false },
-        { answerText: "Yes, by using the resize function", isCorrect: false },
-        { answerText: "No, but slices can be resized", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the result of the following code that iterates over an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [3]int{5, 10, 15}
-      for i := 0; i < len(arr); i++ {
-          fmt.Print(arr[i], " ")
+  func printNumbers(numbers ...int) {
+      for _, number := range numbers {
+          fmt.Println(number)
       }
+  }
+  
+  func main() {
+      printNumbers(1, 2, 3)
   }`,
       answerOptions: [
-        { answerText: "5 10 15 ", isCorrect: true },
-        { answerText: "10 15 5 ", isCorrect: false },
-        { answerText: "5 15 10 ", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
+        { answerText: "1 2 3", isCorrect: true },
+        { answerText: "3 2 1", isCorrect: false },
+        { answerText: "0", isCorrect: false },
+        { answerText: "Tidak ada output", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa itu fungsi anonim dalam Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Fungsi yang tidak memiliki nama dan dapat digunakan sebagai nilai.", isCorrect: true },
+        { answerText: "Fungsi yang hanya bisa digunakan di dalam loop.", isCorrect: false },
+        { answerText: "Fungsi yang selalu mengembalikan nilai yang sama.", isCorrect: false },
+        { answerText: "Fungsi yang dipanggil secara otomatis saat program dijalankan.", isCorrect: false },
       ],
     },
   ];
+
 
   const code1 = [
     {

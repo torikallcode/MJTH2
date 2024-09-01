@@ -30,133 +30,124 @@ export const For = () => {
 
   const questions = [
     {
-      questionText: "What is an array in Go?",
+      questionText: "Apa itu pernyataan 'for' dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "A fixed-size collection of elements of the same type", isCorrect: true },
-        { answerText: "A dynamically sized collection of elements of different types", isCorrect: false },
-        { answerText: "A collection of key-value pairs", isCorrect: false },
-        { answerText: "A built-in function for sorting elements", isCorrect: false },
+        { answerText: "Pernyataan pengulangan yang digunakan untuk menjalankan blok kode beberapa kali berdasarkan kondisi tertentu", isCorrect: true },
+        { answerText: "Pernyataan kondisi untuk memilih antara dua atau lebih jalur eksekusi", isCorrect: false },
+        { answerText: "Pernyataan untuk mengubah tipe data variabel", isCorrect: false },
+        { answerText: "Pernyataan untuk mendeklarasikan variabel", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you declare an array in Go?",
+      questionText: "Bagaimana cara menulis loop 'for' dasar di Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using `var arr [size]Type` syntax", isCorrect: true },
-        { answerText: "Using `var arr []Type` syntax", isCorrect: false },
-        { answerText: "Using `make([]Type, size)` syntax", isCorrect: false },
-        { answerText: "Using `map[Type]Type` syntax", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'for' diikuti dengan kondisi, lalu blok kode yang akan dieksekusi", isCorrect: true },
+        { answerText: "Menggunakan kata kunci 'if' diikuti dengan kondisi, lalu blok kode", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'loop' diikuti dengan kondisi", isCorrect: false },
+        { answerText: "Menggunakan kata kunci 'while' diikuti dengan kondisi", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Apa yang akan terjadi jika kondisi dalam pernyataan 'for' selalu bernilai 'true'?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Loop akan berjalan tanpa henti, menyebabkan infinite loop", isCorrect: true },
+        { answerText: "Loop akan berhenti setelah satu iterasi", isCorrect: false },
+        { answerText: "Program akan menghasilkan kesalahan kompilasi", isCorrect: false },
+        { answerText: "Loop akan secara otomatis berhenti setelah 10 iterasi", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa perbedaan antara loop 'for' dengan kondisi dan loop 'for' dengan 'range' di Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Loop 'for' dengan kondisi menggunakan ekspresi logika, sedangkan 'for' dengan 'range' digunakan untuk mengiterasi elemen dalam koleksi seperti array atau slice", isCorrect: true },
+        { answerText: "Tidak ada perbedaan; keduanya digunakan untuk iterasi sederhana", isCorrect: false },
+        { answerText: "Loop 'for' dengan 'range' hanya digunakan untuk angka", isCorrect: false },
+        { answerText: "Loop 'for' dengan kondisi digunakan untuk tipe data string", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
   func main() {
-      var arr = [3]int{1, 2, 3}
-      fmt.Println(arr[1])
-  }`,
-      answerOptions: [
-        { answerText: "2", isCorrect: true },
-        { answerText: "1", isCorrect: false },
-        { answerText: "3", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you initialize an array of 5 integers with all elements set to zero in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "var arr [5]int", isCorrect: true },
-        { answerText: "var arr [5]int = {0, 0, 0, 0, 0}", isCorrect: false },
-        { answerText: "arr := make([]int, 5)", isCorrect: false },
-        { answerText: "var arr [5] = [0, 0, 0, 0, 0]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the length of the following array in Go?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [...]string{"Go", "is", "fun"}
-      fmt.Println(len(arr))
-  }`,
-      answerOptions: [
-        { answerText: "3", isCorrect: true },
-        { answerText: "2", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How do you update the value of an array element in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "Using the index, e.g., `arr[index] = newValue`", isCorrect: true },
-        { answerText: "Using the `append` function", isCorrect: false },
-        { answerText: "Using the `push` function", isCorrect: false },
-        { answerText: "Using the `insert` function", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the output of the following code that modifies an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [4]int{1, 2, 3, 4}
-      arr[2] = 10
-      fmt.Println(arr)
-  }`,
-      answerOptions: [
-        { answerText: "[1 2 10 4]", isCorrect: true },
-        { answerText: "[1 2 3 4]", isCorrect: false },
-        { answerText: "[10 2 3 4]", isCorrect: false },
-        { answerText: "[1 10 3 4]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which function is used to determine the size of an array in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "len()", isCorrect: true },
-        { answerText: "cap()", isCorrect: false },
-        { answerText: "size()", isCorrect: false },
-        { answerText: "length()", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Can you change the size of an array after it is declared in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "No, arrays have a fixed size", isCorrect: true },
-        { answerText: "Yes, by using the append function", isCorrect: false },
-        { answerText: "Yes, by using the resize function", isCorrect: false },
-        { answerText: "No, but slices can be resized", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the result of the following code that iterates over an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [3]int{5, 10, 15}
-      for i := 0; i < len(arr); i++ {
-          fmt.Print(arr[i], " ")
+      for i := 0; i < 3; i++ {
+          fmt.Println(i)
       }
   }`,
       answerOptions: [
-        { answerText: "5 10 15 ", isCorrect: true },
-        { answerText: "10 15 5 ", isCorrect: false },
-        { answerText: "5 15 10 ", isCorrect: false },
-        { answerText: "Error", isCorrect: false },
+        { answerText: "0\n1\n2", isCorrect: true },
+        { answerText: "1\n2\n3", isCorrect: false },
+        { answerText: "0\n1\n2\n3", isCorrect: false },
+        { answerText: "Kesalahan kompilasi", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana cara menghentikan loop 'for' sebelum mencapai kondisi akhirnya?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Menggunakan pernyataan 'break'", isCorrect: true },
+        { answerText: "Menggunakan pernyataan 'stop'", isCorrect: false },
+        { answerText: "Menggunakan pernyataan 'halt'", isCorrect: false },
+        { answerText: "Menggunakan pernyataan 'exit'", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa fungsi dari pernyataan 'continue' dalam loop 'for' di Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Untuk melewati iterasi saat ini dan melanjutkan ke iterasi berikutnya", isCorrect: true },
+        { answerText: "Untuk menghentikan loop sepenuhnya", isCorrect: false },
+        { answerText: "Untuk kembali ke awal program", isCorrect: false },
+        { answerText: "Untuk mengulang iterasi saat ini", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut dengan 'continue'?",
+      code: `package main
+  import "fmt"
+  
+  func main() {
+      for i := 0; i < 5; i++ {
+          if i == 2 {
+              continue
+          }
+          fmt.Println(i)
+      }
+  }`,
+      answerOptions: [
+        { answerText: "0\n1\n3\n4", isCorrect: true },
+        { answerText: "0\n1\n2\n3\n4", isCorrect: false },
+        { answerText: "0\n1\n2\n4", isCorrect: false },
+        { answerText: "Kesalahan kompilasi", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana cara menulis loop 'for' tanpa kondisi, yang berjalan selamanya?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Menggunakan 'for {}'", isCorrect: true },
+        { answerText: "Menggunakan 'while (true)'", isCorrect: false },
+        { answerText: "Menggunakan 'do...while' dengan kondisi selalu 'true'", isCorrect: false },
+        { answerText: "Menggunakan 'repeat...until' dengan kondisi 'false'", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apakah mungkin menggunakan lebih dari satu variabel kontrol dalam satu pernyataan 'for' di Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Ya, kita bisa menggunakan lebih dari satu variabel kontrol selama dipisahkan oleh koma", isCorrect: true },
+        { answerText: "Tidak, hanya satu variabel kontrol yang diperbolehkan", isCorrect: false },
+        { answerText: "Ya, tetapi hanya dengan tipe data yang sama", isCorrect: false },
+        { answerText: "Tidak, variabel kontrol kedua harus dideklarasikan di luar loop", isCorrect: false },
       ],
     },
   ];
+
 
   const code1 = [
     {

@@ -30,133 +30,138 @@ export const FunctionParameter = () => {
 
   const questions = [
     {
-      questionText: "What is an array in Go?",
+      questionText: "Apa itu parameter fungsi dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "A fixed-size collection of elements of the same type", isCorrect: true },
-        { answerText: "A dynamically sized collection of elements of different types", isCorrect: false },
-        { answerText: "A collection of key-value pairs", isCorrect: false },
-        { answerText: "A built-in function for sorting elements", isCorrect: false },
+        { answerText: "Parameter fungsi adalah variabel yang digunakan untuk menerima input ke dalam fungsi.", isCorrect: true },
+        { answerText: "Parameter fungsi adalah nilai yang selalu dikembalikan oleh fungsi.", isCorrect: false },
+        { answerText: "Parameter fungsi adalah nama lain untuk variabel global dalam fungsi.", isCorrect: false },
+        { answerText: "Parameter fungsi adalah tipe data yang hanya digunakan di dalam fungsi.", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you declare an array in Go?",
+      questionText: "Bagaimana cara mendeklarasikan parameter fungsi dalam Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using `var arr [size]Type` syntax", isCorrect: true },
-        { answerText: "Using `var arr []Type` syntax", isCorrect: false },
-        { answerText: "Using `make([]Type, size)` syntax", isCorrect: false },
-        { answerText: "Using `map[Type]Type` syntax", isCorrect: false },
+        { answerText: "Dengan menyebutkan nama parameter dan tipe datanya di dalam tanda kurung setelah nama fungsi.", isCorrect: true },
+        { answerText: "Dengan menggunakan kata kunci 'parameter' sebelum nama fungsi.", isCorrect: false },
+        { answerText: "Dengan menyebutkan tipe data parameter tanpa nama di dalam tanda kurung.", isCorrect: false },
+        { answerText: "Dengan menyebutkan tipe data parameter di luar tanda kurung setelah nama fungsi.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code?",
+      questionText: "Apa output dari kode berikut?",
       code: `package main
   import "fmt"
   
+  func greet(name string) {
+      fmt.Println("Hello,", name)
+  }
+  
   func main() {
-      var arr = [3]int{1, 2, 3}
-      fmt.Println(arr[1])
+      greet("Go Programmer")
   }`,
       answerOptions: [
-        { answerText: "2", isCorrect: true },
-        { answerText: "1", isCorrect: false },
-        { answerText: "3", isCorrect: false },
+        { answerText: "Hello, Go Programmer", isCorrect: true },
+        { answerText: "Hello, World", isCorrect: false },
+        { answerText: "Hello, ", isCorrect: false },
         { answerText: "Error", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you initialize an array of 5 integers with all elements set to zero in Go?",
+      questionText: "Bisakah fungsi di Go memiliki beberapa parameter? Jika ya, bagaimana cara mendeklarasikannya?",
       code: ``,
       answerOptions: [
-        { answerText: "var arr [5]int", isCorrect: true },
-        { answerText: "var arr [5]int = {0, 0, 0, 0, 0}", isCorrect: false },
-        { answerText: "arr := make([]int, 5)", isCorrect: false },
-        { answerText: "var arr [5] = [0, 0, 0, 0, 0]", isCorrect: false },
+        { answerText: "Ya, dengan menuliskan nama dan tipe data masing-masing parameter yang dipisahkan oleh koma di dalam tanda kurung.", isCorrect: true },
+        { answerText: "Tidak, fungsi hanya bisa memiliki satu parameter.", isCorrect: false },
+        { answerText: "Ya, tetapi hanya jika parameter memiliki tipe data yang sama.", isCorrect: false },
+        { answerText: "Ya, tetapi harus menggunakan kata kunci 'params' di depan nama parameter.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the length of the following array in Go?",
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
+  func add(a int, b int) int {
+      return a + b
+  }
+  
   func main() {
-      arr := [...]string{"Go", "is", "fun"}
-      fmt.Println(len(arr))
+      fmt.Println(add(3, 5))
   }`,
       answerOptions: [
-        { answerText: "3", isCorrect: true },
-        { answerText: "2", isCorrect: false },
-        { answerText: "4", isCorrect: false },
+        { answerText: "8", isCorrect: true },
+        { answerText: "35", isCorrect: false },
         { answerText: "Error", isCorrect: false },
+        { answerText: "0", isCorrect: false },
       ],
     },
     {
-      questionText: "How do you update the value of an array element in Go?",
+      questionText: "Bagaimana cara mendeklarasikan fungsi dengan parameter bernama yang sama tapi berbeda tipe data di Go?",
       code: ``,
       answerOptions: [
-        { answerText: "Using the index, e.g., `arr[index] = newValue`", isCorrect: true },
-        { answerText: "Using the `append` function", isCorrect: false },
-        { answerText: "Using the `push` function", isCorrect: false },
-        { answerText: "Using the `insert` function", isCorrect: false },
+        { answerText: "Tidak bisa, setiap parameter harus memiliki nama yang unik dalam satu fungsi.", isCorrect: true },
+        { answerText: "Bisa, asalkan tipe data berbeda.", isCorrect: false },
+        { answerText: "Bisa, dengan menggunakan tanda petik dua di sekitar nama parameter.", isCorrect: false },
+        { answerText: "Tidak bisa, tetapi bisa menggunakan pointer.", isCorrect: false },
       ],
     },
     {
-      questionText: "What will be the output of the following code that modifies an array?",
+      questionText: "Apa itu parameter default di Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Go tidak mendukung parameter default; semua parameter harus diberi nilai saat fungsi dipanggil.", isCorrect: true },
+        { answerText: "Parameter yang memiliki nilai default saat tidak diberi argumen.", isCorrect: false },
+        { answerText: "Parameter yang digunakan hanya pada saat kompilasi.", isCorrect: false },
+        { answerText: "Parameter yang berubah secara otomatis tergantung pada input.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Bagaimana cara mendeklarasikan parameter variadic di Go?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Dengan menambahkan tiga titik (...) sebelum tipe data parameter terakhir.", isCorrect: true },
+        { answerText: "Dengan menggunakan kata kunci 'variadic' sebelum parameter terakhir.", isCorrect: false },
+        { answerText: "Dengan menambahkan tanda tanya (?) sebelum tipe data parameter terakhir.", isCorrect: false },
+        { answerText: "Dengan menambahkan tanda seru (!) setelah tipe data parameter terakhir.", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apa yang akan dihasilkan oleh kode berikut?",
       code: `package main
   import "fmt"
   
-  func main() {
-      arr := [4]int{1, 2, 3, 4}
-      arr[2] = 10
-      fmt.Println(arr)
-  }`,
-      answerOptions: [
-        { answerText: "[1 2 10 4]", isCorrect: true },
-        { answerText: "[1 2 3 4]", isCorrect: false },
-        { answerText: "[10 2 3 4]", isCorrect: false },
-        { answerText: "[1 10 3 4]", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Which function is used to determine the size of an array in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "len()", isCorrect: true },
-        { answerText: "cap()", isCorrect: false },
-        { answerText: "size()", isCorrect: false },
-        { answerText: "length()", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Can you change the size of an array after it is declared in Go?",
-      code: ``,
-      answerOptions: [
-        { answerText: "No, arrays have a fixed size", isCorrect: true },
-        { answerText: "Yes, by using the append function", isCorrect: false },
-        { answerText: "Yes, by using the resize function", isCorrect: false },
-        { answerText: "No, but slices can be resized", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "What will be the result of the following code that iterates over an array?",
-      code: `package main
-  import "fmt"
-  
-  func main() {
-      arr := [3]int{5, 10, 15}
-      for i := 0; i < len(arr); i++ {
-          fmt.Print(arr[i], " ")
+  func sum(numbers ...int) int {
+      total := 0
+      for _, number := range numbers {
+          total += number
       }
+      return total
+  }
+  
+  func main() {
+      fmt.Println(sum(1, 2, 3, 4))
   }`,
       answerOptions: [
-        { answerText: "5 10 15 ", isCorrect: true },
-        { answerText: "10 15 5 ", isCorrect: false },
-        { answerText: "5 15 10 ", isCorrect: false },
+        { answerText: "10", isCorrect: true },
+        { answerText: "1234", isCorrect: false },
+        { answerText: "0", isCorrect: false },
         { answerText: "Error", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Apakah Go mendukung overloading fungsi dengan parameter yang berbeda?",
+      code: ``,
+      answerOptions: [
+        { answerText: "Tidak, Go tidak mendukung overloading fungsi.", isCorrect: true },
+        { answerText: "Ya, Go mendukung overloading fungsi.", isCorrect: false },
+        { answerText: "Ya, tapi hanya jika parameter memiliki tipe data yang sama.", isCorrect: false },
+        { answerText: "Tidak, tapi Go mendukung overload metode.", isCorrect: false },
       ],
     },
   ];
+
 
   const code1 = [
     {

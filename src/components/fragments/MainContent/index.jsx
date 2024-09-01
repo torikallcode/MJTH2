@@ -25,6 +25,23 @@ import { FunctionAsValue } from './GoDasar/FunctionAsValue';
 import { FunctionAsParameter } from './GoDasar/FunctionAsParameter';
 import { AnonymousFunction } from './GoDasar/AnonymousFunction';
 import { RecursiveFunction } from './GoDasar/RecursiveFunction';
+import { AccesModifier } from './GoDasar/AccesModifier';
+import { AsteriskOperator } from './GoDasar/AsteriskOperator';
+import { Closure } from './GoDasar/Closure';
+import { Defer } from './GoDasar/Defer';
+import { Panic } from './GoDasar/Panic';
+import { Recover } from './GoDasar/Recover';
+import { Struct } from './GoDasar/Struct';
+import { Interface } from './GoDasar/Interface';
+import { Nil } from './GoDasar/Nil';
+import { TypeAssertions } from './GoDasar/TypeAssertions';
+import { Pointer } from './GoDasar/Pointer';
+import { OperatorNew } from './GoDasar/OperatorNew';
+import { PointerFunction } from './GoDasar/PointerFunction';
+import { PointerStruct } from './GoDasar/PointerStruct';
+import { PackageNImport } from './GoDasar/PackageNImport';
+import { PackageInitialization } from './GoDasar/PackageInitialization';
+import { Error } from './GoDasar/Error';
 
 const contentComponents = {
     'variable': Variable,
@@ -53,8 +70,24 @@ const contentComponents = {
     'functionAsParameter': FunctionAsParameter,
     'anonymousFunction': AnonymousFunction,
     'recursiveFunction': RecursiveFunction,
+    'accessModifier': AccesModifier,
+    'asteriskOperator': AsteriskOperator,
+    'closure': Closure,
+    'defer': Defer,
+    'panic': Panic,
+    'recover': Recover,
+    'struct': Struct,
+    'interface': Interface,
+    'nil': Nil,
+    'typeAssertions': TypeAssertions,
+    'pointer': Pointer,
+    'operatorNew': OperatorNew,
+    'pointerFunction': PointerFunction,
+    'pointerStruct': PointerStruct,
+    'packageNImport': PackageNImport,
+    'packageInitialization': PackageInitialization,
+    'error': Error,
 };
-
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
 
