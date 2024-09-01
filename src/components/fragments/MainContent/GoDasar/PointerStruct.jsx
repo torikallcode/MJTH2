@@ -223,7 +223,7 @@ export const PointerStruct = () => {
           pengertian={' Alokasi memori dinamis untuk nilai baru menggunakan new dan mengembalikan pointer.'}
           fungsi={'Mengalokasikan dan menggunakan memori secara dinamis.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

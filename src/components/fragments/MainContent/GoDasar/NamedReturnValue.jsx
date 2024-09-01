@@ -173,7 +173,7 @@ export const NamedReturnValue = () => {
           pengertian={'Menamakan nilai yang dikembalikan oleh fungsi..'}
           fungsi={'Membuat kode lebih jelas dan mudah dibaca.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

@@ -179,7 +179,7 @@ export const FunctionAsValue = () => {
           pengertian={'Fungsi dapat disimpan dalam variabel..'}
           fungsi={'Memungkinkan penugasan fungsi ke variabel untuk fleksibilitas yang lebih besar.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

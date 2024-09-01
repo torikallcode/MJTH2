@@ -177,7 +177,7 @@ export const Array = () => {
           pengertian={'Struktur data untuk menyimpan sekelompok nilai dengan tipe yang sama.'}
           fungsi={'Mengelola koleksi data dengan indeks.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

@@ -188,7 +188,7 @@ export const OperatorNew = () => {
           pengertian={'Mengalokasikan memori untuk tipe tertentu dan mengembalikan pointer ke memori tersebut.'}
           fungsi={'Mengalokasikan memori untuk nilai baru.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

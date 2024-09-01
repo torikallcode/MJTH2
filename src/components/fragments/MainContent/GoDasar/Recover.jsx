@@ -284,7 +284,7 @@ export const Recover = () => {
           pengertian={'Mengembalikan kontrol eksekusi setelah panic.'}
           fungsi={'Menangani error dan mencegah program crash.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

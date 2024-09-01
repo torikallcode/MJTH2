@@ -236,7 +236,7 @@ export const Panic = () => {
           pengertian={'Menghentikan eksekusi program dan mengeluarkan pesan kesalahan.'}
           fungsi={'Menangani situasi kritis di mana program tidak dapat melanjutkan.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

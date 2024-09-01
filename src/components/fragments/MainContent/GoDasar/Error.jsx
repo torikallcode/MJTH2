@@ -261,7 +261,7 @@ export const Error = () => {
           pengertian={'Tipe error digunakan untuk menangani kesalahan. Custom error adalah kesalahan yang dibuat khusus dengan pesan tertentu.'}
           fungsi={'Menangani dan mengelola kesalahan dengan lebih baik.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

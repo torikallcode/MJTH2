@@ -178,7 +178,7 @@ export const FunctionAsParameter = () => {
           pengertian={'Fungsi dapat diteruskan sebagai parameter ke fungsi lain.'}
           fungsi={'Memungkinkan pembuatan fungsi yang lebih dinamis.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

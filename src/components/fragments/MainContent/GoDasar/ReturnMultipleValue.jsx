@@ -178,7 +178,7 @@ export const ReturningMultipleValue = () => {
           pengertian={'ungsi yang mengembalikan lebih dari satu nilai.'}
           fungsi={'Mengembalikan beberapa hasil sekaligus.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

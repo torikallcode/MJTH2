@@ -185,7 +185,7 @@ export const Switch = () => {
           pengertian={'Struktur kontrol untuk memilih salah satu dari beberapa blok kode untuk dieksekusi.'}
           fungsi={'Mengganti penggunaan banyak if-else untuk membuat kode lebih bersih.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

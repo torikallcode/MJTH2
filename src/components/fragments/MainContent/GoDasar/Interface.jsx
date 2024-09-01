@@ -284,7 +284,7 @@ export const Interface = () => {
           pengertian={'nterface mendefinisikan kumpulan metode. Interface kosong (interface{}) dapat memegang nilai dari tipe apapun.'}
           fungsi={'Mendukung polimorfisme; interface{} digunakan untuk fleksibilitas tinggi.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

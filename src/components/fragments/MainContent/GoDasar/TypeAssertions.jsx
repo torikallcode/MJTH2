@@ -208,7 +208,7 @@ export const TypeAssertions = () => {
           pengertian={'Mengubah nilai interface kosong (interface{}) menjadi tipe tertentu.'}
           fungsi={'Memeriksa atau mengambil tipe konkret dari interface.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

@@ -170,7 +170,7 @@ export const For = () => {
           pengertian={'Satu-satunya struktur perulangan di Go.'}
           fungsi={'Mengulang eksekusi blok kode beberapa kali.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

@@ -181,7 +181,7 @@ export const Function = () => {
           pengertian={'Sekumpulan kode yang dapat dipanggil berulang kali.'}
           fungsi={'Membagi program menjadi bagian yang lebih kecil dan lebih terstruktur.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

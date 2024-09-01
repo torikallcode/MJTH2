@@ -236,7 +236,7 @@ file://%20public%20functionfunc%20publicfunction()%20{}//%20Private%20functionfu
           pengertian={'Penentuan visibilitas simbol (variabel, fungsi) di luar package; simbol yang diawali huruf kapital dapat diakses dari luar package.'}
           fungsi={'Mengontrol aksesibilitas dan enkapsulasi data.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

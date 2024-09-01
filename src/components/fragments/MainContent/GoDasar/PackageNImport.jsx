@@ -192,7 +192,7 @@ export const PackageNImport = () => {
           pengertian={'Package adalah kumpulan kode Go yang dapat digunakan bersama. import digunakan untuk mengimpor package.'}
           fungsi={'Membagi kode menjadi modul-modul yang dapat digunakan kembali.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

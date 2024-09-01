@@ -177,7 +177,7 @@ export const Nil = () => {
           pengertian={'Nilai nol untuk pointer, interface, maps, slices, channels, dan fungsi.'}
           fungsi={'Menunjukkan tidak ada nilai atau belum diinisialisasi.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

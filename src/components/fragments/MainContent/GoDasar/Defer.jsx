@@ -222,7 +222,7 @@ export const Defer = () => {
           pengertian={' Menunda eksekusi suatu fungsi sampai fungsi pembungkusnya selesai.'}
           fungsi={'Membersihkan resource, seperti file atau koneksi, setelah digunakan..'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>

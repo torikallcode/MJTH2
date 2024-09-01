@@ -217,7 +217,7 @@ export const PointerFunction = () => {
           pengertian={'Memungkinkan fungsi untuk mengubah nilai asli variabel yang dilewatkan.'}
           fungsi={'Menghemat memori dan meningkatkan efisiensi.'}
         >
-          {code1.map((item, index) => (
+          {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>
