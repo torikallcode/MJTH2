@@ -162,9 +162,47 @@ export const ReturningMultipleValue = () => {
     {
       contoh:
         `
+  // Contoh sederhana
   func swap(a, b int) (int, int) {
       return b, a
   }
+  `
+    },
+    {
+      contoh:
+        `
+  // Contoh lanjutan
+  package main
+
+  import "fmt"
+
+  // Function untuk membagi dua angka dan mengembalikan hasil pembagian serta error jika ada
+  func bagi(a int, b int) (int, error) {
+      if b == 0 {
+          return 0, fmt.Errorf("tidak bisa membagi dengan nol") // Mengembalikan error jika pembagi nol
+      }
+      hasil := a / b
+      return hasil, nil // Mengembalikan hasil pembagian dan nilai error nil (tidak ada error)
+  }
+
+  func main() {
+      // Memanggil function bagi dengan angka 10 dan 2
+      hasil, err := bagi(10, 2)
+      if err != nil {
+          fmt.Println("Terjadi kesalahan:", err)
+      } else {
+          fmt.Println("Hasil pembagian 10 / 2 adalah:", hasil)
+      }
+
+      // Memanggil function bagi dengan angka 10 dan 0
+      hasil, err = bagi(10, 0)
+      if err != nil {
+          fmt.Println("Terjadi kesalahan:", err)
+      } else {
+          fmt.Println("Hasil pembagian 10 / 0 adalah:", hasil)
+      }
+  }
+
   `
     },
   ]
@@ -175,8 +213,8 @@ export const ReturningMultipleValue = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Returning Multiple Value'}
-          pengertian={'ungsi yang mengembalikan lebih dari satu nilai.'}
-          fungsi={'Mengembalikan beberapa hasil sekaligus.'}
+          pengertian={'returning multiple values (mengembalikan beberapa nilai) dari sebuah function adalah seperti memberikan beberapa hadiah sekaligus setelah menyelesaikan tugas. Misalnya, jika kamu meminta temanmu untuk mengumpulkan semua mainan dan memberikan informasi tentang warna dan ukuran mainan, temanmu bisa memberikan dua hadiah sekaligus: satu hadiah tentang warna dan satu tentang ukuran.(Fungsi yang mengembalikan lebih dari satu nilai)'}
+          fungsi={'Kadang-kadang, sebuah function perlu mengembalikan lebih dari satu hasil untuk memberi kita informasi yang lengkap. Misalnya, sebuah function bisa mengembalikan hasil dari perhitungan dan juga informasi tentang apakah perhitungan tersebut berhasil atau tidak.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

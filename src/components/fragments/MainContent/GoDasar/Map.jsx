@@ -152,9 +152,42 @@ export const Map = () => {
   ];
 
   const code1 = `
-  // Deklarasi sederhana
-  var ages map[string]int = map[string]int{"Alice": 30, "Bob": 25}
+  // Deklarasi Sederhana
+  package main
 
+  import "fmt"
+
+  func main() {
+      // Membuat sebuah map bernama "ibuKota" dengan tipe kunci string dan tipe nilai string
+      ibuKota := make(map[string]string)
+
+      // Menambahkan elemen-elemen ke dalam map
+      ibuKota["Indonesia"] = "Jakarta"
+      ibuKota["Jepang"] = "Tokyo"
+      ibuKota["India"] = "New Delhi"
+
+      // Menampilkan semua pasangan kunci dan nilai dalam map
+      fmt.Println("Ibu kota negara:", ibuKota) // Output: Ibu kota negara: map[India:New Delhi Indonesia:Jakarta Jepang:Tokyo]
+
+      // Mengakses nilai dalam map menggunakan kunci
+      fmt.Println("Ibu kota Indonesia:", ibuKota["Indonesia"])  // Output: Ibu kota Indonesia: Jakarta
+
+      // Mengubah nilai dalam map
+      ibuKota["Jepang"] = "Kyoto"
+      fmt.Println("Ibu kota Jepang setelah diubah:", ibuKota["Jepang"]) // Output: Ibu kota Jepang setelah diubah: Kyoto
+
+      // Menghapus elemen dari map
+      delete(ibuKota, "India")
+      fmt.Println("Setelah dihapus, ibu kota negara:", ibuKota) // Output: Setelah dihapus, ibu kota negara: map[Indonesia:Jakarta Jepang:Kyoto]
+
+      // Menampilkan jumlah elemen dalam map
+      fmt.Println("Jumlah negara dalam map:", len(ibuKota)) // Output: Jumlah negara dalam map: 2
+  }
+
+    `;
+  const codew = `
+  // Deklarasi Langsung
+  var ages map[string]int = map[string]int{"Alice": 30, "Bob": 25}
     `;
 
   return (
@@ -162,8 +195,8 @@ export const Map = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Map</h1>
         <div className='flex flex-col gap-y-2'>
-          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Struktur data untuk menyimpan pasangan kunci-nilai.</span></h2>
-          <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Menyimpan data yang dapat diakses melalui kunci unik.</span></h2>
+          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>map adalah seperti kamus. Bayangkan kita memiliki sebuah kamus yang berisi kata-kata (kunci) dan artinya (nilai). Map memungkinkan kita untuk menyimpan data dalam bentuk pasangan kunci (key) dan nilai (value). Kita bisa mencari nilai dengan cepat menggunakan kunci.</span></h2>
+          <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Map sangat berguna ketika kita ingin menyimpan data yang memiliki pasangan, seperti nama siswa dan nilainya, atau nama negara dan ibukotanya. Kita bisa dengan mudah mengambil nilai yang kita inginkan dengan mengetahui kunci yang sesuai..</span></h2>
           <div>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

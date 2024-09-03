@@ -164,6 +164,41 @@ export const Switch = () => {
     {
       contoh:
         `
+  package main
+
+  import "fmt"
+
+  func main() {
+      var hari int
+      fmt.Print("Masukkan nomor hari (1-7): ")
+      fmt.Scanln(&hari)
+
+      // Menggunakan switch untuk menentukan nama hari berdasarkan nomor
+      switch hari {
+      case 1:
+          fmt.Println("Hari Senin")
+      case 2:
+          fmt.Println("Hari Selasa")
+      case 3:
+          fmt.Println("Hari Rabu")
+      case 4:
+          fmt.Println("Hari Kamis")
+      case 5:
+          fmt.Println("Hari Jumat")
+      case 6:
+          fmt.Println("Hari Sabtu")
+      case 7:
+          fmt.Println("Hari Minggu")
+      default:
+          fmt.Println("Nomor hari tidak valid. Masukkan nomor 1-7.")
+      }
+  }
+
+    `
+    },
+    {
+      contoh:
+        `
   switch day {
   case "Monday":
       fmt.Println("Start of the week")
@@ -182,8 +217,8 @@ export const Switch = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Switch'}
-          pengertian={'Struktur kontrol untuk memilih salah satu dari beberapa blok kode untuk dieksekusi.'}
-          fungsi={'Mengganti penggunaan banyak if-else untuk membuat kode lebih bersih.'}
+          pengertian={'switch adalah seperti memilih opsi dari beberapa pilihan yang tersedia. Misalnya, bayangkan kamu berada di restoran dan bisa memilih satu dari beberapa jenis makanan: "Kalau memilih A, kamu akan mendapatkan nasi goreng. Kalau memilih B, kamu akan mendapatkan mie goreng," dan seterusnya. Switch membantu kita untuk melakukan ini dalam program, dengan cara yang lebih rapi daripada menggunakan banyak pernyataan if-else.'}
+          fungsi={'Switch sangat berguna saat kita ingin mengecek nilai variabel terhadap banyak kemungkinan. Misalnya, jika kita ingin mencetak nama hari berdasarkan nomor hari (1 untuk Senin, 2 untuk Selasa, dan seterusnya), menggunakan switch akan membuat kode lebih bersih dan mudah dibaca.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

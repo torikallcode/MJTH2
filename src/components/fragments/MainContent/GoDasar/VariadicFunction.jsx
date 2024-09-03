@@ -196,12 +196,28 @@ export const VariadicFunction = () => {
     {
       contoh:
         `
-  func sum(numbers ...int) int {
+  package main
+
+  import "fmt"
+
+  // Function untuk menjumlahkan beberapa angka
+  func jumlahkanAngka(angka ...int) int {
       total := 0
-      for _, number := range numbers {
-          total += number
+      for _, nilai := range angka {
+          total += nilai
       }
-      return total
+      return total // Mengembalikan hasil jumlah
+  }
+
+  func main() {
+      // Memanggil function jumlahkanAngka dengan berbagai jumlah angka
+      hasil1 := jumlahkanAngka(1, 2, 3)
+      hasil2 := jumlahkanAngka(4, 5, 6, 7, 8)
+      hasil3 := jumlahkanAngka(10)
+
+      fmt.Println("Hasil penjumlahan 1, 2, 3 adalah:", hasil1)
+      fmt.Println("Hasil penjumlahan 4, 5, 6, 7, 8 adalah:", hasil2)
+      fmt.Println("Hasil penjumlahan 10 adalah:", hasil3)
   }
   `
     },
@@ -213,8 +229,8 @@ export const VariadicFunction = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Variadic Function'}
-          pengertian={'Fungsi yang menerima jumlah parameter tak terbatas.'}
-          fungsi={'Memungkinkan fungsi menerima argumen dalam jumlah variabel.'}
+          pengertian={'variadic function adalah seperti sebuah kotak ajaib yang bisa menerima jumlah benda yang berbeda setiap kali kita menggunakannya. Bayangkan kamu punya kotak yang bisa menampung sebanyak mungkin mainan yang kamu bawa, tidak peduli berapa banyak mainan itu.'}
+          fungsi={'Kadang-kadang kita tidak tahu berapa banyak data yang akan kita berikan kepada function. Dengan variadic function, kita bisa memberikan sebanyak mungkin data yang kita mau, dan function akan menangani semuanya dengan baik.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

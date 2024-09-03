@@ -162,7 +162,39 @@ export const Array = () => {
     {
       contoh:
         `
-  // Deklarasi sederhana      
+  // Contoh Sederhana      
+  package main
+
+  import "fmt"
+
+  func main() {
+      // Membuat sebuah array bernama "angka" dengan 5 elemen
+      var angka [5]int
+
+      // Mengisi elemen-elemen array
+      angka[0] = 10
+      angka[1] = 20
+      angka[2] = 30
+      angka[3] = 40
+      angka[4] = 50
+
+      // Menampilkan elemen-elemen array
+      fmt.Println("Isi array angka:", angka) // Output: Isi array angka: [10 20 30 40 50]
+
+      // Mengakses elemen array menggunakan indeks
+      fmt.Println("Angka pertama:", angka[0])  // Output: Angka pertama: 10
+      fmt.Println("Angka kedua:", angka[1])    // Output: Angka kedua: 20
+
+      // Menampilkan panjang array
+      fmt.Println("Jumlah elemen dalam array:", len(angka)) // Output: Jumlah elemen dalam array: 5
+  }
+
+  `
+    },
+    {
+      contoh:
+        `
+  // Deklarasi Langsung      
   var numbers [3]int = [3]int{1, 2, 3}
   `
     },
@@ -174,7 +206,7 @@ export const Array = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Array'}
-          pengertian={'Struktur data untuk menyimpan sekelompok nilai dengan tipe yang sama.'}
+          pengertian={'Di Go, array adalah seperti deretan kotak yang berjejer, di mana setiap kotak bisa menyimpan satu nilai. Bayangkan kita memiliki rak dengan sejumlah kotak tetap, dan setiap kotak hanya bisa diisi satu barang. Array mirip dengan itu — ia memiliki ukuran tetap dan tidak bisa diubah ukurannya setelah dibuat.'}
           fungsi={'Mengelola koleksi data dengan indeks.'}
         >
           {code1.map((item) => (

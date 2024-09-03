@@ -156,9 +156,33 @@ export const NamedReturnValue = () => {
     {
       contoh:
         `
+  // Contoh sederhana
   func divide(a, b int) (result int) {
       result = a / b
       return
+  }
+  `
+    },
+    {
+      contoh:
+        `
+  // Contoh lanjutan
+  package main
+
+  import "fmt"
+
+  // Function untuk menghitung luas dan keliling dari sebuah persegi panjang
+  func hitungLuasDanKeliling(panjang int, lebar int) (luas int, keliling int) {
+      luas = panjang * lebar
+      keliling = 2 * (panjang + lebar)
+      return // Mengembalikan nilai luas dan keliling
+  }
+
+  func main() {
+      // Memanggil function hitungLuasDanKeliling dengan panjang 5 dan lebar 3
+      luas, keliling := hitungLuasDanKeliling(5, 3)
+      fmt.Println("Luas persegi panjang adalah:", luas)
+      fmt.Println("Keliling persegi panjang adalah:", keliling)
   }
   `
     },
@@ -170,8 +194,8 @@ export const NamedReturnValue = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Named Return Value'}
-          pengertian={'Menamakan nilai yang dikembalikan oleh fungsi..'}
-          fungsi={'Membuat kode lebih jelas dan mudah dibaca.'}
+          pengertian={'named return values (nilai kembali bernama) adalah seperti memberi nama pada hadiah yang kamu terima. Misalnya, jika temanmu memberikan dua hadiah, satu adalah mainan dan satu lagi adalah buku, kamu bisa memberi nama pada hadiah-hadiah tersebut sehingga kamu tahu apa yang kamu terima. Dengan named return values, kita memberi nama pada hasil yang dikembalikan oleh sebuah function sehingga lebih jelas dan mudah dipahami.'}
+          fungsi={'Named return values membantu kita untuk membuat kode lebih jelas dan terstruktur. Dengan memberi nama pada nilai yang dikembalikan, kita dapat dengan mudah memahami apa yang dikembalikan oleh function dan membuat kode lebih mudah dibaca.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

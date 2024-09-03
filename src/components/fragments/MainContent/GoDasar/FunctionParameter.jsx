@@ -167,8 +167,38 @@ export const FunctionParameter = () => {
     {
       contoh:
         `
+  // Contoh Sederhana
   func greet(name string) {
       fmt.Println("Hello, " + name)
+  }
+  `
+    },
+    {
+      contoh:
+        `
+  // Contoh Lanjutan
+  package main
+
+  import "fmt"
+
+  // Function dengan parameter untuk menghitung luas persegi panjang
+  func hitungLuasPersegiPanjang(panjang int, lebar int) int {
+      luas := panjang * lebar
+      return luas // Mengembalikan hasil luas
+  }
+
+  // Function dengan parameter untuk menyapa seseorang
+  func sapa(nama string, umur int) {
+      fmt.Printf("Halo, %s! Kamu berusia %d tahun.\n", nama, umur)
+  }
+
+  func main() {
+      // Memanggil function hitungLuasPersegiPanjang dengan panjang 5 dan lebar 3
+      luas := hitungLuasPersegiPanjang(5, 3)
+      fmt.Println("Luas persegi panjang adalah:", luas)
+
+      // Memanggil function sapa dengan parameter nama "Andi" dan umur 10
+      sapa("Andi", 10)
   }
   `
     },
@@ -180,8 +210,8 @@ export const FunctionParameter = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Function Parameter'}
-          pengertian={'Input yang diterima fungsi untuk diproses.'}
-          fungsi={'Membuat fungsi lebih dinamis dan dapat digunakan kembali.'}
+          pengertian={'parameter pada function adalah seperti bahan-bahan yang kita butuhkan untuk membuat sebuah resep masakan. Ketika kita punya resep, kita bisa membuatnya dengan bahan-bahan yang berbeda untuk mendapatkan hasil yang berbeda. Dalam function, kita bisa mengirimkan parameter (bahan-bahan) ke dalam function agar function tersebut dapat bekerja dengan baik.'}
+          fungsi={'Parameter digunakan untuk memberikan informasi tambahan yang dibutuhkan oleh function untuk melakukan tugasnya. Dengan menggunakan parameter, function bisa lebih fleksibel dan lebih berguna karena dapat bekerja dengan berbagai jenis data yang kita berikan.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

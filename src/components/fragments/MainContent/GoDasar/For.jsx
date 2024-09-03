@@ -153,10 +153,52 @@ export const For = () => {
     {
       contoh:
         `
-  for i := 0; i < 5; i++ {
-      fmt.Println(i)
-  }
+  package main
 
+  import "fmt"
+
+  func main() {
+      // Menggunakan for untuk menghitung dari 1 sampai 5
+      for i := 1; i <= 5; i++ {
+          fmt.Println("Angka ke-", i)
+      }
+
+      // Menggunakan for untuk mencetak kata 'Halo' sebanyak 3 kali
+      for j := 0; j < 3; j++ {
+          fmt.Println("Halo!")
+      }
+
+      // Menggunakan for tanpa kondisi untuk perulangan tak terbatas (infinite loop)
+      // Uncomment kode di bawah ini untuk menjalankannya
+      /*
+      for {
+          fmt.Println("Ini akan berjalan terus!")
+      }
+      */
+
+      // Menggunakan for dengan kondisi saja
+      angka := 1
+      for angka <= 3 {
+          fmt.Println("Angka:", angka)
+          angka++
+      }
+  }
+  `
+    },
+    {
+      contoh:
+        `
+    names := []string {"Muhammad" , "Torikal" , "Akbar"}
+
+    for index , name := range names {
+		  fmt.Println("index" , index , "=" , name)
+	  }
+
+    for _, name := range names {
+		  fmt.Println(name)
+	  }
+
+  }
   `
     },
   ]
@@ -167,8 +209,8 @@ export const For = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'For'}
-          pengertian={'Satu-satunya struktur perulangan di Go.'}
-          fungsi={'Mengulang eksekusi blok kode beberapa kali.'}
+          pengertian={'for adalah seperti ketika kita mengulangi sesuatu berulang kali. Misalnya, ketika kita ingin menghitung dari 1 sampai 10, atau ketika kita ingin menggambar bintang (*) di layar sebanyak 5 kali. For membantu kita untuk mengulangi perintah yang sama berulang kali sampai kondisi tertentu terpenuhi.'}
+          fungsi={'For sangat berguna ketika kita ingin melakukan sesuatu berulang kali dalam program kita. Misalnya, jika kita ingin menampilkan angka dari 1 sampai 5, atau jika kita ingin meminta pengguna untuk memasukkan kata sandi beberapa kali sampai benar, kita bisa menggunakan for.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

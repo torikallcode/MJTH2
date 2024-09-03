@@ -199,8 +199,30 @@ export const FunctionReturn = () => {
     {
       contoh:
         `
-  func add(a int, b int) int {
-      return a + b
+  package main
+
+  import "fmt"
+
+  // Function untuk menjumlahkan dua angka dan mengembalikan hasilnya
+  func tambah(a int, b int) int {
+      hasil := a + b
+      return hasil // Mengembalikan hasil penjumlahan
+  }
+
+  // Function untuk menghitung kuadrat dari sebuah angka dan mengembalikan hasilnya
+  func kuadrat(x int) int {
+      hasil := x * x
+      return hasil // Mengembalikan hasil kuadrat
+  }
+
+  func main() {
+      // Memanggil function tambah dan menyimpan hasilnya
+      hasilPenjumlahan := tambah(3, 7)
+      fmt.Println("Hasil penjumlahan 3 + 7 adalah:", hasilPenjumlahan)
+
+      // Memanggil function kuadrat dan menyimpan hasilnya
+      hasilKuadrat := kuadrat(5)
+      fmt.Println("Kuadrat dari 5 adalah:", hasilKuadrat)
   }
   `
     },
@@ -212,8 +234,8 @@ export const FunctionReturn = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Function Return Value'}
-          pengertian={'Nilai yang dikembalikan oleh fungsi setelah selesai eksekusi.'}
-          fungsi={'Mendapatkan hasil dari fungsi.'}
+          pengertian={' return value pada sebuah function adalah seperti hadiah yang diberikan kembali setelah kamu meminta bantuan kepada seseorang. Misalnya, jika kamu meminta temanmu menghitung jumlah apel yang kamu punya dan dia memberikan jawabannya, itu adalah return value dari permintaanmu.'}
+          fungsi={'Return value digunakan ketika sebuah function selesai melakukan tugasnya dan ingin memberikan hasilnya kembali kepada kita. Ini membuat function berguna untuk melakukan perhitungan, memproses data, dan kemudian memberikan jawaban atau hasil yang kita butuhkan.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

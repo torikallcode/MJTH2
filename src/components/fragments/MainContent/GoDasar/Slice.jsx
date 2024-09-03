@@ -159,18 +159,44 @@ export const Slice = () => {
   ];
 
   const code1 = `
-  // Deklarasi sederhana
-  var fruits []string = []string{"apple", "banana"}
+  // Contoh Sederhana
+  package main
+
+  import "fmt"
+
+  func main() {
+      // Membuat sebuah slice bernama "buah" dengan beberapa elemen
+      buah := []string{"apel", "jeruk", "pisang"}
+
+      // Menampilkan elemen-elemen slice
+      fmt.Println("Buah-buahan:", buah) // Output: Buah-buahan: [apel jeruk pisang]
+
+      // Menambahkan elemen baru ke slice
+      buah = append(buah, "mangga")
+      fmt.Println("Setelah ditambah:", buah) // Output: Setelah ditambah: [apel jeruk pisang mangga]
+
+      // Mengakses elemen slice menggunakan indeks
+      fmt.Println("Buah pertama:", buah[0])  // Output: Buah pertama: apel
+      fmt.Println("Buah kedua:", buah[1])    // Output: Buah kedua: jeruk
+
+      // Mengubah elemen di dalam slice
+      buah[1] = "lemon"
+      fmt.Println("Setelah diubah:", buah)   // Output: Setelah diubah: [apel lemon pisang mangga]
+
+      // Menampilkan panjang dari slice
+      fmt.Println("Jumlah buah:", len(buah)) // Output: Jumlah buah: 4
+  }
+
 
     `;
 
   return (
     <div className='flex flex-col pb-3 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
-      <div className='lg:w-[60%] xl:w-4/5'>
+      <div className='lg:w-[60%] xl:w-4/5 max-w-[22rem] sm:max-w-full'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Slice</h1>
         <div className='flex flex-col gap-y-2'>
-          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Struktur data dinamis yang mirip dengan array tetapi lebih fleksibel.</span></h2>
-          <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Menyimpan dan memanipulasi koleksi data dengan ukuran yang berubah-ubah.
+          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Di Go, slice adalah seperti daftar yang bisa berubah panjangnya. Bayangkan kita memiliki deretan kotak (array) untuk menyimpan barang, tetapi jumlah kotaknya tetap. Nah, slice adalah daftar yang lebih fleksibel — kita bisa menambahkan atau mengurangi kotaknya sesuai kebutuhan.</span></h2>
+          <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Slice sangat berguna karena memungkinkan kita untuk menyimpan banyak item (seperti angka atau kata) dan dengan mudah mengubah jumlah item tersebut tanpa harus membuat daftar baru dari awal.
           </span></h2>
           <div>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>

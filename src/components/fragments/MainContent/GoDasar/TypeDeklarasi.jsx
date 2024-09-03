@@ -99,7 +99,7 @@ export const TypeDeklarasi = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>Type Deklarasi</h1>
         <div className='flex flex-col gap-y-2'>
-          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Mendefinisikan tipe data baru atau alias tipe data.</span></h2>
+          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Mendefinisikan tipe data baru atau alias tipe data. dengan tujuan agar lebih mudah dimengerti</span></h2>
           <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Membuat tipe data khusus yang sesuai kebutuhan.
           </span></h2>
           <div>

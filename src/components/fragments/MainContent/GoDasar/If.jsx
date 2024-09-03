@@ -162,11 +162,25 @@ export const If = () => {
 
   const code1 = `
   // Deklarasi sederhana
-  if age > 18 {
-    fmt.Println("Adult")
-  } else {
-    fmt.Println("Not an adult")
+  package main
+
+  import "fmt"
+
+  func main() {
+      var angka int
+      fmt.Print("Masukkan sebuah angka: ")
+      fmt.Scanln(&angka)
+
+      // Menggunakan if untuk mengecek apakah angka lebih besar dari 10
+      if angka > 10 {
+          fmt.Println("Angka Anda lebih besar dari 10")
+      } else if angka == 10 {
+          fmt.Println("Angka Anda adalah 10")
+      } else {
+          fmt.Println("Angka Anda lebih kecil dari 10")
+      }
   }
+
     `;
 
   return (
@@ -174,8 +188,8 @@ export const If = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <h1 className='mb-3 text-2xl font-bold font-poppins'>If else</h1>
         <div className='flex flex-col gap-y-2'>
-          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Pernyataan kondisi untuk mengeksekusi blok kode jika kondisi terpenuhi.</span></h2>
-          <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Mengontrol alur eksekusi program berdasarkan kondisi.</span></h2>
+          <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>if adalah seperti pertanyaan "kalau-kalau" yang sering kita tanyakan dalam kehidupan sehari-hari. Misalnya, "Kalau hujan, aku bawa payung." Dalam pemrograman, if digunakan untuk membuat keputusan berdasarkan kondisi tertentu. Jika kondisinya benar (true), maka blok kode di dalamnya akan dijalankan. Jika tidak, kode tersebut dilewati.</span></h2>
+          <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>If sangat berguna saat kita ingin membuat keputusan di program kita. Misalnya, jika seseorang memasukkan angka yang lebih besar dari 10, kita bisa memberikan pesan "Angka Anda besar." Jika tidak, kita bisa memberikan pesan lain.</span></h2>
           <div>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

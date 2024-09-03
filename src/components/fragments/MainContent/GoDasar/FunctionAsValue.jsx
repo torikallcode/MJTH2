@@ -162,10 +162,40 @@ export const FunctionAsValue = () => {
     {
       contoh:
         `
+  // contoh sederhana
   var greet = func() {
       fmt.Println("Hello!")
   }
   greet()
+  `
+    },
+    {
+      contoh:
+        `
+  // contoh lanjutan
+  package main
+
+  import "fmt"
+
+  // Function untuk menambahkan dua angka
+  func tambah(a int, b int) int {
+      return a + b
+  }
+
+  // Function untuk mengubah operasi penambahan menjadi sebuah function
+  func operasi(operasi func(int, int) int, x int, y int) int {
+      return operasi(x, y) // Memanggil function yang diterima sebagai parameter
+  }
+
+  func main() {
+      // Menyimpan function tambah dalam variabel
+      var fungsiTambah func(int, int) int
+      fungsiTambah = tambah
+
+      // Memanggil function operasi dengan fungsiTambah
+      hasil := operasi(fungsiTambah, 5, 3)
+      fmt.Println("Hasil penjumlahan 5 + 3 adalah:", hasil)
+  }
   `
     },
   ]
@@ -176,8 +206,8 @@ export const FunctionAsValue = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Function as Value'}
-          pengertian={'Fungsi dapat disimpan dalam variabel..'}
-          fungsi={'Memungkinkan penugasan fungsi ke variabel untuk fleksibilitas yang lebih besar.'}
+          pengertian={'function as value berarti kita bisa memperlakukan function seperti benda lain—misalnya, kita bisa menyimpan function dalam sebuah kotak (variabel), memberikannya kepada teman kita, atau mengirimkannya sebagai hadiah. Bayangkan kamu punya sebuah mainan yang bisa disimpan di dalam kotak dan dipindahkan ke tempat lain kapan saja. (Fungsi dapat disimpan dalam sebuah variable)'}
+          fungsi={'Function as value sangat berguna ketika kita ingin menyimpan function dalam variabel, mengirimnya ke function lain, atau bahkan mengembalikannya dari function. Ini memungkinkan kita untuk membuat kode lebih fleksibel dan bisa digunakan kembali.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

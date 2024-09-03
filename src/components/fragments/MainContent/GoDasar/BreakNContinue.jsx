@@ -167,6 +167,37 @@ export const BreakNContinue = () => {
   }
   `
     },
+    {
+      contoh:
+        `
+  package main
+
+  import "fmt"
+
+  func main() {
+      // Menggunakan break untuk menghentikan perulangan ketika i sama dengan 5
+      fmt.Println("Contoh penggunaan break:")
+      for i := 1; i <= 10; i++ {
+          if i == 5 {
+              fmt.Println("Berhenti di angka", i)
+              break // Menghentikan perulangan ketika i bernilai 5
+          }
+          fmt.Println("Angka:", i)
+      }
+
+      // Menggunakan continue untuk melewati angka tertentu (misalnya, angka 3)
+      fmt.Println("\nContoh penggunaan continue:")
+      for j := 1; j <= 5; j++ {
+          if j == 3 {
+              fmt.Println("Melewati angka", j)
+              continue // Melewati iterasi saat j bernilai 3
+          }
+          fmt.Println("Angka:", j)
+      }
+  }
+
+  `
+    },
   ]
 
 
@@ -175,8 +206,8 @@ export const BreakNContinue = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Break & Continue'}
-          pengertian={'break menghentikan loop, sedangkan continue melewati iterasi saat ini dan melanjutkan ke iterasi berikutnya.'}
-          fungsi={'Mengontrol alur perulangan.'}
+          pengertian={'Di Go, break dan continue adalah seperti "berhenti sejenak" dan "lompat ke bagian berikutnya" dalam permainan. Misalnya, jika kamu bermain lompat tali dan ada aturan untuk berhenti ketika mendengar suara peluit (break), atau jika kamu harus melompati satu garis dan melanjutkan ke garis berikutnya (continue).'}
+          fungsi={'Break digunakan untuk menghentikan perulangan lebih awal jika suatu kondisi terpenuhi. Continue digunakan untuk melewati langkah saat ini dalam perulangan dan melanjutkan ke langkah berikutnya. Keduanya sangat berguna untuk mengontrol alur perulangan dan membuat program kita lebih fleksibel.'}
         >
           {code1.map((item, index) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

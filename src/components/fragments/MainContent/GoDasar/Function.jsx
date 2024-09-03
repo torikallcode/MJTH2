@@ -165,8 +165,38 @@ export const Function = () => {
     {
       contoh:
         `
+  // Contoh Sederhana
   func greet() {
       fmt.Println("Hello!")
+  }
+  `
+    },
+    {
+      contoh:
+        `
+  // Contoh Lanjutan
+  package main
+
+  import "fmt"
+
+  // Membuat function bernama tambah yang menjumlahkan dua angka
+  func tambah(a int, b int) int {
+      hasil := a + b
+      return hasil // Mengembalikan hasil penjumlahan
+  }
+
+  // Membuat function lain untuk menyapa
+  func sapa(nama string) {
+      fmt.Println("Halo, " + nama + "!")
+  }
+
+  func main() {
+      // Memanggil function tambah dengan nilai 3 dan 5
+      hasilPenjumlahan := tambah(3, 5)
+      fmt.Println("Hasil penjumlahan 3 + 5 adalah:", hasilPenjumlahan)
+
+      // Memanggil function sapa
+      sapa("Andi")
   }
   `
     },
@@ -178,8 +208,8 @@ export const Function = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Function'}
-          pengertian={'Sekumpulan kode yang dapat dipanggil berulang kali.'}
-          fungsi={'Membagi program menjadi bagian yang lebih kecil dan lebih terstruktur.'}
+          pengertian={'function (fungsi) adalah seperti resep memasak. Ketika kita punya resep, kita bisa menggunakannya berkali-kali untuk membuat makanan yang sama. Dengan function, kita bisa menulis kode sekali dan menggunakannya berkali-kali di tempat lain. Function membantu kita mengatur kode agar lebih rapi, mudah dipahami, dan dapat digunakan kembali.'}
+          fungsi={'Function digunakan untuk mengelompokkan beberapa baris kode yang melakukan tugas tertentu ke dalam satu tempat. Ini membuat kode kita lebih bersih dan lebih mudah diatur. Misalnya, jika kita ingin menjumlahkan dua angka berkali-kali, kita bisa menulis function untuk menjumlahkan angka, dan cukup memanggil function itu setiap kali kita butuh penjumlahan.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
