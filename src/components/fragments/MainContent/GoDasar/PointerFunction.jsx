@@ -201,8 +201,23 @@ export const PointerFunction = () => {
     {
       contoh:
         `
-  func changeValue(val *int) {
-      *val = 20
+  package main
+
+  import "fmt"
+
+  // Fungsi yang menggunakan pointer untuk mengubah nilai asli
+  func ubahNilai(x *int) {
+      *x = *x * 2 // Mengubah nilai di alamat yang ditunjuk oleh pointer
+  }
+
+  func main() {
+      angka := 10
+      fmt.Println("Nilai sebelum diubah:", angka) // Output: Nilai sebelum diubah: 10
+
+      // Mengirim alamat variabel 'angka' ke fungsi
+      ubahNilai(&angka)
+
+      fmt.Println("Nilai setelah diubah melalui pointer function:", angka) // Output: Nilai setelah diubah melalui pointer function: 20
   }
   `
     },
@@ -214,8 +229,8 @@ export const PointerFunction = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Pointer Function'}
-          pengertian={'Memungkinkan fungsi untuk mengubah nilai asli variabel yang dilewatkan.'}
-          fungsi={'Menghemat memori dan meningkatkan efisiensi.'}
+          pengertian={'Pointer function adalah fungsi yang bekerja dengan pointer atau alamat dari sebuah variabel. Bayangkan kamu memiliki peta yang menunjukkan di mana letak mainan kesayanganmu di ruangan. Ketika kamu memberikan peta itu kepada seseorang dan memintanya untuk mengubah sesuatu di tempat mainan itu berada, kamu tidak perlu membuat peta baru. Pointer function memungkinkan kita untuk mengubah data di lokasi asli, bukan salinannya.(Memungkinkan fungsi untuk mengubah nilai asli variabel yang dilewatkan).'}
+          fungsi={'Kita menggunakan pointer function ketika kita ingin sebuah fungsi mengubah nilai asli dari variabel yang dikirim ke fungsi tersebut, tanpa membuat salinan baru. Ini membantu kita menghemat memori dan mempercepat program.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

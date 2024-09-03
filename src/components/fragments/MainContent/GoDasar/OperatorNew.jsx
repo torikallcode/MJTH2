@@ -172,9 +172,33 @@ export const OperatorNew = () => {
     {
       contoh:
         `
+  // Contoh Sederhana
   p := new(int)
   *p = 100
   fmt.Println(*p) // Output: 100
+  `
+    },
+    {
+      contoh:
+        `
+  // Contoh lanjutan
+  package main
+
+  import "fmt"
+
+  func main() {
+      // Membuat pointer untuk menyimpan alamat integer
+      ptr := new(int)
+      
+      // Menampilkan alamat memori yang diberikan oleh new
+      fmt.Println("Alamat memori yang diberikan oleh new:", ptr) // Output: Alamat memori yang diberikan oleh new: (alamat memori)
+
+      // Mengisi nilai di dalam memori yang diberikan
+      *ptr = 100
+      
+      // Menampilkan nilai yang ada di alamat memori tersebut
+      fmt.Println("Nilai yang ada di alamat memori:", *ptr) // Output: Nilai yang ada di alamat memori: 100
+  }
   `
     },
   ]
@@ -185,8 +209,8 @@ export const OperatorNew = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Operator New'}
-          pengertian={'Mengalokasikan memori untuk tipe tertentu dan mengembalikan pointer ke memori tersebut.'}
-          fungsi={'Mengalokasikan memori untuk nilai baru.'}
+          pengertian={'Operator new di Go digunakan untuk membuat ruang di memori untuk menyimpan data dari tipe tertentu. Bayangkan kamu ingin membuat kotak kosong untuk menyimpan mainan baru. Dengan operator new, kamu membuat kotak tersebut dan memastikan kotak itu siap untuk diisi dengan data.'}
+          fungsi={'Operator new digunakan ketika kita ingin membuat ruang di memori untuk sebuah variabel dan mendapatkan alamat tempat data tersebut disimpan. Ini membantu kita mengelola memori dengan lebih baik dan memastikan bahwa kita memiliki tempat yang sesuai untuk data yang akan kita simpan.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

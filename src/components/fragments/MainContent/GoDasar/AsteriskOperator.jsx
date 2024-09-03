@@ -230,8 +230,8 @@ export const AsteriskOperator = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Asterisk Operator'}
-          pengertian={'Operator dereferensi untuk mendapatkan nilai dari alamat yang disimpan dalam pointer.'}
-          fungsi={'Mengakses atau mengubah nilai yang direferensikan oleh pointer.'}
+          pengertian={'Asterisk operator (dalam bahasa Go ditulis sebagai *) digunakan untuk bekerja dengan pointer. Bayangkan kamu memiliki petunjuk atau alamat dari mainan kesayanganmu, dan kamu menggunakan asterisk untuk mengambil mainan tersebut dari alamat yang diberikan. Dengan asterisk operator, kamu bisa melihat atau mengubah nilai yang ada di lokasi yang ditunjuk oleh pointer.'}
+          fungsi={'Asterisk operator digunakan untuk mengakses atau mengubah data yang disimpan di lokasi memori yang ditunjuk oleh pointer. Ini membantu kita bekerja dengan data di tempat tanpa membuat salinan baru, dan memungkinkan kita memanipulasi nilai melalui pointer.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
