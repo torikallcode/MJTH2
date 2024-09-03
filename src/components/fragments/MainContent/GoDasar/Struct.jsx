@@ -232,13 +232,29 @@ export const Struct = () => {
     {
       contoh:
         `
-  type Person struct {
-      Name string
-      Age  int
+  package main
+
+  import "fmt"
+
+  // Membuat struct untuk menyimpan informasi hewan peliharaan
+  type HewanPeliharaan struct {
+      nama  string
+      jenis string
+      umur  int
   }
 
-  func (p Person) Greet() {
-      fmt.Println("Hello, my name is", p.Name)
+  func main() {
+      // Membuat instance struct HewanPeliharaan
+      kucing := HewanPeliharaan{
+          nama:  "Milo",
+          jenis: "Kucing",
+          umur:  2,
+      }
+
+      // Menampilkan informasi hewan peliharaan
+      fmt.Println("Nama Hewan Peliharaan:", kucing.nama)
+      fmt.Println("Jenis Hewan Peliharaan:", kucing.jenis)
+      fmt.Println("Umur Hewan Peliharaan:", kucing.umur, "tahun")
   }
   `
     },
@@ -250,8 +266,8 @@ export const Struct = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Struct'}
-          pengertian={'Struct adalah tipe data buatan pengguna yang mengelompokkan data. Struct method adalah fungsi yang terkait dengan struct.'}
-          fungsi={'Menciptakan tipe data kompleks dan mendefinisikan perilaku di atasnya.'}
+          pengertian={'struct adalah seperti membuat kotak penyimpanan khusus untuk benda-benda berbeda yang saling berkaitan. Bayangkan kamu memiliki kotak khusus untuk menyimpan informasi tentang hewan peliharaanmu, seperti nama, jenis, dan umur. Dengan struct, kita bisa membuat tipe data baru yang bisa menampung informasi berbeda dalam satu tempat.'}
+          fungsi={'Struct digunakan ketika kita ingin mengelompokkan beberapa data yang saling berkaitan ke dalam satu unit. Ini membantu kita mengatur dan mengelola data dengan lebih mudah, terutama ketika datanya rumit atau terdiri dari banyak bagian.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

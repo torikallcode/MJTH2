@@ -220,8 +220,22 @@ export const Panic = () => {
     {
       contoh:
         `
+  package main
+
+  import "fmt"
+
+  // Function untuk membagi dua angka
+  func bagi(a int, b int) int {
+      if b == 0 { // Jika pembagi adalah 0, kita menggunakan panic
+          panic("Pembagian dengan angka 0 tidak diperbolehkan!")
+      }
+      return a / b
+  }
+
   func main() {
-      panic("Something went wrong!")
+      fmt.Println("Hasil pembagian 10 / 2 adalah:", bagi(10, 2)) // Ini akan berhasil
+      fmt.Println("Hasil pembagian 5 / 0 adalah:", bagi(5, 0))   // Ini akan menyebabkan panic
+      fmt.Println("Kode ini tidak akan dijalankan jika terjadi panic.")
   }
   `
     },
@@ -233,8 +247,8 @@ export const Panic = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Panic'}
-          pengertian={'Menghentikan eksekusi program dan mengeluarkan pesan kesalahan.'}
-          fungsi={'Menangani situasi kritis di mana program tidak dapat melanjutkan.'}
+          pengertian={'Panic adalah seperti tombol darurat di dalam kereta. Jika terjadi sesuatu yang sangat salah, kita bisa menekan tombol tersebut untuk menghentikan kereta secara mendadak. Dengan cara yang mirip, panic digunakan dalam kode untuk menghentikan program ketika ada masalah yang sangat besar yang tidak bisa ditangani.'}
+          fungsi={'Panic digunakan ketika kita menemukan kesalahan besar dalam program yang tidak dapat diatasi dengan cara biasa. Ketika kita menggunakan panic, program akan langsung berhenti, dan kita akan melihat pesan kesalahan yang menunjukkan apa yang salah dan di mana kesalahan itu terjadi.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

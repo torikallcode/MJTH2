@@ -263,13 +263,30 @@ export const Recover = () => {
     {
       contoh:
         `
+  // Contoh sederhana
+  package main
+
+  import "fmt"
+
+  // Function untuk menangani panic dengan recover
+  func selamatkanDiri() {
+      if r := recover(); r != nil { // Memeriksa apakah ada panic
+          fmt.Println("Recover dari panic. Pesan:", r)
+      }
+  }
+
+  func bagi(a int, b int) int {
+      defer selamatkanDiri() // Memanggil recover setelah panic
+      if b == 0 {
+          panic("Pembagian dengan angka 0 tidak diperbolehkan!") // Panic jika pembagi 0
+      }
+      return a / b
+  }
+
   func main() {
-      defer func() {
-          if r := recover(); r != nil {
-              fmt.Println("Recovered from:", r)
-          }
-      }()
-      panic("Something bad happened")
+      fmt.Println("Hasil pembagian 10 / 2 adalah:", bagi(10, 2)) // Ini akan berhasil
+      fmt.Println("Hasil pembagian 5 / 0 adalah:", bagi(5, 0))   // Ini akan menyebabkan panic, tapi akan di-recover
+      fmt.Println("Kode ini masih bisa dijalankan setelah recover.")
   }
   `
     },
@@ -281,8 +298,8 @@ export const Recover = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Recover'}
-          pengertian={'Mengembalikan kontrol eksekusi setelah panic.'}
-          fungsi={'Menangani error dan mencegah program crash.'}
+          pengertian={'recover adalah seperti alat penyelamat yang bisa kita gunakan untuk memperbaiki situasi setelah kita menekan tombol darurat (panic). Bayangkan ketika ada masalah di kereta dan tombol darurat ditekan, seorang petugas datang dan mencoba memperbaiki masalah sehingga kereta bisa berjalan kembali. Dengan recover, kita bisa menangani panic dan melanjutkan program tanpa benar-benar menghentikannya..(Mengembalikan kontrol eksekusi setelah panic).'}
+          fungsi={'Recover digunakan untuk menangkap dan memperbaiki situasi ketika ada panic. Ini berguna jika kita ingin mencoba menangani kesalahan besar tanpa benar-benar menghentikan program.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

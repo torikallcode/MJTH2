@@ -230,12 +230,41 @@ export const Closure = () => {
     {
       contoh:
         `
+  // Contoh sederhana
   func adder() func(int) int {
       sum := 0
       return func(x int) int {
           sum += x
           return sum
       }
+  }
+  `
+    },
+    {
+      contoh:
+        `
+  // Contoh lanjutan
+  package main
+
+  import "fmt"
+
+  // Function pembuat closure
+  func buatPenghitung() func() int {
+      hitung := 0 // Variabel luar yang disimpan oleh closure
+
+      // Closure yang mengembalikan function
+      return func() int {
+          hitung++ // Mengakses dan mengubah variabel luar
+          return hitung
+      }
+  }
+
+  func main() {
+      penghitung := buatPenghitung() // Membuat closure
+
+      fmt.Println(penghitung()) // Output: 1
+      fmt.Println(penghitung()) // Output: 2
+      fmt.Println(penghitung()) // Output: 3
   }
   `
     },
@@ -247,8 +276,8 @@ export const Closure = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Closure'}
-          pengertian={'Fungsi yang dideklarasikan di dalam fungsi lain dan mengakses variabel dari fungsi luarnya.'}
-          fungsi={'Mengingat lingkungan di mana mereka diciptakan, berguna untuk fungsi pembungkus.'}
+          pengertian={'closure adalah sebuah function yang bisa "mengikat" atau "menyimpan" variabel dari luar dirinya dan tetap bisa menggunakannya bahkan setelah lingkup di luar function itu selesai. Bayangkan kamu memiliki kotak ajaib yang bisa menyimpan barang-barang di dalamnya, dan kamu bisa membuka kotak itu kapan saja untuk melihat atau menggunakan barang-barang tersebut. Dengan closure, function bisa menyimpan nilai dari variabel luar dan menggunakannya kapan saja diperlukan..(Fungsi yang dideklarasikan di dalam fungsi lain dan mengakses variabel dari fungsi luarnya.)'}
+          fungsi={'Closure sangat berguna ketika kita ingin membuat function yang "ingat" nilai dari variabel tertentu, meskipun lingkup variabel tersebut telah berakhir. Ini memungkinkan kita membuat function yang lebih fleksibel dan kuat.'}
         >
           {code1.map((item, index) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

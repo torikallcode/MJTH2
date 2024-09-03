@@ -172,9 +172,25 @@ export const AnonymousFunction = () => {
     {
       contoh:
         `
-  func() {
-      fmt.Println("This is an anonymous function")
-  }()
+  package main
+
+  import "fmt"
+
+  func main() {
+      // Membuat anonymous function yang mencetak pesan
+      func() {
+          fmt.Println("Halo, ini adalah anonymous function!")
+      }() // Memanggil anonymous function langsung
+
+      // Membuat anonymous function dengan parameter
+      tambah := func(a int, b int) int {
+          return a + b
+      }
+
+      // Memanggil anonymous function yang disimpan di variabel
+      hasil := tambah(3, 4)
+      fmt.Println("Hasil penjumlahan 3 + 4 adalah:", hasil)
+  }
   `
     },
   ]
@@ -185,8 +201,8 @@ export const AnonymousFunction = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Anonymous Function'}
-          pengertian={'Fungsi yang tidak memiliki nama.'}
-          fungsi={'Fungsi sekali pakai atau sebagai argumen.'}
+          pengertian={'anonymous function adalah sebuah function yang tidak memiliki nama. Bayangkan kamu memiliki robot yang bisa melakukan tugas, tapi robot itu tidak memiliki nama—kamu bisa langsung menggunakannya kapan saja tanpa perlu memanggilnya dengan nama tertentu. Jadi, anonymous function bisa dibuat dan digunakan langsung di tempat, tanpa perlu memberinya nama terlebih dahulu.'}
+          fungsi={'Anonymous function sangat berguna ketika kita ingin membuat function yang hanya digunakan sekali atau di satu tempat saja. Dengan menggunakan anonymous function, kita bisa membuat kode kita lebih sederhana dan langsung.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

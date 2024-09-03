@@ -29,6 +29,9 @@ const Sidebar = ({ isOpen, onSelect }) => {
         { id: 'functionParameter', label: 'Function Parameter' },
         { id: 'namedReturnValue', label: 'Named Return Value' },
         { id: 'variadicFunction', label: 'Variadic Function' },
+        { id: 'functionAsValue', label: 'Function As Value' },
+        { id: 'functionAsParameter', label: 'Function As Parameter' },
+        { id: 'variadicFunction', label: 'Variadic Function' },
         { id: 'functionReturn', label: 'Function Return Value' },
         { id: 'anonymousFunction', label: 'Anonymous Function' },
         { id: 'recursiveFunction', label: 'Recursive Function' },
@@ -100,7 +103,7 @@ const Sidebar = ({ isOpen, onSelect }) => {
 
   return (
     <aside
-      className={`fixed lg:sticky top-14 left-0 min-h-full w-64 lg:w-52 xl:w-72 lg:py-10 xl:pl-20 bg-white lg:bg-opacity-50 lg:backdrop-blur-md p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40 overflow-y-auto`}
+      className={`lg:inset-0 lg:top-[3.8125rem] lg:left-[max(0px,calc(50%-50rem))] lg:right-auto fixed min-h-full w-64 lg:w-52 xl:w-72 lg:py-10 xl:pl-20 bg-white lg:bg-opacity-50 lg:backdrop-blur-md p-4 border-r border-gray-300 lg:translate-x-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-40 overflow-y-auto`}
       style={{ maxHeight: 'calc(100vh - 56px)' }}
     >
       <div className="mb-4">

@@ -162,8 +162,33 @@ export const FunctionAsParameter = () => {
     {
       contoh:
         `
+  // contoh sederhana
   func apply(f func(int, int) int, a int, b int) int {
       return f(a, b)
+  }
+  `
+    },
+    {
+      contoh:
+        `
+  // contoh lanjutan
+  package main
+
+  import "fmt"
+
+  // Function untuk mencetak pesan
+  func cetakPesan(nama string) {
+      fmt.Println("Halo, nama saya", nama)
+  }
+
+  // Function yang menerima function sebagai parameter
+  func jalankanFungsi(f func(string), pesan string) {
+      f(pesan) // Memanggil function yang diterima sebagai parameter
+  }
+
+  func main() {
+      // Mengirim function cetakPesan sebagai parameter ke function jalankanFungsi
+      jalankanFungsi(cetakPesan, "Budi")
   }
   `
     },
@@ -175,8 +200,8 @@ export const FunctionAsParameter = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Function as Parameter'}
-          pengertian={'Fungsi dapat diteruskan sebagai parameter ke fungsi lain.'}
-          fungsi={'Memungkinkan pembuatan fungsi yang lebih dinamis.'}
+          pengertian={'function as parameter berarti kita bisa mengirimkan function sebagai "hadiah" ke function lain untuk digunakan. Bayangkan kamu memiliki sebuah mainan yang bisa kamu berikan kepada temanmu, dan temanmu bisa menggunakan mainan itu saat bermain. Dengan function as parameter, kita bisa mengirimkan function ke function lain untuk melakukan tugas tertentu.'}
+          fungsi={'Menggunakan function as parameter sangat berguna ketika kita ingin function lain bisa menggunakan function yang kita berikan. Ini memungkinkan kita untuk membuat kode yang lebih fleksibel dan bisa digunakan kembali, karena function yang berbeda dapat diberikan sebagai parameter untuk melakukan berbagai tugas.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

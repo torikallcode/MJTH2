@@ -206,11 +206,22 @@ export const RecursiveFunction = () => {
     {
       contoh:
         `
-  func factorial(n int) int {
+  package main
+
+  import "fmt"
+
+  // Function untuk menghitung faktorial secara rekursif
+  func faktorial(n int) int {
       if n == 0 {
-          return 1
+          return 1 // Kondisi berhenti
       }
-      return n * factorial(n-1)
+      return n * faktorial(n-1) // Memanggil dirinya sendiri
+  }
+
+  func main() {
+      angka := 5
+      hasil := faktorial(angka)
+      fmt.Println("Faktorial dari", angka, "adalah:", hasil)
   }
   `
     },
@@ -222,8 +233,8 @@ export const RecursiveFunction = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Recursive Function'}
-          pengertian={'Fungsi yang memanggil dirinya sendiri.'}
-          fungsi={'Mengatasi masalah yang dapat dipecah menjadi sub-masalah yang lebih kecil.'}
+          pengertian={'recursive function adalah sebuah function yang bisa memanggil dirinya sendiri. Bayangkan kamu sedang melihat cermin yang memantulkan bayanganmu terus-menerus, seperti cermin yang ada di depan cermin lainnya. Itulah cara recursive function bekerja—ia terus memanggil dirinya sendiri sampai mencapai titik tertentu yang disebut "kondisi berhenti".'}
+          fungsi={'Recursive function sangat berguna ketika kita ingin menyelesaikan masalah yang bisa dipecah menjadi masalah yang lebih kecil yang serupa. Misalnya, menghitung faktorial atau mencari nilai dalam deret Fibonacci adalah contoh masalah yang sering diselesaikan dengan recursion.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

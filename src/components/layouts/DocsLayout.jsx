@@ -36,7 +36,7 @@ export const DocsLayout = () => {
           <Sidebar isOpen={isSidebarOpen} onSelect={handleSelect} />
         </div>
         <div
-          className={`flex-grow transition-all duration-300 ${isSidebarOpen ? 'blur-lg  bg-opacity-30 lg:backdrop-blur-none lg:bg-transparent' : ''}`}
+          className={`lg:ml-52 xl:ml-72 flex-grow transition-all duration-300 ${isSidebarOpen ? 'blur-lg  bg-opacity-30 lg:backdrop-blur-none lg:bg-transparent' : ''}`}
         >
           <MainContent selected={selectedContent} />
         </div>

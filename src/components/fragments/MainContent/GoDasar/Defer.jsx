@@ -206,8 +206,26 @@ export const Defer = () => {
       contoh:
         `
   func main() {
-      defer fmt.Println("Executed last")
-      fmt.Println("Executed first")
+      defer fmt.Println("Program selesai")
+      fmt.Println("Program sedang berjalan")
+  }
+  `
+    },
+    {
+      contoh:
+        `
+  package main
+
+  import "fmt"
+
+  func main() {
+      fmt.Println("Memulai permainan...")
+
+      // Menunda eksekusi hingga function selesai
+      defer fmt.Println("Membersihkan mainan setelah selesai bermain.")
+
+      fmt.Println("Sedang bermain...")
+      fmt.Println("Permainan selesai!")
   }
   `
     },
@@ -219,8 +237,8 @@ export const Defer = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Defer'}
-          pengertian={' Menunda eksekusi suatu fungsi sampai fungsi pembungkusnya selesai.'}
-          fungsi={'Membersihkan resource, seperti file atau koneksi, setelah digunakan..'}
+          pengertian={'defer adalah sebuah kata kunci yang digunakan untuk menunda eksekusi sebuah function atau statement sampai function di mana defer itu berada selesai dijalankan. Bayangkan kamu sedang bermain dan kamu menaruh catatan yang bilang, "Setelah selesai bermain, jangan lupa membersihkan mainanmu." Itulah cara defer bekerja—dia "menyimpan tugas" untuk dikerjakan di akhir.'}
+          fungsi={'Defer sangat berguna ketika kita ingin memastikan bahwa sesuatu akan dilakukan setelah sebuah function selesai, seperti menutup file, membersihkan memori, atau melepaskan koneksi. Hal ini membuat kode kita lebih rapi dan teratur.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
