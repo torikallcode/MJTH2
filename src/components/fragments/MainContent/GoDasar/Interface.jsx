@@ -273,6 +273,54 @@ export const Interface = () => {
   fmt.Println(anyType)
   `
     },
+    {
+      contoh:
+        `
+  package main
+
+  import "fmt"
+
+  // Membuat interface bernama Peliharaan
+  type Peliharaan interface {
+      bersuara() string
+  }
+
+  // Membuat struct Kucing
+  type Kucing struct {
+      nama string
+  }
+
+  // Membuat struct Anjing
+  type Anjing struct {
+      nama string
+  }
+
+  // Implementasi method bersuara untuk Kucing
+  func (k Kucing) bersuara() string {
+      return "Meow!"
+  }
+
+  // Implementasi method bersuara untuk Anjing
+  func (a Anjing) bersuara() string {
+      return "Woof!"
+  }
+
+  // Function untuk memperdengarkan suara hewan peliharaan
+  func dengarSuara(p Peliharaan) {
+      fmt.Println(p.bersuara())
+  }
+
+  func main() {
+      // Membuat instance Kucing dan Anjing
+      kucing := Kucing{nama: "Milo"}
+      anjing := Anjing{nama: "Buddy"}
+
+      // Memperdengarkan suara hewan peliharaan
+      dengarSuara(kucing) // Output: Meow!
+      dengarSuara(anjing) // Output: Woof!
+}
+  `
+    },
   ]
 
 
@@ -281,8 +329,8 @@ export const Interface = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Interface'}
-          pengertian={'nterface mendefinisikan kumpulan metode. Interface kosong (interface{}) dapat memegang nilai dari tipe apapun.'}
-          fungsi={'Mendukung polimorfisme; interface{} digunakan untuk fleksibilitas tinggi.'}
+          pengertian={'interface adalah seperti kontrak atau perjanjian yang menjelaskan apa yang bisa dilakukan oleh sesuatu, tanpa menjelaskan bagaimana cara melakukannya. Bayangkan kamu memiliki mainan robot, dan kamu tahu bahwa robot itu bisa berjalan dan berbicara, tetapi kamu tidak tahu bagaimana cara robot itu bekerja di dalamnya. Interface hanya memberitahu apa yang bisa dilakukan, bukan bagaimana cara melakukannya.'}
+          fungsi={'Interface digunakan ketika kita ingin menulis kode yang bisa bekerja dengan banyak tipe berbeda yang semuanya memiliki kemampuan yang sama. Ini membantu kita membuat kode yang lebih fleksibel dan mudah diubah, karena kita hanya perlu memastikan tipe yang berbeda memenuhi interface yang sama.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

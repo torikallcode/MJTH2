@@ -192,9 +192,45 @@ export const TypeAssertions = () => {
     {
       contoh:
         `
+  // contoh sederhana
   var i interface{} = "hello"
   s := i.(string)
   fmt.Println(s)
+  `
+    },
+    {
+      contoh:
+        `
+  // contoh lanjutan
+  package main
+
+  import "fmt"
+
+  // Fungsi untuk menampilkan informasi tentang sebuah item
+  func tampilkanInfo(item interface{}) {
+      // Coba mengubah item menjadi string
+      str, ok := item.(string)
+      if ok {
+          fmt.Println("Ini adalah string:", str)
+          return
+      }
+
+      // Coba mengubah item menjadi int
+      angka, ok := item.(int)
+      if ok {
+          fmt.Println("Ini adalah angka:", angka)
+          return
+      }
+
+      // Jika tidak bisa diubah ke tipe lain
+      fmt.Println("Ini bukan string atau angka.")
+  }
+
+  func main() {
+      tampilkanInfo("Halo, Dunia!")  // Output: Ini adalah string: Halo, Dunia!
+      tampilkanInfo(42)             // Output: Ini adalah angka: 42
+      tampilkanInfo(3.14)           // Output: Ini bukan string atau angka.
+  }
   `
     },
   ]
@@ -205,8 +241,8 @@ export const TypeAssertions = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Type Assertions'}
-          pengertian={'Mengubah nilai interface kosong (interface{}) menjadi tipe tertentu.'}
-          fungsi={'Memeriksa atau mengambil tipe konkret dari interface.'}
+          pengertian={'Type assertion di Go adalah seperti membuka kotak yang kamu pikir berisi satu jenis mainan, tetapi kamu ingin memastikan isinya atau memeriksa jenis mainan di dalamnya. Dengan type assertion, kita bisa memeriksa jenis asli dari sebuah variabel yang bertipe interface{} dan mengubahnya ke tipe yang kita inginkan.(Mengubah nilai interface kosong (interface{}) menjadi tipe tertentu.)'}
+          fungsi={'Type assertion digunakan untuk mengubah variabel bertipe interface{} ke tipe data yang lebih spesifik. Ini membantu kita mengambil data dari interface{} dan menggunakannya sesuai dengan tipe yang diharapkan, sehingga kita bisa bekerja dengan data tersebut dengan cara yang lebih sesuai.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

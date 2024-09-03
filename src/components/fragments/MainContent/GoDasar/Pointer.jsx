@@ -164,10 +164,24 @@ export const Pointer = () => {
     {
       contoh:
         `
-  func sum(numbers ...int) int {
-  var x int = 10
-  var p *int = &x
-  fmt.Println(*p) // Output: 10
+  package main
+
+  import "fmt"
+
+  func main() {
+      // Membuat variabel biasa
+      angka := 10
+      fmt.Println("Nilai awal angka:", angka) // Output: Nilai awal angka: 10
+
+      // Membuat pointer yang menunjuk ke variabel angka
+      var ptr *int = &angka
+      fmt.Println("Alamat pointer:", ptr)          // Output: Alamat pointer: (alamat memori)
+      fmt.Println("Nilai yang ditunjuk pointer:", *ptr) // Output: Nilai yang ditunjuk pointer: 10
+
+      // Mengubah nilai melalui pointer
+      *ptr = 20
+      fmt.Println("Nilai setelah diubah melalui pointer:", angka) // Output: Nilai setelah diubah melalui pointer: 20
+  }
   `
     },
   ]
@@ -178,8 +192,8 @@ export const Pointer = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Pointer'}
-          pengertian={'Menyimpan alamat memori suatu variabel.'}
-          fungsi={'Mengubah nilai dari variabel di luar cakupan fungsi.'}
+          pengertian={'Pointer di Go adalah seperti petunjuk atau alamat yang menunjukkan lokasi suatu benda di dalam kotak penyimpanan. Bayangkan kamu memiliki sebuah peta yang menunjukkan di mana mainan kesayanganmu berada di dalam sebuah ruangan. Pointer memberikan informasi tentang di mana sesuatu berada, bukan benda itu sendiri.(Menyimpan alamat memori suatu variabel).'}
+          fungsi={'Pointer digunakan ketika kita ingin mengetahui lokasi dari data atau ingin mengubah data langsung di tempat tanpa membuat salinan baru. Ini membantu kita mengelola memori dengan lebih efisien dan bekerja dengan data yang besar atau kompleks.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

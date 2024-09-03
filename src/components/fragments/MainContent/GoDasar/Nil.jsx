@@ -160,9 +160,34 @@ export const Nil = () => {
     {
       contoh:
         `
-  var p *int = nil
-  if p == nil {
-      fmt.Println("Pointer is nil")
+  package main
+
+  import "fmt"
+
+  func main() {
+      // Membuat variabel pointer yang awalnya nil
+      var ptr *int
+      if ptr == nil {
+          fmt.Println("Pointer ini kosong (nil).")
+      } else {
+          fmt.Println("Pointer ini memiliki nilai:", *ptr)
+      }
+
+      // Membuat variabel slice yang awalnya nil
+      var slice []int
+      if slice == nil {
+          fmt.Println("Slice ini kosong (nil).")
+      } else {
+          fmt.Println("Slice ini memiliki elemen:", slice)
+      }
+
+      // Membuat variabel map yang awalnya nil
+      var m map[string]int
+      if m == nil {
+          fmt.Println("Map ini kosong (nil).")
+      } else {
+          fmt.Println("Map ini memiliki elemen:", m)
+      }
   }
   `
     },
@@ -174,8 +199,8 @@ export const Nil = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Nil'}
-          pengertian={'Nilai nol untuk pointer, interface, maps, slices, channels, dan fungsi.'}
-          fungsi={'Menunjukkan tidak ada nilai atau belum diinisialisasi.'}
+          pengertian={'nil adalah seperti tanda "tidak ada" atau "kosong". Bayangkan kamu memiliki kotak yang kosong dan tidak ada benda di dalamnya. Nil digunakan untuk menunjukkan bahwa tidak ada data atau informasi yang tersedia dalam sebuah variabel.(Nilai nol untuk pointer, interface, maps, slices, channels, dan fungsi).'}
+          fungsi={'Nil digunakan untuk menunjukkan bahwa sebuah variabel tidak memiliki nilai atau data yang valid. Ini membantu kita untuk mengecek apakah variabel sudah diisi atau masih kosong. Dalam berbagai tipe data seperti pointer, slice, map, dan channel, nil berarti tidak ada objek atau data yang terkait dengan variabel tersebut.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

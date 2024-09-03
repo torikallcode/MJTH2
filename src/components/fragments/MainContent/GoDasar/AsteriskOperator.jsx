@@ -190,8 +190,36 @@ export const AsteriskOperator = () => {
     {
       contoh:
         `
+  // contoh sederhana
   var p *int = &x
   fmt.Println(*p) // Mengakses nilai x melalui pointer
+  `
+    },
+    {
+      contoh:
+        `
+  // contoh lanjutan
+  package main
+
+  import "fmt"
+
+  func main() {
+      // Membuat variabel biasa
+      angka := 30
+      fmt.Println("Nilai awal angka:", angka) // Output: Nilai awal angka: 30
+
+      // Membuat pointer yang menunjuk ke variabel angka
+      var ptr *int = &angka
+      fmt.Println("Alamat pointer:", ptr) // Output: Alamat pointer: (alamat memori)
+
+      // Mengakses nilai melalui asterisk operator
+      nilaiMelaluiPointer := *ptr
+      fmt.Println("Nilai yang ditunjuk pointer:", nilaiMelaluiPointer) // Output: Nilai yang ditunjuk pointer: 30
+
+      // Mengubah nilai melalui asterisk operator
+      *ptr = 50
+      fmt.Println("Nilai setelah diubah melalui pointer:", angka) // Output: Nilai setelah diubah melalui pointer: 50
+  }
   `
     },
   ]
