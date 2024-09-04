@@ -174,10 +174,40 @@ export const PackageNImport = () => {
     {
       contoh:
         `
-  import "fmt"
+  // File : matematika/perhitungan.go
+  // Deklarasi package
+  package matematika
+
+  // Fungsi Penjumlahan
+  func Tambah(a int, b int) int {
+      return a + b
+  }
+
+  // Fungsi Pengurangan
+  func Kurang(a int, b int) int {
+      return a - b
+  }
+  `
+    },
+    {
+      contoh:
+        `
+  File: main.go
+  // Deklarasi package utama
+  package main
+
+  // Mengimport package matematika
+  import (
+      "fmt"
+      "matematika" // Import package matematika
+  )
 
   func main() {
-      fmt.Println("Hello, World!")
+      hasilTambah := matematika.Tambah(5, 3)
+      hasilKurang := matematika.Kurang(10, 4)
+
+      fmt.Println("Hasil penjumlahan 5 + 3:", hasilTambah)   // Output: Hasil penjumlahan 5 + 3: 8
+      fmt.Println("Hasil pengurangan 10 - 4:", hasilKurang) // Output: Hasil pengurangan 10 - 4: 6
   }
   `
     },
@@ -189,8 +219,8 @@ export const PackageNImport = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Package dan Import'}
-          pengertian={'Package adalah kumpulan kode Go yang dapat digunakan bersama. import digunakan untuk mengimpor package.'}
-          fungsi={'Membagi kode menjadi modul-modul yang dapat digunakan kembali.'}
+          pengertian={'Dalam bahasa Go, package adalah cara untuk mengelompokkan kode-kode yang memiliki fungsi terkait, seperti kotak-kotak besar di perpustakaan yang berisi buku-buku dengan tema yang sama. Import adalah cara untuk membawa kotak itu ke dalam proyek kita sehingga kita bisa menggunakan isi dari kotak tersebut.(Package adalah kumpulan kode Go yang dapat digunakan bersama. import digunakan untuk mengimpor package).'}
+          fungsi={'Dengan menggunakan package, kita bisa mengatur kode kita agar lebih rapi dan mudah dipelihara. Sementara itu, import memungkinkan kita menggunakan kode-kode yang sudah dibuat oleh orang lain atau oleh diri kita sendiri di tempat lain, tanpa perlu menulis ulang semuanya. Ini membantu membuat program lebih efisien dan mudah dibaca.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

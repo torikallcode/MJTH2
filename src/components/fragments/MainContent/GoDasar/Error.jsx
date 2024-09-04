@@ -242,11 +242,58 @@ export const Error = () => {
     {
       contoh:
         `
-  import "errors"
+  // cara menggunakan error
+  package main
+
+  import (
+      "fmt"
+      "strconv"
+  )
 
   func main() {
-      err := errors.New("This is a custom error")
-      fmt.Println(err)
+      var input string
+      fmt.Print("Masukkan angka: ")
+      fmt.Scanln(&input)
+
+      // Mengonversi input string menjadi angka
+      if number, err := strconv.Atoi(input); err != nil {
+          fmt.Println("Error:", err.Error()) // Output error jika input bukan angka
+      } else {
+          fmt.Println("Angka yang Anda masukkan adalah:", number) // Output angka jika berhasil
+      }
+  }
+  `
+    },
+    {
+      contoh:
+        `
+  // Custom error
+  package main
+
+  import (
+      "errors"
+      "fmt"
+  )
+
+  // Fungsi yang menerima angka positif
+  func cekAngkaPositif(angka int) error {
+      if angka < 0 {
+          return errors.New("angka tidak boleh negatif") // Membuat Custom Error
+      }
+      return nil // Jika tidak ada error, kembalikan nilai nil
+  }
+
+  func main() {
+      var angka int
+      fmt.Print("Masukkan angka positif: ")
+      fmt.Scanln(&angka)
+
+      // Memanggil fungsi cekAngkaPositif untuk validasi angka
+      if err := cekAngkaPositif(angka); err != nil {
+          fmt.Println("Error:", err.Error()) // Output error jika angka negatif
+      } else {
+          fmt.Println("Angka yang Anda masukkan adalah:", angka) // Output angka jika berhasil
+      }
   }
   `
     },
@@ -258,8 +305,8 @@ export const Error = () => {
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
           judul={'Error'}
-          pengertian={'Tipe error digunakan untuk menangani kesalahan. Custom error adalah kesalahan yang dibuat khusus dengan pesan tertentu.'}
-          fungsi={'Menangani dan mengelola kesalahan dengan lebih baik.'}
+          pengertian={'Error adalah cara untuk memberi tahu bahwa ada sesuatu yang salah saat program dijalankan. Bayangkan saja seperti alarm yang berbunyi ketika ada masalah di rumah, seperti pintu yang tidak terkunci atau jendela yang terbuka. Go memungkinkan kita untuk membuat Custom Error, yaitu error buatan sendiri yang dirancang khusus untuk kebutuhan kita. Ini seperti membuat alarm khusus untuk masalah tertentu yang kita inginkan, misalnya alarm untuk memberitahu bahwa susu di kulkas sudah habis.'}
+          fungsi={'Error digunakan agar program kita bisa mengetahui dan menangani masalah yang mungkin terjadi, seperti input yang salah atau koneksi internet yang terputus. Dengan membuat Custom Error, kita bisa memberikan pesan yang lebih jelas dan spesifik tentang masalah yang terjadi sehingga lebih mudah untuk diperbaiki.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">

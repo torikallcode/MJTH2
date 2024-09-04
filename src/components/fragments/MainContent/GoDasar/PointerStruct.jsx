@@ -209,7 +209,31 @@ export const PointerStruct = () => {
     {
       contoh:
         `
-  p := new(int)
+  package main
+
+  import "fmt"
+
+  // Membuat struct bernama "Person"
+  type Person struct {
+      nama string
+      umur int
+  }
+
+  // Fungsi yang menggunakan pointer untuk mengubah nilai struct
+  func tambahUmur(p *Person) {
+      p.umur += 1 // Mengubah umur di struct yang ditunjuk oleh pointer
+  }
+
+  func main() {
+      // Membuat variabel struct "Person"
+      orang := Person{nama: "Budi", umur: 10}
+      fmt.Println("Umur sebelum diubah:", orang.umur) // Output: Umur sebelum diubah: 10
+
+      // Mengirimkan alamat struct "orang" ke fungsi
+      tambahUmur(&orang)
+
+      fmt.Println("Umur setelah diubah melalui pointer struct:", orang.umur) // Output: Umur setelah diubah melalui pointer struct: 11
+  }
   `
     },
   ]
@@ -219,9 +243,9 @@ export const PointerStruct = () => {
     <div className='flex flex-col pb-3 lg:pt-5 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
-          judul={'Pointer New'}
-          pengertian={' Alokasi memori dinamis untuk nilai baru menggunakan new dan mengembalikan pointer.'}
-          fungsi={'Mengalokasikan dan menggunakan memori secara dinamis.'}
+          judul={'Pointer Struct'}
+          pengertian={'Pointer struct adalah kombinasi dari pointer dan struct. Jika kamu membayangkan struct sebagai sebuah kotak yang bisa menyimpan beberapa barang sekaligus (seperti mainan, buku, atau makanan), pointer struct adalah peta yang menunjukkan di mana kotak itu berada. Dengan menggunakan pointer struct, kita bisa mengakses dan mengubah barang-barang di dalam kotak tanpa harus membawa seluruh kotak tersebut.'}
+          fungsi={'Kita menggunakan pointer struct ketika kita ingin mengakses atau mengubah data dalam sebuah struct tanpa membuat salinan struct tersebut. Ini sangat membantu ketika struct-nya besar atau ketika kita ingin memodifikasi data asli yang ada di struct.'}
         >
           {code1.map((item) => (
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
