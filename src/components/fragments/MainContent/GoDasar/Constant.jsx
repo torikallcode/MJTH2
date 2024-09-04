@@ -105,7 +105,7 @@ export const Constant = () => {
         <div className='flex flex-col gap-y-2'>
           <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Nilai yang tidak bisa diubah setelah dideklarasikan. Cara Pembuatan Constant mirip dengan variable, yang membedakan hanya kata kunci yang digunakan adalah const bukan var. Saat membuat constant,kita wajib langsung menginisialisasikan datanya</span></h2>
           <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Menyimpan nilai tetap yang digunakan di seluruh program.</span></h2>
-          <div>
+          <div className='max-w-[22rem] sm:max-w-full xl:max-w-3xl'>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {code1}

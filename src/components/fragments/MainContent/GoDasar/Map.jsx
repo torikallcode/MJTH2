@@ -197,7 +197,7 @@ export const Map = () => {
         <div className='flex flex-col gap-y-2'>
           <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>map adalah seperti kamus. Bayangkan kita memiliki sebuah kamus yang berisi kata-kata (kunci) dan artinya (nilai). Map memungkinkan kita untuk menyimpan data dalam bentuk pasangan kunci (key) dan nilai (value). Kita bisa mencari nilai dengan cepat menggunakan kunci.</span></h2>
           <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Map sangat berguna ketika kita ingin menyimpan data yang memiliki pasangan, seperti nama siswa dan nilainya, atau nama negara dan ibukotanya. Kita bisa dengan mudah mengambil nilai yang kita inginkan dengan mengetahui kunci yang sesuai..</span></h2>
-          <div>
+          <div className='max-w-[22rem] sm:max-w-full xl:max-w-3xl'>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {code1}

@@ -343,6 +343,7 @@ export const Error = () => {
     <div className='flex flex-col pb-3 lg:pt-5 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
         <FillContent
+          classname={'mb-10'}
           judul={'Error'}
           pengertian={'Error adalah cara untuk memberi tahu bahwa ada sesuatu yang salah saat program dijalankan. Bayangkan saja seperti alarm yang berbunyi ketika ada masalah di rumah, seperti pintu yang tidak terkunci atau jendela yang terbuka. Go memungkinkan kita untuk membuat Custom Error, yaitu error buatan sendiri yang dirancang khusus untuk kebutuhan kita. Ini seperti membuat alarm khusus untuk masalah tertentu yang kita inginkan, misalnya alarm untuk memberitahu bahwa susu di kulkas sudah habis.'}
           fungsi={'Error digunakan agar program kita bisa mengetahui dan menangani masalah yang mungkin terjadi, seperti input yang salah atau koneksi internet yang terputus. Dengan membuat Custom Error, kita bisa memberikan pesan yang lebih jelas dan spesifik tentang masalah yang terjadi sehingga lebih mudah untuk diperbaiki.'}
@@ -353,6 +354,16 @@ export const Error = () => {
             </SyntaxHighlighter>
           ))}
         </FillContent>
+        <div className='max-w-[22rem] sm:max-w-full xl:max-w-3xl'>
+          <h1 className='mb-2 italic font-medium font-poppins'>Latihan: </h1>
+          {pertanyaan2.map((item) => (
+            <Accordion
+              level={item.level}
+              pertanyaan={item.pertanyaan}
+              jawaban={item.jawaban}
+            />
+          ))}
+        </div>
       </div>
       <div className='lg:w-[40%] lg:sticky lg:top-24'>
         <h2 className='mb-1 text-base italic font-medium font-poppins lg:hidden'>Quiz:</h2>
@@ -365,16 +376,6 @@ export const Error = () => {
           handleAnswerOptionClick={handleAnswerOptionClick}
           handleRestartQuiz={handleRestartQuiz}
         />
-      </div>
-      <div>
-        <h1 className='mb-2 italic font-medium font-poppins'>Latihan: </h1>
-        {pertanyaan2.map((item) => (
-          <Accordion
-            level={item.level}
-            pertanyaan={item.pertanyaan}
-            jawaban={item.jawaban}
-          />
-        ))}
       </div>
       <div>
       </div>

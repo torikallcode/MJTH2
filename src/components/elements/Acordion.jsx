@@ -9,7 +9,7 @@ const Accordion = ({ pertanyaan, jawaban, level }) => {
         <h1 className='absolute italic text-gray-400 left-3 top-3'>{level}</h1>
         <input type="radio" name="my-accordion-4" defaultChecked />
         <div className="text-base font-poppins collapse-title">{pertanyaan}</div>
-        <div className="collapse-content max-w-[22rem]">
+        <div className="collapse-content max-w-[22rem] sm:max-w-full">
           <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
             {jawaban}
           </SyntaxHighlighter>

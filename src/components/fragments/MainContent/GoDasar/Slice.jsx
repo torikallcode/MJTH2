@@ -198,7 +198,7 @@ export const Slice = () => {
           <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Di Go, slice adalah seperti daftar yang bisa berubah panjangnya. Bayangkan kita memiliki deretan kotak (array) untuk menyimpan barang, tetapi jumlah kotaknya tetap. Nah, slice adalah daftar yang lebih fleksibel — kita bisa menambahkan atau mengurangi kotaknya sesuai kebutuhan.</span></h2>
           <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Slice sangat berguna karena memungkinkan kita untuk menyimpan banyak item (seperti angka atau kata) dan dengan mudah mengubah jumlah item tersebut tanpa harus membuat daftar baru dari awal.
           </span></h2>
-          <div>
+          <div className='max-w-[22rem] sm:max-w-full xl:max-w-3xl'>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {code1}

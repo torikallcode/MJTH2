@@ -190,7 +190,7 @@ export const If = () => {
         <div className='flex flex-col gap-y-2'>
           <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>if adalah seperti pertanyaan "kalau-kalau" yang sering kita tanyakan dalam kehidupan sehari-hari. Misalnya, "Kalau hujan, aku bawa payung." Dalam pemrograman, if digunakan untuk membuat keputusan berdasarkan kondisi tertentu. Jika kondisinya benar (true), maka blok kode di dalamnya akan dijalankan. Jika tidak, kode tersebut dilewati.</span></h2>
           <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>If sangat berguna saat kita ingin membuat keputusan di program kita. Misalnya, jika seseorang memasukkan angka yang lebih besar dari 10, kita bisa memberikan pesan "Angka Anda besar." Jika tidak, kita bisa memberikan pesan lain.</span></h2>
-          <div>
+          <div className='max-w-[22rem] sm:max-w-full xl:max-w-3xl'>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {code1}

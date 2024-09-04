@@ -4,6 +4,7 @@ import QuizComponent from '../../QuizComponent';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FillContent } from '../FillContent';
+import Accordion from '../../../elements/Acordion';
 export const Pointer = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -186,6 +187,45 @@ export const Pointer = () => {
     },
   ]
 
+  const pertanyaan2 = [
+    {
+      id: 1,
+      level: "Mudah",
+      pertanyaan: "Apa yang akan terjadi jika kita memanggil fungsi `cekAngkaPositif` dengan angka negatif?",
+      jawaban: `  // cara menggunakan error
+  package main
+
+  import (
+      "fmt"
+      "strconv"
+  )
+
+  func main() {
+      var input string
+      fmt.Print("Masukkan angka: ")
+      fmt.Scanln(&input)
+
+      // Mengonversi input string menjadi angka
+      if number, err := strconv.Atoi(input); err != nil {
+          fmt.Println("Error:", err.Error()) // Output error jika input bukan angka
+      } else {
+          fmt.Println("Angka yang Anda masukkan adalah:", number) // Output angka jika berhasil
+      }
+  }`
+    },
+    {
+      id: 2,
+      level: "Sedang",
+      pertanyaan: "Apa yang akan terjadi jika kita memanggil fungsi `cekAngkaPositif` dengan angka negatif?",
+      jawaban: `hehe`
+    },
+    {
+      id: 3,
+      level: "Lanjutan",
+      pertanyaan: "Apa yang akan terjadi jika kita memanggil fungsi `cekAngkaPositif` dengan angka negatif?",
+      jawaban: `hehe`
+    },
+  ]
 
   return (
     <div className='flex flex-col pb-3 lg:pt-5 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
@@ -196,11 +236,21 @@ export const Pointer = () => {
           fungsi={'Pointer digunakan ketika kita ingin mengetahui lokasi dari data atau ingin mengubah data langsung di tempat tanpa membuat salinan baru. Ini membantu kita mengelola memori dengan lebih efisien dan bekerja dengan data yang besar atau kompleks.'}
         >
           {code1.map((item) => (
-            <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
+            <SyntaxHighlighter language="go" style={nightOwl} className="max-w-full mb-4 rounded-lg font-poppins">
               {item.contoh}
             </SyntaxHighlighter>
           ))}
         </FillContent>
+        <div className='max-w-[22rem] sm:max-w-full xl:max-w-3xl'>
+          <h1 className='mb-2 italic font-medium font-poppins'>Latihan: </h1>
+          {pertanyaan2.map((item) => (
+            <Accordion
+              level={item.level}
+              pertanyaan={item.pertanyaan}
+              jawaban={item.jawaban}
+            />
+          ))}
+        </div>
       </div>
       <div className='lg:w-[40%] lg:sticky lg:top-24'>
         <h2 className='mb-1 text-base italic font-medium font-poppins lg:hidden'>Quiz:</h2>

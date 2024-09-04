@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import QuizComponent from '../../QuizComponent';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Accordion from '../../../elements/Acordion';
 export const Variable = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -173,6 +174,41 @@ export const Variable = () => {
   x := 10
   y := "Hello"
   `
+
+  const pertanyaan2 = [
+    {
+      id: 1,
+      level: "Mudah",
+      pertanyaan: "Buat variabel dengan tipe data integer, boolean, dan string. Kemudian, cetak nilai dari masing-masing variabel tersebut.",
+      jawaban: ` 
+  package main
+  import "fmt"
+
+  func main() {
+      var number int = 10
+      var isAvailable bool = true
+      var greeting string = "Hello, Go!"
+
+      fmt.Println(number)
+      fmt.Println(isAvailable)
+      fmt.Println(greeting)
+  }
+`
+    },
+    {
+      id: 2,
+      level: "Sedang",
+      pertanyaan: "Apa yang akan terjadi jika kita memanggil fungsi `cekAngkaPositif` dengan angka negatif?",
+      jawaban: `hehe`
+    },
+    {
+      id: 3,
+      level: "Lanjutan",
+      pertanyaan: "Apa yang akan terjadi jika kita memanggil fungsi `cekAngkaPositif` dengan angka negatif?",
+      jawaban: `hehe`
+    },
+  ]
+
   return (
     <div className='flex flex-col lg:items-start pb-96 lg:flex-row lg:gap-x-3 gap-y-7'>
       <div className='lg:w-[60%] xl:w-4/5'>
@@ -180,7 +216,7 @@ export const Variable = () => {
         <div className='flex flex-col gap-y-2'>
           <h2 className='text-base italic font-medium font-poppins'>Pengertian: <br /> <span className='not-italic font-normal'>Tempat untuk menyimpan data yang dapat berubah. Di Golang , Setiap variable yang dibuat harus di gunakan</span></h2>
           <h2 className='text-base italic font-medium font-poppins'>Fungsi: <br /><span className='not-italic font-normal'>Menyimpan dan mengelola data sementara selama program berjalan.</span></h2>
-          <div>
+          <div className='max-w-[22rem] sm:max-w-full xl:max-w-3xl'>
             <h2 className='mb-1 text-base italic font-medium font-poppins'>Cara penggunaan:</h2>
             <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
               {code1}
@@ -192,6 +228,16 @@ export const Variable = () => {
               {code3}
             </SyntaxHighlighter>
           </div>
+        </div>
+        <div className='max-w-[22rem] sm:max-w-full xl:max-w-3xl'>
+          <h1 className='mb-2 italic font-medium font-poppins'>Latihan: </h1>
+          {pertanyaan2.map((item) => (
+            <Accordion
+              level={item.level}
+              pertanyaan={item.pertanyaan}
+              jawaban={item.jawaban}
+            />
+          ))}
         </div>
       </div>
       <div className='lg:w-[40%] lg:sticky lg:top-24 mx-auto lg:mx-0'>
