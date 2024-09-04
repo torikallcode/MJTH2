@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import QuizComponent from '../../QuizComponent';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
-import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { idea, nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FillContent } from '../FillContent';
+import Accordion from '../../../elements/Acordion';
 export const Error = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -237,7 +238,6 @@ export const Error = () => {
     },
   ];
 
-
   const code1 = [
     {
       contoh:
@@ -299,6 +299,45 @@ export const Error = () => {
     },
   ]
 
+  const pertanyaan2 = [
+    {
+      id: 1,
+      level: "Mudah",
+      pertanyaan: "Apa yang akan terjadi jika kita memanggil fungsi `cekAngkaPositif` dengan angka negatif?",
+      jawaban: `  // cara menggunakan error
+  package main
+
+  import (
+      "fmt"
+      "strconv"
+  )
+
+  func main() {
+      var input string
+      fmt.Print("Masukkan angka: ")
+      fmt.Scanln(&input)
+
+      // Mengonversi input string menjadi angka
+      if number, err := strconv.Atoi(input); err != nil {
+          fmt.Println("Error:", err.Error()) // Output error jika input bukan angka
+      } else {
+          fmt.Println("Angka yang Anda masukkan adalah:", number) // Output angka jika berhasil
+      }
+  }`
+    },
+    {
+      id: 2,
+      level: "Sedang",
+      pertanyaan: "Apa yang akan terjadi jika kita memanggil fungsi `cekAngkaPositif` dengan angka negatif?",
+      jawaban: `hehe`
+    },
+    {
+      id: 3,
+      level: "Lanjutan",
+      pertanyaan: "Apa yang akan terjadi jika kita memanggil fungsi `cekAngkaPositif` dengan angka negatif?",
+      jawaban: `hehe`
+    },
+  ]
 
   return (
     <div className='flex flex-col pb-3 lg:pt-5 lg:items-start lg:flex-row lg:gap-x-3 gap-y-7'>
@@ -326,6 +365,18 @@ export const Error = () => {
           handleAnswerOptionClick={handleAnswerOptionClick}
           handleRestartQuiz={handleRestartQuiz}
         />
+      </div>
+      <div>
+        <h1 className='mb-2 italic font-medium font-poppins'>Latihan: </h1>
+        {pertanyaan2.map((item) => (
+          <Accordion
+            level={item.level}
+            pertanyaan={item.pertanyaan}
+            jawaban={item.jawaban}
+          />
+        ))}
+      </div>
+      <div>
       </div>
     </div >
   );
