@@ -55,11 +55,12 @@ const Sidebar = ({ isOpen, onSelect }) => {
       ],
     },
     {
-      id: 'getting-started',
-      label: 'Getting Started',
+      id: 'latihanSoal',
+      label: 'Latihan Soal',
       children: [
-        { id: 'basics', label: 'The Basics' },
-        { id: 'advanced', label: 'Advanced' },
+        { id: 'mudah', label: 'Mudah' },
+        { id: 'sedang', label: 'Sedang' },
+        { id: 'lanjutan', label: 'Lanjutan' },
       ],
     },
     {

@@ -42,6 +42,9 @@ import { PointerStruct } from './MainContent/GoDasar/PointerStruct';
 import { PackageNImport } from './MainContent/GoDasar/PackageNImport';
 import { PackageInitialization } from './MainContent/GoDasar/PackageInitialization';
 import { Error } from './MainContent/GoDasar/Error';
+import { Mudah } from './MainContent/LatihanSoal/Mudah';
+import { Sedang } from './MainContent/LatihanSoal/Sedang';
+import { Lanjutan } from './MainContent/LatihanSoal/Lanjutan';
 
 const contentComponents = {
     'variable': Variable,
@@ -87,6 +90,9 @@ const contentComponents = {
     'packageNImport': PackageNImport,
     'packageInitialization': PackageInitialization,
     'error': Error,
+    'mudah': Mudah,
+    'sedang': Sedang,
+    'lanjutan': Lanjutan
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
