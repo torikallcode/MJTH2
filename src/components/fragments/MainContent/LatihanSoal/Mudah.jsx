@@ -27,7 +27,6 @@ export const Mudah = () => {
             </table>
           </div>
         </div>
-
       </div>
     </div >
   );

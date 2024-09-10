@@ -60,48 +60,13 @@ export const AuthLayout = () => {
         </svg>
       </div>
       <div className="flex flex-col items-center justify-center bg-white">
-        <div className="relative flex flex-col items-center justify-center w-full h-screen mx-auto">
-          <h1 className="text-6xl text-center mx-auto max-w-[250px] xl:max-w-xl xl:text-8xl text-hitam font-semibold">My Journey To Heaven</h1>
+        <div className="relative flex flex-col items-center justify-center w-full h-screen mx-auto gap-y-11">
+          <h1 className="text-5xl text-center mx-auto max-w-[300px] xl:max-w-2xl xl:text-8xl text-hitam font-bold -mt-32 lg:-mt-20 font-baskerville uppercase">My Journey To Heaven</h1>
+          <Link to={'/docs'}>
+            <h1 className="px-4 py-3 text-sm text-white rounded-md bg-hitam font-poppins">Get Started</h1>
+          </Link>
           <h2 className="absolute text-3xl text-center bottom-12 font-baskerville">II</h2>
         </div>
-        {/* <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
-          {showScore ? (
-            <div className="text-center">
-              <div className="mb-4 text-2xl font-bold">Your Score: {score}</div>
-              <button
-                className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-600"
-                onClick={() => window.location.reload()}
-              >
-                Restart Quiz
-              </button>
-            </div>
-          ) : (
-            <>
-              <div className="mb-4">
-                <div className="text-xl font-bold">
-                  Question {currentQuestion + 1}/{questions.length}
-                </div>
-                <div className="mb-4 text-lg">{questions[currentQuestion].questionText}</div>
-                {questions[currentQuestion].code && (
-                  <SyntaxHighlighter language="javascript" style={docco} className="mb-4">
-                    {questions[currentQuestion].code}
-                  </SyntaxHighlighter>
-                )}
-              </div>
-              <div className="space-y-2">
-                {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}
-                    className="w-full px-4 py-2 text-left bg-blue-100 rounded hover:bg-blue-200"
-                  >
-                    {answerOption.answerText}
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
-        </div> */}
       </div>
     </div>
 

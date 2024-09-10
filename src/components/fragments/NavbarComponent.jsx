@@ -42,28 +42,28 @@ export default function NavbarComponent({ buttonStart }) {
 
   return (
     <Navbar
-      className={`fixed top-0 left-0 right-0 z-10 px-0 mx-0 transition-colors duration-300 ${isScrolled ? "bg-white/30 backdrop-blur-lg border-b border-gray-200" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 max-w-0 z-10 px-5 lg:px-24 mx-0 transition-colors duration-300 ${isScrolled ? "bg-white/30 backdrop-blur-lg border-b border-gray-200" : "bg-transparent"
         }`}
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className="w-full">
+      <NavbarContent className="w-full bg-teal-500">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand className="flex items-center gap-x-1">
           {/* <img src="img/logonew.png" alt="" className="w-7 h-7" /> */}
-          <p className="text-xl font-medium text-inherit text-hitam font-baskerville">MJTH</p>
+          <p className="text-xl font-semibold text-inherit text-hitam font-baskerville">MJTH</p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent justify="end">
+      {/* <NavbarContent justify="end">
         <NavbarItem>
           <Link to={'/docs'}>
             <h1 className="px-4 py-3 text-sm text-white rounded-md bg-hitam font-poppins">Get Started</h1>
           </Link>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
