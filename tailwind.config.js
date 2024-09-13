@@ -23,6 +23,9 @@ export default {
         'hitam' : '#212721'
       }
     },
+    screens: {
+      'vsm': '400px',
+    }
   },
   darkMode: "class",
   plugins: [

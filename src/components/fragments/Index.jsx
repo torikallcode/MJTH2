@@ -45,6 +45,12 @@ import { Error } from './MainContent/GoDasar/Error';
 import { Mudah } from './MainContent/LatihanSoal/Mudah';
 import { Sedang } from './MainContent/LatihanSoal/Sedang';
 import { Lanjutan } from './MainContent/LatihanSoal/Lanjutan';
+import { StandartLibrary } from './MainContent/StandartLibrary/Index';
+import { Fmt } from './MainContent/StandartLibrary/Fmt';
+import { Errors } from './MainContent/StandartLibrary/Errors';
+import { Os } from './MainContent/StandartLibrary/Os';
+import { Flag } from './MainContent/StandartLibrary/FLag';
+import { Strings } from './MainContent/StandartLibrary/Strings';
 
 const contentComponents = {
     'variable': Variable,
@@ -92,7 +98,13 @@ const contentComponents = {
     'error': Error,
     'mudah': Mudah,
     'sedang': Sedang,
-    'lanjutan': Lanjutan
+    'lanjutan': Lanjutan,
+    'standartLibrary': StandartLibrary,
+    'fmt': Fmt,
+    'errors': Errors,
+    'os': Os,
+    'flag': Flag,
+    'strings': Strings,
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
