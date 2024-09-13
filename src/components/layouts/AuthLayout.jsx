@@ -61,7 +61,7 @@ export const AuthLayout = () => {
       </div>
       <div className="flex flex-col items-center justify-center bg-white">
         <div className="relative flex flex-col items-center justify-center w-full h-screen mx-auto gap-y-11">
-          <h1 className="text-5xl text-center mx-auto max-w-[300px] xl:max-w-2xl xl:text-8xl text-hitam font-bold -mt-32 lg:-mt-20 font-baskerville uppercase">My Journey To Heaven</h1>
+          <h1 className="text-5xl text-center mx-auto max-w-[300px] sm:max-w-md sm:text-7xl md:text-8xl lg:text-7xl xl:max-w-2xl xl:text-8xl text-hitam font-bold -mt-32 lg:-mt-20 font-baskerville uppercase">My Journey To Heaven</h1>
           <Link to={'/docs'}>
             <h1 className="px-4 py-3 text-sm text-white rounded-md bg-hitam font-poppins">Get Started</h1>
           </Link>

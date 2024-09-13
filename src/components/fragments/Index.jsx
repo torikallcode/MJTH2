@@ -51,6 +51,9 @@ import { Errors } from './MainContent/StandartLibrary/Errors';
 import { Os } from './MainContent/StandartLibrary/Os';
 import { Flag } from './MainContent/StandartLibrary/FLag';
 import { Strings } from './MainContent/StandartLibrary/Strings';
+import { Strconv } from './MainContent/StandartLibrary/Strconv';
+import { Math } from './MainContent/StandartLibrary/Math';
+import { ContainerLIst } from './MainContent/StandartLibrary/ContainerList';
 
 const contentComponents = {
     'variable': Variable,
@@ -105,6 +108,9 @@ const contentComponents = {
     'os': Os,
     'flag': Flag,
     'strings': Strings,
+    'strconv': Strconv,
+    'math': Math,
+    'containerList': ContainerLIst,
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
