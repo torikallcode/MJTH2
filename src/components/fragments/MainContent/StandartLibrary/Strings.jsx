@@ -22,7 +22,7 @@ export const Strings = () => {
     fmt.Println(strings.Split("M. Torikal Akbar", ""))                      
     //untuk memisah string
     fmt.Println(strings.ToLower("M. Torikal Akbar"))                        
-    //membuat string menjadi huruf kecil semua
+    //membuat string menjadi huruf kecil semua1
     fmt.Println(strings.ToUpper("M. Torikal Akbar"))                        
     // membuat string menjadi huruf besar semua
     fmt.Println(strings.Trim("  M. Torikal Akbar   ", " "))                 
