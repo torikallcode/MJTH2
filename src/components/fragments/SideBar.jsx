@@ -81,7 +81,7 @@ const Sidebar = ({ isOpen, onSelect }) => {
         { id: 'reflect', label: 'Reflect' },
         { id: 'regexp', label: 'Regexp' },
         { id: 'encoding', label: 'Encoding' },
-        { id: 'slice', label: 'Slices' },
+        { id: 'slices', label: 'Slices' },
         { id: 'path', label: 'Path' },
         { id: 'io', label: 'io' },
         { id: 'bufio', label: 'Bufio' },

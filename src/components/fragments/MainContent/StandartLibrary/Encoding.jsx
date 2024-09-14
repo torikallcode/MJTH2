@@ -7,59 +7,111 @@ export const Encoding = () => {
 
   const code1 = [
     {
+      id: 1,
+      name: "encoding / json",
+      desc: "json.Marshal(): Mengonversi data Go (struct, map, dll.) menjadi format JSON, json.Unmarshal(): Membaca data JSON dan mengonversinya menjadi tipe data Go.",
       contoh:
         `
   package main
 
   import (
-    "fmt"
-    "math"
+      "encoding/json"
+      "fmt"
+  )
+
+  type Orang struct {
+      Nama  string
+      Umur  int
+      Kota  string
+  }
+
+  func main() {
+      orang := Orang{
+          Nama: "Budi",
+          Umur: 10,
+          Kota: "Jakarta",
+      }
+
+      // Mengonversi struct menjadi JSON (json.Marshal)
+      dataJSON, _ := json.Marshal(orang)
+      fmt.Println(string(dataJSON)) // Output dalam bentuk JSON
+      // Output: {"Nama":"Budi","Umur":10,"Kota":"Jakarta"}
+
+      // Membaca data JSON (json.Unmarshal)
+      dataJSON := \`{"Nama":"Budi","Umur":10,"Kota":"Jakarta"}\`
+      var orang Orang
+      json.Unmarshal([]byte(dataJSON), &orang)
+      fmt.Println(orang) // Mengubah JSON menjadi struct
+      // Output: {Budi 10 Jakarta}
+  }
+  `,
+    },
+    {
+      id: 2,
+      name: "encoding/xml",
+      desc: "xml.Marshal(): Mengonversi data Go menjadi format XML, xml.Unmarshal(): Membaca data XML dan mengonversinya menjadi tipe data Go.",
+      contoh:
+        `
+  package main
+
+  import (
+      "encoding/xml"
+      "fmt"
+  )
+
+  type Orang struct {
+    Nama  string \`xml: "nama"\`
+    Umur  int    \`xml: "umur"\`
+    Kota  string \`xml: "kota"\`
+  }
+
+  func main() {
+      orang := Orang{
+          Nama: "Budi",
+          Umur: 10,
+          Kota: "Jakarta",
+      }
+
+      // Mengonversi struct menjadi XML (xml.Marshal)
+      dataXML, _ := xml.Marshal(orang)
+      fmt.Println(string(dataXML)) // Output dalam bentuk XML
+      // Output: <Orang><nama>Budi</nama><umur>10</umur><kota>Jakarta</kota></Orang>
+
+      dataXML := \`<Orang><nama>Budi</nama><umur>10</umur><kota>Jakarta</kota></Orang>\`
+      var orang Orang
+      xml.Unmarshal([]byte(dataXML), &orang)
+      fmt.Println(orang) // Mengubah XML menjadi struct
+      // Output: {Budi 10 Jakarta}
+  }
+  `,
+    },
+    {
+      id: 3,
+      name: "encoding/base64",
+      desc: "base64.StdEncoding.EncodeToString(): Mengonversi data menjadi string base64, base64.StdEncoding.DecodeString(): Mengonversi data base64 menjadi byte asli.",
+      contoh:
+        `
+  package main
+
+  import (
+      "encoding/base64"
+      "fmt"
   )
 
   func main() {
-    // 1. digunakan untuk memeriksa apakah suatu string cocok dengan pola 
-    // regex yang kita tentukan. = regexp.MatchString()
-    cocok, _ := regexp.MatchString("halo", "halo dunia")
-    fmt.Println("Cocok:", cocok)
-    // Output: cocok: true
-    // Dalam contoh ini, program memeriksa apakah teks "halo" ada di dalam "halo dunia". 
-    // Hasilnya true, karena cocok.
+      // Mengonversi string menjadi base64 (EncodeToString)
+      data := "Halo, Dunia!"
+      encoded := base64.StdEncoding.EncodeToString([]byte(data))
+      fmt.Println("Encoded:", encoded)
+      // Output: encoded: SGFsbywgRHVuaWEh
 
-    // 2. MustCompile() digunakan untuk membuat pola regex yang bisa digunakan berulang kali.
-    // FindString() digunakan untuk menemukan dan mengembalikan teks pertama yang cocok dengan pola. 
-    // = regexp.MustCompile() dan FindString()
-    re := regexp.MustCompile("dunia")
-    hasil := re.FindString("halo dunia")
-    fmt.Println("Ditemukan:", hasil)
-    // Output: ditemukan: dunia
-    //Program ini mencari kata "dunia" di dalam string "halo dunia" 
-    //dan mengembalikannya jika ditemukan.
-
-    // 3. mencari dan mengembalikan semua string yang cocok 
-    // dengan pola dalam teks, bukan hanya yang pertama. = FindAllString()
-    re := regexp.MustCompile("[a-z]+")
-    hasil := re.FindAllString("123 abc def 456 ghi", -1)
-    fmt.Println("Semua yang cocok:", hasil)
-    //Output: Semua yang cocok: [abc def ghi]
-    //Dalam contoh ini, kita menggunakan pola [a-z]+, yang berarti 
-    //"cari semua kata yang terdiri dari huruf kecil". Hasilnya adalah semua kata kecil dalam string.
-
-
-    // 4. mengganti semua teks yang cocok dengan pola dengan teks yang kita tentukan = ReplaceAllString()
-    re := regexp.MustCompile("halo")
-    hasil := re.ReplaceAllString("halo dunia, halo semua", "hi")
-    fmt.Println("Hasil setelah diganti:", hasil)
-    // Output: Hasil setelah diganti: hi dunia, hi semua
-    //Program ini mengganti semua kemunculan kata "halo" dengan "hi".
-
-
-    // 5. memecah string menjadi beberapa bagian berdasarkan pola tertentu = Split()
-    re := regexp.MustCompile("[0-9]+")
-    hasil := re.Split("abc123def456ghi", -1)
-    fmt.Println("Hasil split:", hasil)
-    // Output: Hasil split: [abc def ghi]
+      // Mengonversi base64 kembali menjadi string (DecodeString)
+      encoded := "SGFsbywgRHVuaWEh"
+      decoded, _ := base64.StdEncoding.DecodeString(encoded)
+      fmt.Println("Decoded:", string(decoded))
+      // Output: decoded: Halo, Dunia!
   }
-  `
+  `,
     },
   ]
 
@@ -75,20 +127,25 @@ export const Encoding = () => {
             <div className='mb-5'>
               <h1 className='text-lg italic font-medium font-poppins'>Fungsi-fungsi yang sering digunakan:</h1>
               <ul className='flex flex-col ml-5 text-base list-outside font-poppins'>
-                <li className='list-decimal'>regexp.MatchString(): Untuk memeriksa apakah sebuah teks cocok dengan pola tertentu.</li>
-                <li className='list-decimal'>regexp.MustCompile(): Untuk membuat objek regex yang bisa kita gunakan berulang kali.</li>
-                <li className='list-decimal'>FindString(): Untuk mencari dan mengambil teks yang cocok dengan pola.</li>
-                <li className='list-decimal'>FindAllString(): Untuk mencari semua teks yang cocok dengan pola.</li>
-                <li className='list-decimal'>ReplaceAllString(): Untuk mengganti bagian teks yang cocok dengan pola tertentu.</li>
-                <li className='list-decimal'>Split(): Untuk memecah teks menjadi beberapa bagian berdasarkan pola tertentu.</li>
+                <li className='list-decimal'>encoding/json: Digunakan untuk bekerja dengan data JSON.</li>
+                <li className='list-decimal'>encoding/xml: Digunakan untuk bekerja dengan data XML.</li>
+                <li className='list-decimal'>encoding/base64: Digunakan untuk mengonversi data ke dan dari format base64.</li>
               </ul>
             </div>
           }
         >
           {code1.map((item) => (
-            <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
-              {item.contoh}
-            </SyntaxHighlighter>
+            <div className='flex flex-col gap-y-3 mb-3'>
+              <div>
+                <ul className='flex flex-row font-poppins list-inside font-medium'>
+                  <li className='flex gap-x-3 items-center'>{item.id}.<span className='bg-[#efeffd] rounded-lg px-2 py-1 text-[#6366f1]'>{item.name} </span></li>
+                </ul>
+                <p className='font-poppins text-base'>{item.desc}</p>
+              </div>
+              <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
+                {item.contoh}
+              </SyntaxHighlighter>
+            </div>
           ))}
         </FillContent>
       </div>

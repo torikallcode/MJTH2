@@ -59,6 +59,10 @@ import { Time } from './MainContent/StandartLibrary/Time';
 import { Reflect } from './MainContent/StandartLibrary/Reflect';
 import { Regexp } from './MainContent/StandartLibrary/Regexp';
 import { Encoding } from './MainContent/StandartLibrary/Encoding';
+import { Slices } from './MainContent/StandartLibrary/Slices';
+import { Path } from './MainContent/StandartLibrary/Path';
+import { Io } from './MainContent/StandartLibrary/Io';
+import { Bufio } from './MainContent/StandartLibrary/Bufio';
 
 const contentComponents = {
     'variable': Variable,
@@ -121,6 +125,10 @@ const contentComponents = {
     'reflect': Reflect,
     'regexp': Regexp,
     'encoding': Encoding,
+    'slices': Slices,
+    'path': Path,
+    'io': Io,
+    'bufio': Bufio,
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
