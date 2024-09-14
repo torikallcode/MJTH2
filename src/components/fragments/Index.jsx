@@ -55,6 +55,7 @@ import { Strconv } from './MainContent/StandartLibrary/Strconv';
 import { Math } from './MainContent/StandartLibrary/Math';
 import { ContainerLIst } from './MainContent/StandartLibrary/ContainerList';
 import { ContaierRing } from './MainContent/StandartLibrary/ContainerRing';
+import { Sort } from './MainContent/StandartLibrary/Sort';
 import { Time } from './MainContent/StandartLibrary/Time';
 import { Reflect } from './MainContent/StandartLibrary/Reflect';
 import { Regexp } from './MainContent/StandartLibrary/Regexp';
@@ -121,6 +122,7 @@ const contentComponents = {
     'math': Math,
     'containerList': ContainerLIst,
     'containerRing': ContaierRing,
+    'sort': Sort,
     'time': Time,
     'reflect': Reflect,
     'regexp': Regexp,
