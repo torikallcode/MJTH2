@@ -56,6 +56,9 @@ import { Math } from './MainContent/StandartLibrary/Math';
 import { ContainerLIst } from './MainContent/StandartLibrary/ContainerList';
 import { ContaierRing } from './MainContent/StandartLibrary/ContainerRing';
 import { Time } from './MainContent/StandartLibrary/Time';
+import { Reflect } from './MainContent/StandartLibrary/Reflect';
+import { Regexp } from './MainContent/StandartLibrary/Regexp';
+import { Encoding } from './MainContent/StandartLibrary/Encoding';
 
 const contentComponents = {
     'variable': Variable,
@@ -115,6 +118,9 @@ const contentComponents = {
     'containerList': ContainerLIst,
     'containerRing': ContaierRing,
     'time': Time,
+    'reflect': Reflect,
+    'regexp': Regexp,
+    'encoding': Encoding,
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
