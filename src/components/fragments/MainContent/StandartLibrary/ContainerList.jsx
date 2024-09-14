@@ -17,38 +17,51 @@ export const ContainerLIst = () => {
   )
 
   func main() {
-    // 1. Menghitung nilai absolut dari -8.5
-    fmt.Println(math.Abs(-8.5))  
-    // output: 8.5
+    // 1. Membuat list baru = list.New()
+    myList := list.New()
+    fmt.Println("List baru dibuat:", myList)
+    // output: List baru dibuat: &{0xc000010060}
 
-    // 2. Menghitung nilai pangkat
-    fmt.Println(math.Pow(2, 4)) 
-    // Output: 16
+    // 2. Menambahkan elemen ke akhir list = list.PushBack()
+    myList := list.New()
+    myList.PushBack("Tugas 1")
+    myList.PushBack("Tugas 2")
+    fmt.Println("List setelah menambahkan elemen:", myList)
+    // Output: List setelah menambahkan elemen: &{0xc000010060}
 
-    // 3. Menghitung akar kuadrat
-    fmt.Println(math.Sqrt(16.0))
-    // Output: 4
+    // 3. Menambahkan elemen ke awal list = list.PushFront()
+    myList := list.New()
+    myList.PushFront("Tugas 1")
+    myList.PushFront("Tugas 2")
+    fmt.Println("List setelah menambahkan elemen di awal:", myList)
+    // output: List setelah menambahkan elemen di awal: &{0xc000010060}
+
+    // 4. Menghapus elemen = list.Remove()
+    myList := list.New()
+    elem1 := myList.PushBack("Tugas 1")
+    elem2 := myList.PushBack("Tugas 2")
     
-    // 4. Membulatkan float64 keatas
-    fmt.Println(math.Ceil(1.40))  
-    // Output: 2
+    myList.Remove(elem1)
+    fmt.Println("List setelah menghapus elemen pertama:", myList)
+    // Output: List setelah menghapus elemen pertama: &{0xc000010060}
 
-    // 5. Membulatkan float64 kebawah
-    fmt.Println(math.Floor(1.60)) 
-    //Output: 1
+    // 5. Mengambil elemen pertama = list.Front()
+    myList := list.New()
+    myList.PushBack("Tugas 1")
+    myList.PushBack("Tugas 2")
+    
+    firstElem := myList.Front()
+    fmt.Println("Elemen pertama dalam list:", firstElem.Value)
+    //Output: Elemen pertama dalam list: Tugas 1
 
-    // 6. Membualatkan float64 sesuai dengan yang paling dekat
-    fmt.Println(math.Round(1.49)) 
-    //Output: 1
-
-    // 7. Mengembalikan nilai float64 paling besar
-    fmt.Println(math.Max(10, 11)) 
-    //Output: 11
-
-    // 8. Mengembalikan nilai float64 paling kecil
-    fmt.Println(math.Min(10, 11)) 
-    // Output: 10
-
+    // 6. Mengambil elemen terakhir
+    myList := list.New()
+    myList.PushBack("Tugas 1")
+    myList.PushBack("Tugas 2")
+    
+    lastElem := myList.Back()
+    fmt.Println("Elemen terakhir dalam list:", lastElem.Value)
+    // Output: Elemen terakhir dalam list: Tugas 2
   }
 
   `

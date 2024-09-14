@@ -54,6 +54,8 @@ import { Strings } from './MainContent/StandartLibrary/Strings';
 import { Strconv } from './MainContent/StandartLibrary/Strconv';
 import { Math } from './MainContent/StandartLibrary/Math';
 import { ContainerLIst } from './MainContent/StandartLibrary/ContainerList';
+import { ContaierRing } from './MainContent/StandartLibrary/ContainerRing';
+import { Time } from './MainContent/StandartLibrary/Time';
 
 const contentComponents = {
     'variable': Variable,
@@ -111,6 +113,8 @@ const contentComponents = {
     'strconv': Strconv,
     'math': Math,
     'containerList': ContainerLIst,
+    'containerRing': ContaierRing,
+    'time': Time,
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
