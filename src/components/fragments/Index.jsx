@@ -64,6 +64,7 @@ import { Slices } from './MainContent/StandartLibrary/Slices';
 import { Path } from './MainContent/StandartLibrary/Path';
 import { Io } from './MainContent/StandartLibrary/Io';
 import { Bufio } from './MainContent/StandartLibrary/Bufio';
+import { Navbar } from './MainContent/Component/Navbar';
 
 const contentComponents = {
     'variable': Variable,
@@ -131,6 +132,7 @@ const contentComponents = {
     'path': Path,
     'io': Io,
     'bufio': Bufio,
+    'navbar': Navbar
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];

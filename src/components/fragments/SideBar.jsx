@@ -92,7 +92,7 @@ const Sidebar = ({ isOpen, onSelect }) => {
       id: 'components',
       label: 'Components',
       children: [
-        { id: 'buttons', label: 'Buttons' },
+        { id: 'navbar', label: 'Navbar' },
         { id: 'cards', label: 'Cards' },
       ],
     },
