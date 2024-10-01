@@ -20,7 +20,9 @@ export default {
         'darken': '#0F172A',
         'light-pink': '#f472b6',
         'dark-gray': '#333333',
-        'hitam' : '#212721'
+        'hitam' : '#212721',
+        'ungu': "#6a3dec",
+        'pure-pink': "#cf2f98"
       }
     },
     screens: {

@@ -5,6 +5,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlig
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
+
 const ComponentShowcase = ({ componentName, componentCode, componentPreview }) => {
   const [view, setView] = useState('preview'); // 'preview' or 'code'
   const [copied, setCopied] = useState(false);
@@ -41,14 +42,14 @@ const ComponentShowcase = ({ componentName, componentCode, componentPreview }) =
         </div>
       </div>
 
-      <div className="p-4 border-gray-400 border rounded-md max-w-[22rem] sm:max-w-full">
+      <div className="p-5 rounded-xl max-w-[22rem] sm:min-w-full bg-transparent bg-gradient-to-br from-pure-pink to-ungu">
         {view === 'preview' ? (
-          <div className="flex items-center justify-center component-preview">
+          <div className="flex items-center justify-center w-full h-full component-preview">
             {componentPreview}
           </div>
         ) : (
-          <pre className="mx-auto whitespace-pre-wrap component-code">
-            <SyntaxHighlighter language="go" style={nightOwl} className="mb-4 rounded-lg font-poppins">
+          <pre className="w-full h-full mx-auto whitespace-pre-wrap component-code">
+            <SyntaxHighlighter language="go" style={nightOwl} className="rounded-lg font-poppins">
               {componentCode}
             </SyntaxHighlighter>
           </pre>

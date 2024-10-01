@@ -96,6 +96,18 @@ const Sidebar = ({ isOpen, onSelect }) => {
         { id: 'cards', label: 'Cards' },
       ],
     },
+    {
+      id: 'gomodules',
+      label: 'Go modules',
+      children: [
+        { id: 'createModule', label: 'Create Module' },
+        { id: 'tagModule', label: 'Tag/versi' },
+        { id: 'addDependency', label: 'Add Dependency' },
+        { id: 'upgradeModule', label: 'Upgrade Module' },
+        { id: 'upgradeDependency', label: 'Upgrade Dependency' },
+        { id: 'majorUpgrade', label: 'Major Upgrade' },
+      ],
+    },
   ];
 
   const handleMenuClick = (id) => {

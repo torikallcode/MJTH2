@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { NextUIProvider } from '@nextui-org/react'
 import { Home } from './pages/home'
 import { Docs } from './pages/docs'
+import { TestComponent } from './pages/testComponent'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,9 @@ const router = createBrowserRouter([
   }, {
     path: '/docs',
     element: <Docs />,
+  }, {
+    path: '/testing',
+    element: <TestComponent />
   }
 ])
 createRoot(document.getElementById('root')).render(

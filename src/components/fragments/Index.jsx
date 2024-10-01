@@ -65,6 +65,12 @@ import { Path } from './MainContent/StandartLibrary/Path';
 import { Io } from './MainContent/StandartLibrary/Io';
 import { Bufio } from './MainContent/StandartLibrary/Bufio';
 import { Navbar } from './MainContent/Component/Navbar';
+import { createModule } from './MainContent/GoModules/CreateModule';
+import { TagModule } from './MainContent/GoModules/TagModule';
+import { AddDependency } from './MainContent/GoModules/AddDependency';
+import { UpgradeModule } from './MainContent/GoModules/UpgradeModule';
+import { UpgradeDependency } from './MainContent/GoModules/UpgradeDependency';
+import { MajorUpgrade } from './MainContent/GoModules/MajorUpgrade';
 
 const contentComponents = {
     'variable': Variable,
@@ -132,7 +138,13 @@ const contentComponents = {
     'path': Path,
     'io': Io,
     'bufio': Bufio,
-    'navbar': Navbar
+    'navbar': Navbar,
+    'createModule': createModule,
+    'tagModule': TagModule,
+    'addDependency': AddDependency,
+    'upgradeModule': UpgradeModule,
+    'upgradeDependency': UpgradeDependency,
+    'majorUpgrade': MajorUpgrade,
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];
