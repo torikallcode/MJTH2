@@ -42,14 +42,14 @@ const ComponentShowcase = ({ componentName, componentCode, componentPreview }) =
         </div>
       </div>
 
-      <div className="p-5 rounded-xl max-w-[22rem] sm:min-w-full bg-transparent bg-gradient-to-br from-pure-pink to-ungu">
+      <div className="p-5 rounded-md max-w-[22rem] sm:min-w-full bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200">
         {view === 'preview' ? (
           <div className="flex items-center justify-center w-full h-full component-preview">
             {componentPreview}
           </div>
         ) : (
           <pre className="w-full h-full mx-auto whitespace-pre-wrap component-code">
-            <SyntaxHighlighter language="go" style={nightOwl} className="rounded-lg font-poppins">
+            <SyntaxHighlighter language="kotlin" style={nightOwl} className="rounded-lg font-poppins">
               {componentCode}
             </SyntaxHighlighter>
           </pre>
