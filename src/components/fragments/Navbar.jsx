@@ -26,7 +26,6 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
     <nav className={`bg-white max-w-[100rem] mx-auto bg-opacity-50 backdrop-blur-md p-4 w-full z-50 fixed top-0 lg:border-b lg:border-gray-300 ${hasScrolled ? 'border-b border-gray-200' : ''}`}>
       <div className="container mx-auto flex justify-between items-center max-w-[84rem]">
         <Link to={'/'} className="text-lg font-semibold tracking-widest text-hitam font-baskerville">MJTH</Link>
-        <Link to={'/testing'} className="text-lg font-semibold tracking-widest text-hitam font-baskerville">Testing</Link>
         <div className="block lg:hidden">
           <button
             onClick={toggleSidebar}

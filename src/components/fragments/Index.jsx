@@ -1,4 +1,3 @@
-import React from 'react';
 import { Variable } from './MainContent/GoDasar/Variable';
 import { Integer } from './MainContent/GoDasar/Integer';
 import { Boolean } from './MainContent/GoDasar/Boolean';
@@ -71,6 +70,11 @@ import { AddDependency } from './MainContent/GoModules/AddDependency';
 import { UpgradeModule } from './MainContent/GoModules/UpgradeModule';
 import { UpgradeDependency } from './MainContent/GoModules/UpgradeDependency';
 import { MajorUpgrade } from './MainContent/GoModules/MajorUpgrade';
+import { Index } from './MainContent/UnitTest';
+import { Concurrency } from './MainContent/GoConcurrency/Concurrency';
+import { Goroutines } from './MainContent/GoConcurrency/Goroutines';
+import { Channels } from './MainContent/GoConcurrency/Channels';
+import { SelectStatement } from './MainContent/GoConcurrency/SelectStatement';
 
 const contentComponents = {
     'variable': Variable,
@@ -145,6 +149,11 @@ const contentComponents = {
     'upgradeModule': UpgradeModule,
     'upgradeDependency': UpgradeDependency,
     'majorUpgrade': MajorUpgrade,
+    'introductionUT': Index,
+    'concurrency': Concurrency,
+    'goroutines': Goroutines,
+    'channels': Channels,
+    'selectStatement': SelectStatement
 };
 const MainContent = ({ selected }) => {
     const ContentComponent = contentComponents[selected];

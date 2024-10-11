@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Sidebar = ({ isOpen, onSelect }) => {
+
+  Sidebar.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onSelect: PropTypes.func.isRequired,
+  };
+
   const [activeMenu, setActiveMenu] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -106,6 +113,32 @@ const Sidebar = ({ isOpen, onSelect }) => {
         { id: 'upgradeModule', label: 'Upgrade Module' },
         { id: 'upgradeDependency', label: 'Upgrade Dependency' },
         { id: 'majorUpgrade', label: 'Major Upgrade' },
+      ],
+    },
+    {
+      id: 'unitTest',
+      label: 'Unit Test',
+      children: [
+        { id: 'introductionUT', label: 'Introduction' },
+        { id: 'tagModule', label: 'Tag/versi' },
+        { id: 'addDependency', label: 'Add Dependency' },
+        { id: 'upgradeModule', label: 'Upgrade Module' },
+        { id: 'upgradeDependency', label: 'Upgrade Dependency' },
+        { id: 'majorUpgrade', label: 'Major Upgrade' },
+      ],
+    },
+    {
+      id: 'goconcurrency',
+      label: 'Concurrency',
+      children: [
+        { id: 'concurrency', label: 'Concurrency' },
+        { id: 'goroutines', label: 'Goroutines' },
+        { id: 'channels', label: 'Channels' },
+        { id: 'selectStatement', label: 'Select Statement' },
+        { id: 'waitGroup', label: 'WaitGroup' },
+        { id: 'mutex', label: 'Mutex' },
+        { id: 'raceCondition', label: 'Race Condition' },
+        { id: 'atomic', label: 'Atomic' },
       ],
     },
   ];

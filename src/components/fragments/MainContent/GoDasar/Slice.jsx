@@ -1,5 +1,5 @@
 // Integer.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import QuizComponent from '../../QuizComponent';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';

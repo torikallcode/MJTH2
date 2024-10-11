@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from 'react'; // Correct import
+import { useState } from 'react'; // Correct import
 import ComponentShowcase from '../../../elements/ComponentShowcase';
 import { Link } from 'react-router-dom';
-import { Button } from '@nextui-org/react';
 
 export const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 0);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const buttonCode = `
     import React, { useState, useEffect } from 'react';

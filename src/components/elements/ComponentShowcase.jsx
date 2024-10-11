@@ -3,10 +3,15 @@ import { IoCopyOutline } from 'react-icons/io5';
 import { FaCheck } from 'react-icons/fa';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
+import { propTypes } from 'react';
 
 
 const ComponentShowcase = ({ componentName, componentCode, componentPreview }) => {
+  ComponentShowcase.propTypes = {
+    componentName: propTypes.string.isRequired,
+    componentCode: propTypes.string.isRequired,
+    componentPreview: propTypes.node.isRequired,
+  };
   const [view, setView] = useState('preview'); // 'preview' or 'code'
   const [copied, setCopied] = useState(false);
   const handleCopyCode = () => {
